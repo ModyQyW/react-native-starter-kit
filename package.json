@@ -1,0 +1,20 @@
+{
+  "name": "react-native-starter-kit",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.2.3",
+    "expo": "^24.0.0",
+    "mobx": "^4.4.0",
+    "mobx-react": "^5.2.5",
+    "react": "16.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
+    "react-navigation": "^2.12.1"
+  }
+}
