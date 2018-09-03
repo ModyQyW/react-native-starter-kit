@@ -30,7 +30,7 @@ npm install -g exp
 On the command prompt run the following commands | 在终端运行如下命令
 
 ```sh
-$ 
+$ git clone https://github.com/ModyQyW/react-native-starter-kit.git
 
 $ cd react-native-starter-kit
 
