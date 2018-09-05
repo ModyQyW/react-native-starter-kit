@@ -56,13 +56,56 @@ expo eject
 ### Run on Android | Android上运行
 
 ```sh
-expo start --android
+$ expo start --android
+  or
+$ npm run android
 ```
 
 ### Run on iOS | IOS上运行
 
 ```sh
-expo start --ios
+$ expo start --ios
+  or
+$ npm run ios
+```
+
+### 3. Code Organization | 代码结构
+
+```sh
+|-  src
+    |-  assets
+        |-  fonts
+        |-  images
+        |-  ...
+    |-  boot
+        |-  configureStore.js
+        |-  index.js
+        |-  setup.js
+    |-  container
+        |-  xxxContainer
+    |-  screens
+        |-  xxx
+            |-  related js
+            |-  styles.js
+    |-  store
+        |-  related store
+    |-  util
+    |-  App.js
+|-  App.js
+|-  app.json
+|-  package.json
+|-  README.md
+```
+
+### 4. Coding Specification | 编码规范
+
+I appreciate this: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow the coding specfication showed below, or follow your own coding specfication.
+
+我推崇这么一条法则：“永远遵循同一套编码规范——不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。”我希望你能遵循以下的编码规范，又或者遵循你自己的编码规范。
+
+```md
+// to do: put my coding specification
+// to do: 填写编码规范
 ```
 
 ## Advice | 建议
