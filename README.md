@@ -71,30 +71,30 @@ $ npm run ios
 
 ### 3. Code Organization | 代码结构
 
-```sh
-|-  src
-    |-  assets
-        |-  fonts
-        |-  images
-        |-  ...
-    |-  boot
-        |-  configureStore.js
-        |-  index.js
-        |-  setup.js
-    |-  container
+```md
+|-  src                         code and asset directory | 代码及资源目录
+    |-  assets                  asset directory | 资源目录
+        |-  fonts               font assets directory | 字体资源目录
+        |-  images              image assets directory | 图片资源目录
+        |-  ...                 other assets directory | 其他资源目录
+    |-  boot                    boot directory | 引导目录
+        |-  ConfigureStore.js   configure all stores | 配置所有store
+        |-  Index.js            call store configuration and fonts loading | 调用store配置和字体加载
+        |-  Setup.js            load fonts needed | 加载需要的字体
+    |-  container               screen containers directory | container目录
         |-  xxxContainer
-    |-  screens
-        |-  xxx
-            |-  related js
-            |-  styles.js
-    |-  store
-        |-  related store
-    |-  util
-    |-  App.js
-|-  App.js
-|-  app.json
-|-  package.json
-|-  README.md
+    |-  screens                 screens directory | screen目录
+        |-  xxx                 specific screens directory | 特定页面目录
+            |-  related js      related js files | 相关js文件
+            |-  styles.js       used style file | 使用到的样式文件
+    |-  store                   stores directory | store目录
+        |-  related store       related store files | 相关store文件
+    |-  util                    tool directory | 工具目录
+    |-  App.js                  navigation configuration file | 导航配置文件
+|-  App.js                      app entry | 应用入口
+|-  app.json                    expo app configuration file | expo应用配置文件
+|-  package.json                app package file | 应用包文件
+|-  README.md                   you know what it is | 你懂的
 ```
 
 ### 4. Coding Specification | 编码规范
