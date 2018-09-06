@@ -109,34 +109,42 @@ I appreciate this words: *Always follow the same set of coding specification - n
 
 Besides, I have given a referenced react native import order.
 
-> react
-> react-native
->
-> redux or mobx
-> reactredux or mobx-react
->
-> third-party lib | 第三方库
-> custom components | 自定义组件
-> images | 图片
-> public style | 公共样式
-> business components & their styles | 业务组件及其样式
-> Actions
+另外，我还给出了用于参考的 RN 引入顺序。
+
+```md
+react
+react-native
+
+redux or mobx
+reactredux or mobx-react
+
+third-party lib | 第三方库
+custom components | 自定义组件
+images | 图片
+public style | 公共样式
+business components & their styles | 业务组件及其样式
+actions
+```
 
 And a referenced react native method order.
 
-> getDefaultProps
-> getInitialState
-> componentWillMount
-> componentDidMount
-> componentWillReceiveProps
-> shouldComponentUpdate
-> componentWillUpdate
-> componentDidUpdate
-> componentWillUnmount
->
-> other methods
->
-> render
+以及用于参考的 RN 方法顺序。
+
+```md
+getDefaultProps
+getInitialState
+componentWillMount
+componentDidMount
+componentWillReceiveProps
+shouldComponentUpdate
+componentWillUpdate
+componentDidUpdate
+componentWillUnmount
+
+other methods
+
+render
+```
 
 ## Advice | 建议
 
