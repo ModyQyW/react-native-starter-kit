@@ -21,8 +21,8 @@ This is A [React Native](https://facebook.github.io/react-native/) Starter Kit w
 
 ```sh
 npm install -g react-native-cli
-npm install -g yarn
 npm install -g exp
+npm install -g yarn
 ```
 
 ### 2. Installation | 安装
@@ -99,14 +99,44 @@ $ npm run ios
 
 ### 4. Coding Specification | 编码规范
 
-I appreciate this: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow the coding specfication showed below, or follow your own coding specfication.
+I appreciate this words: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow one coding specfication to keep your codes neat. I have given some coding specifications below for reference.
 
-我推崇这么一条法则：“永远遵循同一套编码规范——不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。”我希望你能遵循以下的编码规范，又或者遵循你自己的编码规范。
+我推崇这么一条法则：“永远遵循同一套编码规范——不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。”我希望你能遵循一个编码规范以保证代码简洁优雅。我在下方给出了一些编码规范以供参考。
 
-```md
-// to do: put my coding specification
-// to do: 填写编码规范
-```
+- [Coding Specification by @mdo](https://codeguide.bootcss.com/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+
+Besides, I have given a referenced react native import order.
+
+> react
+> react-native
+>
+> redux or mobx
+> reactredux or mobx-react
+>
+> third-party lib | 第三方库
+> custom components | 自定义组件
+> images | 图片
+> public style | 公共样式
+> business components & their styles | 业务组件及其样式
+> Actions
+
+And a referenced react native method order.
+
+> getDefaultProps
+> getInitialState
+> componentWillMount
+> componentDidMount
+> componentWillReceiveProps
+> shouldComponentUpdate
+> componentWillUpdate
+> componentDidUpdate
+> componentWillUnmount
+>
+> other methods
+>
+> render
 
 ## Advice | 建议
 
