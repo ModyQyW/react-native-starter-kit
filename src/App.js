@@ -38,7 +38,7 @@ const AppSwitch = createSwitchNavigator(
     }
 )
 
-export default class App extends React.Component {
+export default class App extends React.Component<Props, State> {
     render() {
       return <AppSwitch />;
     }

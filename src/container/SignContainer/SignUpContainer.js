@@ -7,6 +7,8 @@ import SignUp from "../../screens/Sign/SignUp"
 @observer
 export default class SignUpContainer extends React.Component<Props, State> {
 
+    toSignIn = () => { this.props.navigation.navigate('SignIn'); }
+
     render() {
         return <SignUp />
     }

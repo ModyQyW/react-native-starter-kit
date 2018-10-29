@@ -12,7 +12,7 @@ export default class HomeContainer extends React.Component<Props, State> {
             <View style={styles.container_Home}>
                 <View style={styles.viewStart}>
                     <Text>Do something to start coding!</Text>
-                    <Text>做点什么，开始打码吧！</Text>
+                    <Text>做点什么, 开始打码吧!</Text>
                 </View>
             </View>
         );

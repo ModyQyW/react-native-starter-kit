@@ -7,12 +7,21 @@ import SignIn from "../../screens/Sign/SignIn";
 @inject("signStore")
 @observer
 export default class SignInContainer extends React.Component<Props, State> {
-    emailInput: any;
-    pwdinput: any;
-    onSignIn() {
-        this.props.navigation.navigate("Home");
-    }
-    render() {
-        return <SignIn onSignIn={() => this.onSignIn()} />;
-    }
+
+  toHome() { 
+    this.props.navigation.navigate('Home');
+  }
+
+  toSignUp() {
+    this.props.navigation.navigate('SignUp');
+  }
+
+  render() {
+    return (
+      <SignIn 
+        toHome={ () => this.toHome() }
+        toSignUp={ () => this.toSignUp() }
+      />
+    );
+  }
 }

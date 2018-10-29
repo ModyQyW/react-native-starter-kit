@@ -9,12 +9,12 @@
         "eject": "expo eject"
     },
     "dependencies": {
-        "antd-mobile-rn": "^2.2.1",
-        "expo": "^24.0.0",
-        "mobx": "^4.4.0",
-        "mobx-react": "^5.2.5",
-        "react": "16.0.0",
-        "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
-        "react-navigation": "^2.12.1"
+        "antd-mobile-rn": "^2.3.0",
+        "expo": "^30.0.0",
+        "mobx": "^4.5.2",
+        "mobx-react": "^5.3.6",
+        "react": "16.3.1",
+        "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+        "react-navigation": "^2.18.2"
     }
 }
