@@ -14,10 +14,7 @@
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
-        "assetBundlePatterns": [
-            "./src/assets/fonts/*",
-            "./src/assets/images/*"
-        ],
+        "assetBundlePatterns": ["./src/assets/*/*"],
         "ios": {
             "bundleIdentifier": "io.github.modyqyw",
             "supportsTablet": true

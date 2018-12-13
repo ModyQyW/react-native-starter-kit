@@ -1,10 +1,9 @@
-import SignStore from "../store/SignStore";
+import SignStore from '../store/SignStore';
 
-export default function() {
-  
+export default function () {
   const signStore = new SignStore();
 
-	return {
-		signStore
-	};
+  return {
+    signStore,
+  };
 }

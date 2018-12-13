@@ -1,37 +1,43 @@
-import * as React from 'react';
-import { observer, inject } from "mobx-react/native";
-import { observable, action, runInAction } from "mobx"
+import React from 'react';
+import { observer, inject } from 'mobx-react/native';
+import { observable, action, runInAction } from 'mobx';
 
-import AutoSignIn from "../../screens/Sign/AutoSignIn"
+import AutoSignIn from '../../screens/Sign/AutoSignIn';
 
-@inject("signStore")
+export interface Props {
+  navigation: any,
+  signStore: any,
+}
+export interface State {}
+
+@inject('signStore')
 @observer
-export default class AutoSignInContainer extends React.Component<Props, State> {
-
- 
+class AutoSignInContainer extends React.Component<Props, State> {
+  @observable navi = this.props.navigation;
 
   // can auto sign in or not
   // 是否能自动登录
   async componentWillMount() {
-    console.disableYellowBox = true;
+    // console.disableYellowBox = true;
   }
 
   toHome() {
-    this.props.navigation.navigate('Home');
+    this.navi.navigate('Home');
   }
 
-  toSignIn() { 
-    console.log('toSignIn');
-    this.props.navigation.navigate('SignIn');
+  toSignIn() {
+    this.navi.navigate('SignIn');
   }
 
-	render() {
+  render() {
     return (
-      <AutoSignIn 
-        isAutoSignIn={ this.isAutoSignIn }
-        toHome={ () => this.toHome() }
-        toSignIn={ () => this.toSignIn() }
+      <AutoSignIn
+        isAutoSignIn={this.isAutoSignIn}
+        toHome={() => this.toHome()}
+        toSignIn={() => this.toSignIn()}
       />
     );
-	}
+  }
 }
+
+export default AutoSignInContainer;

@@ -1,17 +1,24 @@
-import * as React from "react";
-import { View, ActivityIndicator, StatusBar } from "react-native";
-import { observer, inject } from "mobx-react/native";
-import { observable, action, configure } from "mobx"
+import * as React from 'react';
+import { View, ActivityIndicator, StatusBar } from 'react-native';
+import { observer, inject } from 'mobx-react/native';
+import { observable, action, configure } from 'mobx';
 
-import styles from "./styles"
+import styles from './styles';
+
+export interface Props {
+  navigation: any,
+  signStore: any
+}
+export interface State {}
 
 // handle your auto sign in logic here
 // 在这里处理你的自动登录逻辑
-@inject("signStore")
+@inject('signStore')
 @observer
-export default class AutoSignIn extends React.Component<Props, State> {
+class AutoSignIn extends React.Component<Props, State> {
+  @observable isAutoSignIn = null;
 
-  @observable isAutoSignIn;
+  @observable signStore = this.props.signStore;
 
   // if auto sign in failed, navigate to SignIn screen
   // else navigate to Home screen
@@ -19,18 +26,21 @@ export default class AutoSignIn extends React.Component<Props, State> {
   // 否则导航到 Home 页
   async componentDidMount() {
     const { toHome, toSignIn } = this.props;
-    this.isAutoSignIn = await this.props.signStore.autoSignIn();
-    if (this.isAutoSignIn === true)
+    this.isAutoSignIn = await this.signStore.autoSignIn();
+    if (this.isAutoSignIn === true) {
       toHome();
-    else
+    } else {
       toSignIn();
+    }
   }
 
-	render() {
-		return (
+  render() {
+    return (
       <View style={styles.container_AutoSignIn}>
-          <ActivityIndicator />
+        <ActivityIndicator />
       </View>
     );
-	}
+  }
 }
+
+export default AutoSignIn;

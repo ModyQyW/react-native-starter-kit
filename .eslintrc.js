@@ -1,6 +1,5 @@
 module.exports = {
   "parserOptions": {
-    "sourceType": "module"
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
@@ -8,22 +7,29 @@ module.exports = {
   },
   "parser": "babel-eslint",
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true
+    "es6": true,
+    "react-native/react-native": true
   },
   "plugins": [
-    "flowtype",
-    "prettier", 
     "react",
     "react-native"
   ],
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "no-unused-vars": 1
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/destructuring-assignment": 0,
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "react-native/no-raw-text": 2
   }
 };

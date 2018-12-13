@@ -1,20 +1,22 @@
-import * as Expo from "expo";
-import * as React from "react";
-import { Provider } from "mobx-react/native";
+import Expo from 'expo';
+import React from 'react';
+import { Provider } from 'mobx-react/native';
 
-import App from "../App";
+import App from '../App';
 
 export default function (stores) {
-  return class Setup extends React.Component<Props, State> {
+  return class Setup extends React.Component {
     constructor() {
       super();
       this.state = {
         isReady: false,
       };
     }
+
     componentWillMount() {
       this.loadFonts();
     }
+
     loadFonts() {
       // await Expo.Font.loadAsync({
       //     write the font you need load here | 在这里引入你需要的字体
@@ -24,13 +26,14 @@ export default function (stores) {
     }
 
     render() {
-      if (!this.state.isReady) {
-          return <Expo.AppLoading />;
+      const { isReady } = this.state;
+      if (!isReady) {
+        return <Expo.AppLoading />;
       }
       return (
-          <Provider {...stores}>
-              <App />
-          </Provider>
+        <Provider {...stores}>
+          <App />
+        </Provider>
       );
     }
   };

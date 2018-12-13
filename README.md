@@ -6,7 +6,7 @@
 
 ## Introduction | 介绍
 
-This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile](https://mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
+This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
 By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 30.0.0.
 
@@ -80,29 +80,29 @@ $ yarn run android
 ## Code Organization | 代码结构
 
 ```md
-|-  src                         code and asset directory | 代码及资源目录
-    |-  assets                  asset directory | 资源目录
-        |-  fonts               font assets directory | 字体资源目录
-        |-  images              image assets directory | 图片资源目录
-        |-  ...                 other assets directory | 其他资源目录
-    |-  boot                    boot directory | 引导目录
-        |-  ConfigureStore.js   configure all stores | 配置所有store
-        |-  Index.js            call store configuration and fonts loading | 调用store配置和字体加载
-        |-  Setup.js            load fonts needed | 加载需要的字体
-    |-  container               screen containers directory | container目录
-        |-  xxxContainer
-    |-  screens                 screens directory | screen目录
-        |-  xxx                 specific screens directory | 特定页面目录
-            |-  related js      related js files | 相关js文件
-            |-  styles.js       used style file | 使用到的样式文件
-    |-  store                   stores directory | store目录
-        |-  related store       related store files | 相关store文件
-    |-  util                    tool directory | 工具目录
-    |-  App.js                  navigation configuration file | 导航配置文件
-|-  App.js                      app entry | 应用入口
-|-  app.json                    expo app configuration file | expo应用配置文件
-|-  package.json                app package file | 应用包文件
-|-  README.md                   you know what it is | 你懂的
+|-- src                       code and asset directory | 代码及资源目录
+  |-- assets                  asset directory | 资源目录
+    |-- fonts                 font assets directory | 字体资源目录
+    |-- images                image assets directory | 图片资源目录
+    |-- ...                   other assets directory | 其他资源目录
+  |-- boot                    boot directory | 引导目录
+    |-- ConfigureStore.js     configure all stores | 配置所有store
+    |-- Index.js              call store configuration and fonts loading | 调用store配置和字体加载
+    |-- Setup.js              load fonts needed | 加载需要的字体
+  |-- container               screen containers directory | container目录
+    |-- xxxContainer
+  |-- screens                 screens directory | screen目录
+    |-- xxx                   specific screens directory | 特定页面目录
+      |-- related js          related js files | 相关js文件
+      |-- styles.js           used style file | 使用到的样式文件
+  |-- store                   stores directory | store目录
+    |-- related store         related store files | 相关store文件
+  |-- util                    tool directory | 工具目录
+  |-- App.js                  navigation configuration file | 导航配置文件
+|-- App.js                    app entry | 应用入口
+|-- app.json                  expo app configuration file | expo应用配置文件
+|-- package.json              app package file | 应用包文件
+|-- README.md                 you know what it is | 你懂的
 ```
 
 I get all data and write every function I needed in containers, pass the function and data to screens, and do layout jobs and deal with logic in screens. Just change this scheme as you like. :D
@@ -179,3 +179,10 @@ In the next few months I will use my free time to continue to update this scaffo
 Welcome to give me some advice whatever you want to say. I am a Chinese and my English is poor. Forgive me. :D
 
 欢迎给我有关任何方面的建议。我是中国人, 英语比较差, 请见谅。:D
+
+## Links | 相关链接
+
+- [Configuring ESLint](https://eslint.org/)
+- [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+- [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype)
+- [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)

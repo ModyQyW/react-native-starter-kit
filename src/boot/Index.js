@@ -1,7 +1,7 @@
-import config from "./ConfigureStore";
-import app from "./Setup";
+import config from './ConfigureStore';
+import app from './Setup';
 
-export default function() {
+export default function () {
   const stores = config();
-	return app(stores);
+  return app(stores);
 }

@@ -1,27 +1,36 @@
 import * as React from 'react';
-import { observer, inject } from "mobx-react/native";
-import { observable, action } from "mobx"
+import { observer, inject } from 'mobx-react/native';
+import { observable, action } from 'mobx';
 
-import SignIn from "../../screens/Sign/SignIn";
+import SignIn from '../../screens/Sign/SignIn';
 
-@inject("signStore")
+export interface Props {
+  navigation: any,
+  signStore: any,
+}
+export interface State {}
+
+@inject('signStore')
 @observer
-export default class SignInContainer extends React.Component<Props, State> {
+class SignInContainer extends React.Component<Props, State> {
+  @observable navi = this.props.navigation;
 
-  toHome() { 
-    this.props.navigation.navigate('Home');
+  toHome() {
+    this.navi.navigate('Home');
   }
 
   toSignUp() {
-    this.props.navigation.navigate('SignUp');
+    this.navi.navigate('SignUp');
   }
 
   render() {
     return (
-      <SignIn 
-        toHome={ () => this.toHome() }
-        toSignUp={ () => this.toSignUp() }
+      <SignIn
+        toHome={() => this.toHome()}
+        toSignUp={() => this.toSignUp()}
       />
     );
   }
 }
+
+export default SignInContainer;
