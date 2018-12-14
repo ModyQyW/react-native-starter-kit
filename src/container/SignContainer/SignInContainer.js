@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { observer, inject } from 'mobx-react/native';
+import React from 'react';
 import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react/native';
 
 import SignIn from '../../screens/Sign/SignIn';
 

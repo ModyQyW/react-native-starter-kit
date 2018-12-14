@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { } from 'react-native';
-import { observer, inject } from 'mobx-react/native';
 import { observable } from 'mobx';
+import { observer, inject } from 'mobx-react/native';
+
 import SignUp from '../../screens/Sign/SignUp';
 
 export interface Props {

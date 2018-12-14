@@ -1,6 +1,6 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react/native';
 import { observable, action, runInAction } from 'mobx';
+import { observer, inject } from 'mobx-react/native';
 
 import AutoSignIn from '../../screens/Sign/AutoSignIn';
 

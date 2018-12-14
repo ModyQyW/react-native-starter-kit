@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
-import { observer, inject } from 'mobx-react/native';
 import { observable, action, configure } from 'mobx';
+import { observer, inject } from 'mobx-react/native';
 
 import styles from './styles';
 

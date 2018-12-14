@@ -1,8 +1,8 @@
 {
     "expo": {
-        "name": "react-native-starter-kit",
-        "description": "This is a starter kit for react native using mobx, antd-mobile and react-navigation. Hope this helpful :D",
-        "slug": "react-native-starter-kit",
+        "name": "rn-starter-kit-with-antd",
+        "description": "This is a starter kit for react native using mobx, antd-mobile-rn and react-navigation. Hope this helpful :D",
+        "slug": "rn-starter-kit-with-antd",
         "privacy": "public",
         "sdkVersion": "30.0.0",
         "platforms": ["ios", "android"],

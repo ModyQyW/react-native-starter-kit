@@ -1,5 +1,5 @@
 {
-    "name": "react-native-starter-kit",
+    "name": "rn-starter-kit-with-antd",
     "main": "node_modules/expo/AppEntry.js",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "antd-mobile-rn": "^2.3.2",
-        "expo": "^30.0.2",
+        "expo": "^30.0.0",
         "mobx": "^5.7.0",
         "mobx-react": "^5.4.2",
         "react": "16.3.1",

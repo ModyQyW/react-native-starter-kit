@@ -8,11 +8,11 @@
 
 This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 30.0.0.
+By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 30.
 
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [Ant Design Mobile](https://mobile.ant.design/docs/react/introduce-cn), [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-另外, 如果想使用离线支持, 保证 Expo 的版本在 23 以上. 这个项目里我使用了 Expo 30.0.0.
+另外, 如果想使用离线支持, 保证 Expo 的版本在 23 以上. 这个项目里我使用了 Expo 30.
 
 ## Get Started | 起步
 
@@ -34,9 +34,9 @@ npm install -g yarn
 On the command prompt run the following commands | 在终端运行如下命令
 
 ```sh
-$ git clone https://github.com/ModyQyW/react-native-starter-kit.git
+$ git clone https://github.com/ModyQyW/rn-starter-kit-with-antd.git
 
-$ cd react-native-starter-kit
+$ cd rn-starter-kit-with-antd
 
 $ npm install
   or
@@ -60,21 +60,13 @@ expo eject
 ### Run on Android | Android上运行
 
 ```sh
-$ expo start --android
-  or
-$ npm run android
-  or
-$ yarn run android
+expo start --android
 ```
 
 ### Run on iOS | IOS上运行
 
 ```sh
-$ expo start --ios
-  or
-$ npm run ios
-  or
-$ yarn run android
+expo start --ios
 ```
 
 ## Code Organization | 代码结构
@@ -185,4 +177,3 @@ Welcome to give me some advice whatever you want to say. I am a Chinese and my E
 - [Configuring ESLint](https://eslint.org/)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 - [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype)
-- [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)
