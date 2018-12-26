@@ -8,11 +8,11 @@
 
 This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 30.
+By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 31.
 
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [Ant Design Mobile](https://mobile.ant.design/docs/react/introduce-cn), [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-另外, 如果想使用离线支持, 保证 Expo 的版本在 23 以上. 这个项目里我使用了 Expo 30.
+另外, 如果想使用离线支持, 保证 Expo 的版本在 23 以上. 这个项目里我使用了 Expo 31.
 
 ## Get Started | 起步
 

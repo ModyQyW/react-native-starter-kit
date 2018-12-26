@@ -1,12 +1,7 @@
 {
   "presets": ["babel-preset-expo"],
   "plugins": [
-    "transform-decorators-legacy",
+    "@babel/plugin-transform-react-jsx-source",
     ["import", { "libraryName": "antd-mobile-rn" }]
-  ],
-  "env": {
-    "development": {
-      "plugins": ["transform-react-jsx-source"]
-    }
-  }
+  ]
 }

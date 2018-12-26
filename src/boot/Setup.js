@@ -20,7 +20,7 @@ export default function (stores) {
     loadFonts() {
       // await Expo.Font.loadAsync({
       //     write the font you need load here | 在这里引入你需要的字体
-      //     check | 详见  https://docs.expo.io/versions/v30.0.0/sdk/font
+      //     check | 详见  https://docs.expo.io/versions/v31.0.0/sdk/font
       // });
       this.setState({ isReady: true });
     }
