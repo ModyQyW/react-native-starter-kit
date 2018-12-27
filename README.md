@@ -10,9 +10,17 @@ This is A [React Native](https://facebook.github.io/react-native/) Starter Kit w
 
 By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 31.
 
+If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo).
+
+I import [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) in order to use different components as required.
+
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [Ant Design Mobile](https://mobile.ant.design/docs/react/introduce-cn), [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
 另外, 如果想使用离线支持, 保证 Expo 的版本在 23 以上. 这个项目里我使用了 Expo 31.
+
+如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo-sdk-walkthrough)和[这里](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo)。
+
+我引入了 [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) ，这样能视需求使用不同的组件。
 
 ## Get Started | 起步
 
@@ -177,3 +185,5 @@ Welcome to give me some advice whatever you want to say. I am a Chinese and my E
 - [Configuring ESLint](https://eslint.org/)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 - [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype)
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+- [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
