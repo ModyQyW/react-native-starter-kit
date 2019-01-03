@@ -1,26 +1,31 @@
 {
-    "expo": {
-        "name": "rn-starter-kit-with-antd",
-        "description": "This is a starter kit for react native using mobx, antd-mobile-rn and react-navigation. Hope this helpful :D",
-        "slug": "rn-starter-kit-with-antd",
-        "privacy": "public",
-        "sdkVersion": "31.0.0",
-        "platforms": ["ios", "android"],
-        "version": "0.0.1",
-        "orientation": "portrait",
-        "icon": "./src/assets/icon.png",
-        "splash": {
-            "image": "./src/assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "assetBundlePatterns": ["./src/assets/*/*"],
-        "ios": {
-            "bundleIdentifier": "io.github.modyqyw",
-            "supportsTablet": true
-        },
-        "android": {
-            "package": "io.github.modyqyw"
-        }
+  "expo": {
+    "name": "rn-starter-kit-with-antd",
+    "description": "This is a starter kit for react native using mobx, antd-mobile-rn and react-navigation. Hope this helpful :D",
+    "slug": "rn-starter-kit-with-antd",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["./src/assets/*/*"],
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_ERROR_RECOVERY",
+      "fallbackToCacheTimeout": 0
+    },
+    "ios": {
+      "bundleIdentifier": "io.github.modyqyw",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "io.github.modyqyw"
     }
+  }
 }

@@ -12,11 +12,13 @@ module.exports = {
   },
   "plugins": [
     "react",
+    "jsx-a11y",
     "react-native"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
     "airbnb"
   ],
   "rules": {

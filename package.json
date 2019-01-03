@@ -1,32 +1,38 @@
 {
-    "name": "rn-starter-kit-with-antd",
-    "main": "node_modules/expo/AppEntry.js",
-    "private": true,
-    "scripts": {
-        "start": "expo start",
-        "android": "expo start --android",
-        "ios": "expo start --ios",
-        "eject": "expo eject"
-    },
-    "dependencies": {
-        "antd-mobile-rn": "^2.3.2",
-        "expo": "^31.0.2",
-        "lodash": "^4.17.11",
-        "mobx": "^5.7.0",
-        "mobx-react": "^5.4.2",
-        "react": "16.5.0",
-        "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-        "react-native-ui-xg": "0.0.6",
-        "react-navigation": "^3.0.8"
-    },
-    "devDependencies": {
-        "babel-eslint": "^10.0.1",
-        "babel-plugin-import": "^1.11.0",
-        "eslint": "^5.10.0",
-        "eslint-config-airbnb": "^17.1.0",
-        "eslint-plugin-import": "^2.14.0",
-        "eslint-plugin-jsx-a11y": "^6.1.2",
-        "eslint-plugin-react": "^7.11.1",
-        "eslint-plugin-react-native": "^3.5.0"
-    }
+  "name": "rn-starter-kit-with-antd",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^31.0.2",
+    "lodash": "^4.17.11",
+    "mobx": "^5.7.0",
+    "mobx-react": "^5.4.2",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-ui-xg": "0.0.6",
+    "react-navigation": "^3.0.8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "babel-preset-expo": "^5.0.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.5.0",
+    "jest-expo": "^31.0.0",
+    "npm-check": "^5.9.0"
+  }
 }

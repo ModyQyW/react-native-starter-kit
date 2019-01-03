@@ -3,6 +3,8 @@ import { View, Text } from 'react-native';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
+import { Button } from '@ant-design/react-native';
+
 import styles from './styles';
 
 export interface Props {
