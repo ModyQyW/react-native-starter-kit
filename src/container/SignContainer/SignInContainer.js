@@ -2,7 +2,7 @@ import React from 'react';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import SignIn from '../../screens/Sign/SignIn';
+import SignIn from '../../screen/Sign/SignIn';
 
 export interface Props {
   navigation: any,

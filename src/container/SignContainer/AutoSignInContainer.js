@@ -2,7 +2,7 @@ import React from 'react';
 import { observable, action, runInAction } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import AutoSignIn from '../../screens/Sign/AutoSignIn';
+import AutoSignIn from '../../screen/Sign/AutoSignIn';
 
 export interface Props {
   navigation: any,

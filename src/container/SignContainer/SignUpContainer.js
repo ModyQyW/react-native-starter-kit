@@ -3,7 +3,7 @@ import { } from 'react-native';
 import { observable } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import SignUp from '../../screens/Sign/SignUp';
+import SignUp from '../../screen/Sign/SignUp';
 
 export interface Props {
   navigation: any,

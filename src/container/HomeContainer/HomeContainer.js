@@ -2,15 +2,10 @@ import React from 'react';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import Home from '../../screens/Home/Home';
-
-export interface Props {
-  navigation: any,
-}
-export interface State {}
+import Home from '../../screen/Home/Home';
 
 @observer
-class HomeContainer extends React.Component<Props, State> {
+class HomeContainer extends React.Component {
   render() {
     return (<Home />);
   }

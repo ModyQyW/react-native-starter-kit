@@ -94,7 +94,7 @@ expo start --ios
     |-- Setup.js              加载需要的字体
   |-- container               container目录
     |-- xxxContainer
-  |-- screens                 screen目录
+  |-- screen                  screen目录
     |-- xxx                   特定页面目录
       |-- related js          相关js文件
       |-- styles.js           使用到的样式文件
@@ -108,7 +108,9 @@ expo start --ios
 |-- README.md                 你懂的
 ```
 
-我在 container 里获取到所有我需要的数据、写好了所有我需要的函数, 把数据和函数传给 screen, 在 screen 里进行布局并处理页面逻辑。请随意调整这种方案。:D
+我在 container 里获取到所有我需要的数据、写好了所有我需要的函数，把数据和函数传给 screen，在 screen 里进行布局并处理页面逻辑。这种方案预期适用于十个以上页面、单用户角色的场景；假如页面少于十个，请视需要合并 container 和 screen；假如用户角色不止一个，建议在 container 和 screen 文件夹中新建对应角色的文件夹并放入对应文件。
+
+请随意调整这种方案。_(:з」∠)_
 
 ## 编码规范
 

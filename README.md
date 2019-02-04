@@ -85,8 +85,8 @@ expo start --ios
     |-- Setup.js              load fonts needed
   |-- container               screen containers directory
     |-- xxxContainer
-  |-- screens                 screens directory
-    |-- xxx                   specific screens directory
+  |-- screen                  screen directory
+    |-- xxx                   specific screen directory
       |-- related js          related js files
       |-- styles.js           used style file
   |-- store                   stores directory
@@ -99,7 +99,9 @@ expo start --ios
 |-- README.md                 you know what it is
 ```
 
-I get all data and write every function I needed in containers, pass the function and data to screens, and do layout jobs and deal with logic in screens. Just change this scheme as you like. :D
+I get all data and write every function I needed in containers, pass the function and data to screen, and do layout jobs and deal with logic in screen. This scheme is expected to apply to scenes with more than ten pages and one user role. If pages number is fewer than ten, please merge the container and screen as needed. If there are more than one role, it is recommended to create new corresponding folders in the container and screen folder and put corresponding files.
+
+Just change this scheme as you like. :D
 
 ## Coding Specification
 
