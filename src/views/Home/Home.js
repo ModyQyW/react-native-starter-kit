@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
@@ -7,13 +7,8 @@ import { Button } from '@ant-design/react-native';
 
 import styles from './styles';
 
-export interface Props {
-  navigation: any,
-}
-export interface State {}
-
 @observer
-class Home extends React.Component<Props, State> {
+class Home extends React.Component {
   render() {
     return (
       <View style={styles.container_Home}>

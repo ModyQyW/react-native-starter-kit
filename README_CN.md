@@ -1,4 +1,4 @@
-# React Native 脚手架
+# React Native MobX 脚手架
 
 *By ModyQyW*
 
@@ -6,15 +6,25 @@
 
 ## 介绍
 
-这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [Ant Design Mobile](https://mobile.ant.design/docs/react/introduce-cn), [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
+这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有[React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-另外, 如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 31。
+另外, 如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 32。
 
-如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo-sdk-walkthrough)和[这里](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo)。
+如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough)和[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo)。
 
-我引入了 [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) ，这样能视需求使用不同的组件。
+我引入了数个 UI 库，列写如下：
 
-另外，我还加入一些工具，包括 [js-base64](https://github.com/dankogai/js-base64)，[js-xss](https://github.com/leizongmin/js-xss) 和 [validator](https://github.com/chriso/validator.js)。如果你需要 [moment](https://github.com/moment/moment)，我相信 react-native-ui-xg 已经替你引入了。
+- [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce-cn)
+- [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
+- [teaset](https://github.com/rilyu/teaset/blob/master/docs/cn/README.md)
+- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
+
+它们风格相近，功能互补，可以视需求使用不同的组件。我个人的建议是，以 Ant Design Mobile RN 或 React Native Elements 为主要 UI 库，出现其不能满足的组件需求时再到别的库中寻求解决方法。
+
+另外，我还加入一些我认为非常有用的库，包括：
+
+- [moment](http://momentjs.com/)
+- [validator](https://github.com/chriso/validator.js)
 
 ## 起步
 
@@ -28,6 +38,7 @@
 ```sh
 npm i -g react-native-cli
 npm i -g expo-cli
+# 建议
 npm i -g yarn
 ```
 

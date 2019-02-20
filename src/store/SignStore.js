@@ -1,27 +1,31 @@
-import { AsyncStorage } from "react-native";
-import { observer } from "mobx-react/native";
-import { observable, action, configure } from "mobx";
+import { AsyncStorage } from 'react-native';
+import { observer } from 'mobx-react/native';
+import { observable, action, runInAction } from 'mobx';
 
 class SignStore {
-    
-  @observable user = "123";
-  @observable pwd = "123";
+  @observable user = '123';
+
+  @observable pwd = '123';
 
   @action
   async autoSignIn() {
     try {
-      this.user = await AsyncStorage.getItem('user');
-      this.pwd = await AsyncStorage.getItem('pwd');
-      if (this.user !== null && this.pwd !== null) {
+      const user = await AsyncStorage.getItem('user');
+      const pwd = await AsyncStorage.getItem('pwd');
+      runInAction(() => {
+        this.user = user;
+        this.pwd = pwd;
+      });
+      if (this.user && this.pwd) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     } catch (e) {
-      console.log(e);
+      // eslint-disable-next-line
+      console.log('error', e);
+      return e;
     }
   }
-    
 }
 
 export default SignStore;

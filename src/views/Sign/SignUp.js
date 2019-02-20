@@ -1,24 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { observable, action, configure } from 'mobx';
+import { StyleSheet, View, Text } from 'react-native';
+import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import styles from './styles';
+import gStyles from '../styles';
 
-export interface Props {
-  navigation: any,
-  signStore: any,
-}
-export interface State {}
+const styles = StyleSheet.create({
+
+});
 
 // handle your sign up logic here
 // 在这里处理你的注册逻辑
 @inject('signStore')
 @observer
-class SignUp extends React.Component<Props, State> {
+class SignUp extends React.Component {
   render() {
     return (
-      <View style={styles.container_SignUp}>
+      <View style={gStyles.container}>
         <View>
           <Text>This is the sign up screen.</Text>
         </View>

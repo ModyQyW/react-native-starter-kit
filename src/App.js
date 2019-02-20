@@ -1,10 +1,13 @@
 import React from 'react';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
+import { configure } from 'mobx';
 
-import AutoSignIn from './container/SignContainer/AutoSignInContainer';
-import SignIn from './container/SignContainer/SignInContainer';
-import SignUp from './container/SignContainer/SignUpContainer';
-import Home from './container/HomeContainer/HomeContainer';
+import AutoSignIn from './views/Sign/AutoSignIn';
+import SignIn from './views/Sign/SignIn';
+import SignUp from './views/Sign/SignUp';
+import Home from './views/Home/Home';
+
+configure({ enforceActions: 'always' });
 
 const SignStack = createStackNavigator(
   {

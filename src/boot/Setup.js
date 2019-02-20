@@ -1,4 +1,4 @@
-import Expo from 'expo';
+import { AppLoading, Font } from 'expo';
 import React from 'react';
 import { Provider } from 'mobx-react/native';
 
@@ -13,22 +13,32 @@ export default function (stores) {
       };
     }
 
-    componentWillMount() {
-      this.loadFonts();
-    }
-
-    loadFonts() {
-      // await Expo.Font.loadAsync({
-      //     write the font you need load here | 在这里引入你需要的字体
-      //     check | 详见  https://docs.expo.io/versions/v31.0.0/sdk/font
-      // });
+    async componentWillMount() {
+      await this.loadFonts();
       this.setState({ isReady: true });
     }
+
+    /* eslint-disable */
+    async loadFonts() {
+      // await Expo.Font.loadAsync({
+      //     write the font you need load here | 在这里引入你需要的字体
+      //     check | 详见  https://docs.expo.io/versions/v32.0.0/sdk/font
+      // });
+      await Font.loadAsync(
+        'antoutline',
+        require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+      );
+      await Font.loadAsync(
+        'antfill',
+        require('@ant-design/icons-react-native/fonts/antfill.ttf'),
+      );
+    }
+    /* eslint-enable */
 
     render() {
       const { isReady } = this.state;
       if (!isReady) {
-        return <Expo.AppLoading />;
+        return <AppLoading />;
       }
       return (
         <Provider {...stores}>

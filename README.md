@@ -1,4 +1,4 @@
-# React Native Starter Kit
+# React Native MobX Starter Kit
 
 *By ModyQyW*
 
@@ -8,9 +8,9 @@
 
 This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 31.
+By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 32.
 
-If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v31.0.0/workflow/upgrading-expo).
+If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo).
 
 I import [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) in order to use different components as required.
 
@@ -107,7 +107,7 @@ Just change this scheme as you like. :D
 
 I appreciate this words: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow one coding specfication to keep your codes neat. I have given some coding specifications below for reference.
 
-- [Coding Specification by @mdo](https://codeguide.bootcss.com/)
+- [Coding Specification by @mdo](http://codeguide.co/)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
@@ -168,6 +168,5 @@ Help me improve it if it's not perfect for you :D
 
 - [Configuring ESLint](https://eslint.org/)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype)
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 - [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
