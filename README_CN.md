@@ -8,7 +8,7 @@
 
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有[React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-另外, 如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 32。
+如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 32。
 
 如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough)和[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo)。
 
@@ -19,7 +19,7 @@
 - [teaset](https://github.com/rilyu/teaset/blob/master/docs/cn/README.md)
 - [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
 
-它们风格相近，功能互补，可以视需求使用不同的组件。我个人的建议是，以 Ant Design Mobile RN 或 React Native Elements 为主要 UI 库，出现其不能满足的组件需求时再到别的库中寻求解决方法。
+它们风格相近，功能互补，可以视需求使用不同的组件。我个人的建议是，以 Ant Design Mobile RN 或 React Native Elements 为主要 UI 库，出现其不能满足的组件需求时再到别的库中寻求解决方法。在该项目中，把 Ant Design Mobile RN 作为主要 UI 库。请根据你的需要进行调整。
 
 另外，我还加入一些我认为非常有用的库，包括：
 
@@ -67,27 +67,19 @@ $ npm i
 
 ## 命令
 
-### 启动
-
 ```sh
+# start
 expo start
-```
 
-### 弹出
-
-```sh
+# eject
+# 请确认你知道执行这条命令意味着什么！
+# 查阅 https://docs.expo.io/versions/v32.0.0/expokit/eject/
 expo eject
-```
 
-### Android上运行
-
-```sh
+# android 运行
 expo start --android
-```
 
-### IOS上运行
-
-```sh
+# ios 运行
 expo start --ios
 ```
 
@@ -166,13 +158,7 @@ other methods
 render
 ```
 
-另：确认自己在使用严格模式, 减少错误. 但我自己不太会用, 帮帮我! QAQ
-
-```js
-import { configure } from "mobx"
-
-configure({ enforceActions: "always" });
-```
+另：默认开启了 MobX 的严格模式。请查看 [App.js](./src/App.js)。
 
 ## 后续计划
 
@@ -188,6 +174,5 @@ configure({ enforceActions: "always" });
 
 - [Configuring ESLint](https://eslint.org/)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype)
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 - [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)

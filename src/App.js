@@ -2,9 +2,9 @@ import React from 'react';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { configure } from 'mobx';
 
-import AutoSignIn from './views/Sign/AutoSignIn';
-import SignIn from './views/Sign/SignIn';
-import SignUp from './views/Sign/SignUp';
+import AutoSignIn from './views/Auth/AutoSignIn';
+import SignIn from './views/Auth/SignIn';
+import SignUp from './views/Auth/SignUp';
 import Home from './views/Home/Home';
 
 configure({ enforceActions: 'always' });

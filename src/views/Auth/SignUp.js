@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 // handle your sign up logic here
 // 在这里处理你的注册逻辑
-@inject('signStore')
+@inject('authStore')
 @observer
 class SignUp extends React.Component {
   render() {

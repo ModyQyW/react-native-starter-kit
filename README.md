@@ -6,19 +6,29 @@
 
 ## Introduction
 
-This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce), [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) Apps ( iOS & Android ) inited by [Expo](https://docs.expo.io/). Hope this helpful.
+This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-By the way, to use offline support, make sure Expo version is higher than 23. Here I use Expo 32.
+To use offline support, make sure Expo version is higher than 23. Here I use Expo 32.
 
 If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo).
 
-I import [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) in order to use different components as required.
+I import several UI toolkit listed below.
 
-Besides, I add some Utilities, including [js-base64](https://github.com/dankogai/js-base64), [js-xss](https://github.com/leizongmin/js-xss), [validator](https://github.com/chriso/validator.js). I believe react-native-ui-xg has help import [moment](https://github.com/moment/moment) if you need.
+- [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce)
+- [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
+- [teaset](https://github.com/rilyu/teaset/blob/master/README.md)
+- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
+
+They are similar in style and complementary in function, allowing to use different components as needed. My personal suggestion is to use Ant Design Mobile RN or React Native Elements as the main UI. When there are component requirements that can't be met, use another library to get a solution. In this project, I used Ant Design Mobile RN as the main UI. Please adjust according to your needs.
+
+Besides, I add some Utilities I think helpful.
+
+- [moment](http://momentjs.com/)
+- [validator](https://github.com/chriso/validator.js)
 
 ## Get Started
 
-### 1. System Environment Requirements
+### System Environment Requirements
 
 - Globally installed [Node](https://nodejs.org/en/) **first**
 - Globally installed react-native-cli
@@ -31,7 +41,7 @@ npm i -g expo-cli
 npm i -g yarn
 ```
 
-### 2. Installation
+### Installation
 
 On the command prompt run the following commands
 
@@ -45,29 +55,21 @@ $ yarn
 $ npm i
 ```
 
-## Command
-
-### Start
+## Commands
 
 ```sh
+# start
 expo start
-```
 
-### Eject
-
-```sh
+# eject
+# make sure you know what you are doing when exec this!
+# check https://docs.expo.io/versions/v32.0.0/expokit/eject/
 expo eject
-```
 
-### Run on Android
-
-```sh
+# run on android
 expo start --android
-```
 
-### Run on iOS
-
-```sh
+# run on ios
 expo start --ios
 ```
 
@@ -146,13 +148,7 @@ other methods
 render
 ```
 
-P.S. make sure using strict mode to reduce mistakes. But I know little using it, help me please! T_T
-
-```js
-import { configure } from "mobx"
-
-configure({ enforceActions: "always" });
-```
+P.S. Default using MobX strict mode. Check [App.js](./src/App.js).
 
 ## Follow-up Plan
 

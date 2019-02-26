@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 // handle your sign in logic here
 // 在这里处理你的登录逻辑
-@inject('signStore')
+@inject('authStore')
 @observer
 class SignIn extends React.Component {
   @observable navi = this.props.navigation;

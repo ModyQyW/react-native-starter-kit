@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
 
 // handle your auto sign in logic here
 // 在这里处理你的自动登录逻辑
-@inject('signStore')
+@inject('authStore')
 @observer
 class AutoSignIn extends React.Component {
-  @observable signStore = this.props.signStore;
+  @observable authStore = this.props.authStore;
 
   @observable navi = this.props.navigation;
 
@@ -24,7 +24,7 @@ class AutoSignIn extends React.Component {
   // 否则导航到 Home 页
   @action
   async componentDidMount() {
-    this.signStore.autoSignIn()
+    this.authStore.autoSignIn()
       .then((canAutoSignIn) => {
         if (canAutoSignIn) {
           this.toHome();

@@ -5,14 +5,14 @@ import { observer, inject } from 'mobx-react/native';
 
 import { Button } from '@ant-design/react-native';
 
-import styles from './styles';
+import gStyles from '../styles';
 
 @observer
 class Home extends React.Component {
   render() {
     return (
-      <View style={styles.container_Home}>
-        <View style={styles.viewStart}>
+      <View style={gStyles.container}>
+        <View style={gStyles.viewStart}>
           <Text>Do something to start coding!</Text>
           <Text>做点什么, 开始打码吧!</Text>
         </View>
