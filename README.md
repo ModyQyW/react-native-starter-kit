@@ -10,7 +10,11 @@ This is A [React Native](https://facebook.github.io/react-native/) Starter Kit w
 
 To use offline support, make sure Expo version is higher than 23. Here I use Expo 32.
 
+You **must** check [Expo Document](https://docs.expo.io/versions/latest/) for overall information.
+
 If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo).
+
+Before building standalone apps, please check [here](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/).
 
 I import several UI toolkit listed below.
 
@@ -38,7 +42,17 @@ Besides, I add some Utilities I think helpful.
 ```sh
 npm i -g react-native-cli
 npm i -g expo-cli
+# optional
 npm i -g yarn
+```
+
+- Chinese users are recommended to set repository to mirrors
+
+```sh
+npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+yarn config set registry https://registry.npm.taobao.org --global
+yarn config set disturl https://npm.taobao.org/dist --global
 ```
 
 ### Installation
@@ -46,9 +60,9 @@ npm i -g yarn
 On the command prompt run the following commands
 
 ```sh
-$ git clone https://github.com/ModyQyW/rn-starter-kit-with-antd.git
+$ git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
 
-$ cd rn-starter-kit-with-antd
+$ cd rn-mobx-starter-kit
 
 $ yarn
   or
@@ -62,7 +76,7 @@ $ npm i
 expo start
 
 # eject
-# make sure you know what you are doing when exec this!
+# make sure you know what you are doing when exec this
 # check https://docs.expo.io/versions/v32.0.0/expokit/eject/
 expo eject
 
@@ -71,7 +85,15 @@ expo start --android
 
 # run on ios
 expo start --ios
+
+# build android app
+expo build:android
+
+# build ios app
+expo build:ios
 ```
+
+For more commands and usage, check documents or use `expo -h`.
 
 ## Code Organization
 
@@ -80,30 +102,44 @@ expo start --ios
   |-- assets                  asset directory
     |-- fonts                 font assets directory
     |-- images                image assets directory
+    |-- icon.png              app icon
+    |-- splash.png            image for loading and splash screen for standalone apps
     |-- ...                   other assets directory
   |-- boot                    boot directory
     |-- ConfigureStore.js     configure all stores
     |-- Index.js              call store configuration and fonts loading
     |-- Setup.js              load fonts needed
-  |-- container               screen containers directory
-    |-- xxxContainer
-  |-- screen                  screen directory
-    |-- xxx                   specific screen directory
-      |-- related js          related js files
-      |-- styles.js           used style file
-  |-- store                   stores directory
+  |-- components              global components
+  |-- stores                  stores directory
     |-- related store         related store files
-  |-- util                    tool directory
+  |-- utils                    tool directory
+    |-- request.js            axios encapsulation
+  |-- views                   view directory
+    |-- xxx                   view module directory
+      |-- related js          module js files
+      |-- styles.js           module style file
+    |-- styles.js             global styles
   |-- App.js                  navigation configuration file
+|-- .eslintrc.js              eslint configuration file
 |-- App.js                    app entry
 |-- app.json                  expo app configuration file
 |-- package.json              app package file
 |-- README.md                 you know what it is
+|-- yarn.lock                 package version file
+|-- ...
 ```
 
-I get all data and write every function I needed in containers, pass the function and data to screen, and do layout jobs and deal with logic in screen. This scheme is expected to apply to scenes with more than ten pages and one user role. If pages number is fewer than ten, please merge the container and screen as needed. If there are more than one role, it is recommended to create new corresponding folders in the container and screen folder and put corresponding files.
+I almost finish all my job in stores and views, sometimes also in components. This pattern is suitable for small projects.
 
-Just change this scheme as you like. :D
+If your project is big enought, I advise to use this pattern:
+
+- get all data and write all functions you needed in containers
+- pass functions and data to corresponding views
+- deal with layout and logic in corresponding views
+
+If there are more than one role, I advise to create new corresponding role folders in views (containers and views for big project) and put corresponding files.
+
+Or just change as you like. :D
 
 ## Coding Specification
 
@@ -152,17 +188,29 @@ P.S. Default using MobX strict mode. Check [App.js](./src/App.js).
 
 ## Follow-up Plan
 
-In the next few months I will use my free time to continue to update this scaffold, including adding interfaces and some layout examples.
+In the next few months I will use my free time to continue to update this starter, including adding interfaces and some layout examples.
 
 ## Advice
 
-Welcome to give me some advice whatever you want to say. I am a Chinese and my English is poor. Forgive me. :D
+Welcome to give me some advice whatever you want to say. I am a Chinese and my English is poor. Forgive me.
 
-Help me improve it if it's not perfect for you :D
+Help me improve it if it's not perfect.
 
-## Links
+You can also help me improve my English :D
+
+## Related Links
 
 - [Configuring ESLint](https://eslint.org/)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 - [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
+
+## Donate
+
+I am still working on it to imporve - not only add new function but also complete codes and documents.
+
+If you think this is helpful, you can buy me a coffee :D
+
+|WeChat|Alipay|
+|:-:|:-:|
+|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 300px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 300px;" />|

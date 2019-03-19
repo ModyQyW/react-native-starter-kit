@@ -1,4 +1,4 @@
-import AuthStore from '../store/AuthStore';
+import AuthStore from '../stores/AuthStore';
 
 export default function () {
   const authStore = new AuthStore();

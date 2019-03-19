@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { configure } from 'mobx';
 
