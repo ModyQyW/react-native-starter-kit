@@ -30,6 +30,10 @@ Besides, I add some Utilities I think helpful.
 - [moment](http://momentjs.com/)
 - [validator](https://github.com/chriso/validator.js)
 
+About flexbox, check here:
+
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 ## Get Started
 
 ### System Environment Requirements
@@ -73,23 +77,32 @@ $ npm i
 
 ```sh
 # start
-expo start
+# expo start
+yarn start
 
 # eject
 # make sure you know what you are doing when exec this
 # check https://docs.expo.io/versions/v32.0.0/expokit/eject/
-expo eject
+# expo eject
+yarn eject
 
 # run on android
-expo start --android
+# expo start --android
+yarn android
 
 # run on ios
-expo start --ios
+# expo start --ios
+yarn ios
+
+# test using jest
+yarn test
 
 # build android app
+# expo build:android -h for more info
 expo build:android
 
 # build ios app
+# expo build:ios -h for more info
 expo build:ios
 ```
 
@@ -110,15 +123,17 @@ For more commands and usage, check documents or use `expo -h`.
     |-- Index.js              call store configuration and fonts loading
     |-- Setup.js              load fonts needed
   |-- components              global components
+  |-- mixins                  global styles and colors
+    |-- colors.js
+    |-- styles.js
   |-- stores                  stores directory
     |-- related store         related store files
-  |-- utils                    tool directory
+  |-- utils                   tool directory
     |-- request.js            axios encapsulation
   |-- views                   view directory
     |-- xxx                   view module directory
       |-- related js          module js files
       |-- styles.js           module style file
-    |-- styles.js             global styles
   |-- App.js                  navigation configuration file
 |-- .eslintrc.js              eslint configuration file
 |-- App.js                    app entry
@@ -131,7 +146,7 @@ For more commands and usage, check documents or use `expo -h`.
 
 I almost finish all my job in stores and views, sometimes also in components. This pattern is suitable for small projects.
 
-If your project is big enought, I advise to use this pattern:
+If your project is big enough, I advise to use this pattern:
 
 - get all data and write all functions you needed in containers
 - pass functions and data to corresponding views
@@ -213,4 +228,4 @@ If you think this is helpful, you can buy me a coffee :D
 
 |WeChat|Alipay|
 |:-:|:-:|
-|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 300px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 300px;" />|
+|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 200px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 200px;" />|

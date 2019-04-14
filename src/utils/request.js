@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { AsyncStorage } from 'react-native';
 
-const devUrl = 'https://easy-mock.com/mock/5c6cf4bb2ecce005c352d635/rn-mobx-starter-kit';
-const prodUrl = '';
-const baseUrl = process.env.NODE_ENV === 'development' ? devUrl : prodUrl;
+// for dev env
+const baseUrl = '';
+// for prod env
+// const baseUrl = '';
 
 // base url
 // 接口 url 前缀
@@ -12,7 +12,7 @@ axios.defaults.baseURL = baseUrl;
 // request header
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',
-  'Content-Type': 'application/json;charset=UTF-8',
+  'Content-Type': 'application/json',
   Accept: 'application/json',
 };
 // timeout setting
@@ -35,9 +35,10 @@ axios.defaults.maxRedirects = 5;
 axios.interceptors.response.use(
   response => response.data,
   (error) => {
+    // just make it like api responses
     const err = {
       success: false,
-      message: '',
+      msg: '',
     };
     // console.log(error.config);
     if (error.response) {
@@ -47,23 +48,25 @@ axios.interceptors.response.use(
       // console.log(error.response.data);
       // console.log(error.response.status);
       // console.log(error.response.headers);
-      err.message = 'badStatusCode';
+      err.msg = 'badStatusCode';
     } else if (error.request) {
       // The request was made but no response was received
       // 发送了请求，没有收到响应
       // console.log(error.request);
-      err.message = 'noResponse';
+      err.msg = 'noResponse';
     } else {
       // Something happened in setting up the request that triggered an Error
       // 请求时发生错误
       // console.log('Error', error.message);
-      err.message = 'requestError';
+      err.msg = 'requestError';
     }
     return err;
   },
 );
 
 const request = {};
+
+// pass null if there is nothing to send
 
 request.get = async (url, params, token) => axios({
   method: 'get',

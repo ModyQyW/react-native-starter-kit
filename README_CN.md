@@ -30,6 +30,11 @@
 - [moment](http://momentjs.com/)
 - [validator](https://github.com/chriso/validator.js)
 
+关于 flexbox，查看以下链接：
+
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox 布局详解](http://caibaojian.com/flexbox-guide.html)
+
 ## 起步
 
 ### 系统环境要求
@@ -73,23 +78,32 @@ $ npm i
 
 ```sh
 # start
-expo start
+# expo start
+yarn start
 
 # eject
 # 请确认你知道执行这条命令意味着什么
 # 查阅 https://docs.expo.io/versions/v32.0.0/expokit/eject/
-expo eject
+# expo eject
+yarn eject
 
 # android 运行
-expo start --android
+# expo start --android
+yarn android
 
 # ios 运行
-expo start --ios
+# expo start --ios
+yarn ios
+
+# jest 测试
+yarn test
 
 # 构建 android app
+# expo build:android -h 可以获取更多信息
 expo build:android
 
 # 构建 ios app
+# expo build:ios -h 可以获取更多信息
 expo build:ios
 ```
 
@@ -111,6 +125,9 @@ expo build:ios
     |-- Index.js              调用 store 配置和字体加载
     |-- Setup.js              加载需要的字体
   |-- components              全局组件
+  |-- mixins                  全局样式与颜色
+    |-- colors.js
+    |-- styles.js
   |-- stores                  store 目录
     |-- related store         相关 store 文件
   |-- utils                   工具目录
@@ -214,4 +231,4 @@ render
 
 |WeChat|Alipay|
 |:-:|:-:|
-|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 300px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 300px;" />|
+|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 200px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 200px;" />|

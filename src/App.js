@@ -1,49 +1,72 @@
 import * as React from 'react';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { configure } from 'mobx';
+import { Provider } from '@ant-design/react-native';
 
-import AutoSignIn from './views/Auth/AutoSignIn';
-import SignIn from './views/Auth/SignIn';
-import SignUp from './views/Auth/SignUp';
-import Home from './views/Home/Home';
+import AuthAutoSignIn from './views/Auth/AutoSignIn';
+import AuthSignIn from './views/Auth/SignIn';
+import AuthSignUp from './views/Auth/SignUp';
+
+import MainIndex from './views/Main/Index';
+
+import DemoIndex from './views/Demo/Index';
+import DemoLayout1 from './views/Demo/Layout1';
+import DemoLayout2 from './views/Demo/Layout2';
 
 configure({ enforceActions: 'always' });
 
-const SignStack = createStackNavigator(
+const AuthStack = createStackNavigator(
   {
-    AutoSignIn: { screen: AutoSignIn },
-    SignIn: { screen: SignIn },
-    SignUp: { screen: SignUp },
+    AuthAutoSignIn: { screen: AuthAutoSignIn },
+    AuthSignIn: { screen: AuthSignIn },
+    AuthSignUp: { screen: AuthSignUp },
   },
   {
-    initialRouteName: 'AutoSignIn',
+    initialRouteName: 'AuthAutoSignIn',
     headerMode: 'none',
   },
 );
 
-const HomeStack = createStackNavigator(
+const MainStack = createStackNavigator(
   {
-    Home: { screen: Home },
+    MainIndex: { screen: MainIndex },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'MainIndex',
+    headerMode: 'none',
+  },
+);
+
+const DemoStack = createStackNavigator(
+  {
+    DemoIndex: { screen: DemoIndex },
+    DemoLayout1: { screen: DemoLayout1 },
+    DemoLayout2: { screen: DemoLayout2 },
+  },
+  {
+    initialRouteName: 'DemoIndex',
     headerMode: 'none',
   },
 );
 
 const AppSwitch = createSwitchNavigator(
   {
-    Sign: SignStack,
-    Home: HomeStack,
+    AuthStack,
+    MainStack,
+    DemoStack,
   },
   {
-    initialRouteName: 'Sign',
+    initialRouteName: 'AuthStack',
     headerMode: 'none',
   },
 );
 
 const AppContainer = createAppContainer(AppSwitch);
 
-const App = () => <AppContainer />;
+const App = () => (
+  <Provider>
+    <AppContainer />
+  </Provider>
+);
 
 export default App;

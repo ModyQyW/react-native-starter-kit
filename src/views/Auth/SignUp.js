@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import {
+  StyleSheet, View, Text, Button,
+} from 'react-native';
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import gStyles from '../styles';
+import Styles from '../../mixins/styles';
 
 const styles = StyleSheet.create({
 
@@ -14,12 +16,22 @@ const styles = StyleSheet.create({
 @inject('authStore')
 @observer
 class SignUp extends React.Component {
+  @observable navi = this.props.navigation;
+
+  handleBack = () => {
+    this.navi.goBack();
+  }
+
   render() {
     return (
-      <View style={gStyles.container}>
-        <View>
-          <Text>This is the sign up screen.</Text>
-        </View>
+      <View style={Styles.container}>
+        <Text>This is the sign up screen.</Text>
+        <Text>The button below is from React Native.</Text>
+        <Text>Look like a middle type:D</Text>
+        <Button
+          onPress={() => this.handleBack()}
+          title="Go Back"
+        />
       </View>
     );
   }
