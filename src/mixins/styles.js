@@ -164,23 +164,23 @@ const styles = StyleSheet.create({
   textHeavy: {
     fontWeight: '900',
   },
-  font12: {
+  text12: {
     fontSize: 12,
     lineHeight: 20,
   },
-  font14: {
+  text14: {
     fontSize: 14,
     lineHeight: 22,
   },
-  font16: {
+  text16: {
     fontSize: 16,
     lineHeight: 24,
   },
-  font18: {
+  text18: {
     fontSize: 18,
     lineHeight: 26,
   },
-  font20: {
+  text20: {
     fontSize: 20,
     lineHeight: 28,
   },
