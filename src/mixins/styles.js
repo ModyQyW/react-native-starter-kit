@@ -125,20 +125,94 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   // default
+  textThin: {
+    fontWeight: '100',
+  },
+  textExtraLight: {
+    fontWeight: '200',
+  },
+  textUltraLight: {
+    fontWeight: '200',
+  },
+  textLight: {
+    fontWeight: '300',
+  },
+  textRegular: {
+    fontWeight: '400',
+  },
+  textNormal: {
+    fontWeight: '400',
+  },
+  textMedium: {
+    fontWeight: '500',
+  },
+  textSemiBold: {
+    fontWeight: '600',
+  },
+  textBold: {
+    fontWeight: '700',
+  },
+  textExtraBold: {
+    fontWeight: '800',
+  },
+  textUltraBold: {
+    fontWeight: '800',
+  },
+  textBlack: {
+    fontWeight: '900',
+  },
+  textHeavy: {
+    fontWeight: '900',
+  },
+  font12: {
+    fontSize: 12,
+    lineHeight: 20,
+  },
+  font14: {
+    fontSize: 14,
+    lineHeight: 22,
+  },
+  font16: {
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  font18: {
+    fontSize: 18,
+    lineHeight: 26,
+  },
+  font20: {
+    fontSize: 20,
+    lineHeight: 28,
+  },
+  textSecondary: {
+    fontSize: 12,
+    fontWeight: '200',
+    lineHeight: 20,
+  },
+  textMainLight: {
+    fontSize: 13,
+    fontWeight: '300',
+    lineHeight: 21,
+  },
   textMain: {
     fontSize: 14,
     fontWeight: '400',
     lineHeight: 22,
   },
-  textSecondary: {
-    fontSize: 12,
-    fontWeight: '400',
-    lineHeight: 20,
+  textTitleLight: {
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 24,
   },
   textTitle: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
-    lineHeight: 24,
+    lineHeight: 26,
+  },
+  textTitleBold: {
+    fontSize: 20,
+    fontWeight: '700',
+    lineHeight: 28,
   },
 });
 
