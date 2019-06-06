@@ -20,9 +20,11 @@ const iphoneXMarginBottom = 83;
 const iosMarginBottom = 49;
 
 const marginTop = androidMarginTop || (isIphoneX ? iphoneXMarginTop : iosMarginTop);
+/* eslint-disable */
 const marginBottom = isIos
   ? (isIphoneX ? iphoneXMarginBottom : iosMarginBottom)
   : androidMarginBottom;
+/* eslint-enable */
 const cutHeight = marginTop + marginBottom;
 
 const styles = StyleSheet.create({

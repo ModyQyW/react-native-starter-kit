@@ -8,11 +8,11 @@
 
 This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-To use offline support, make sure Expo version is higher than 23. Here I use Expo 32.
+To use offline support, make sure Expo version is higher than 23. Here I use Expo 33.
 
 You **must** check [Expo Document](https://docs.expo.io/versions/latest/) for overall information.
 
-If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough) and [here](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo).
+If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v33.0.0/workflow/upgrading-expo-sdk-walkthrough/) and [here](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c).
 
 Before building standalone apps, please check [here](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/).
 
@@ -82,7 +82,7 @@ yarn start
 
 # eject
 # make sure you know what you are doing when exec this
-# check https://docs.expo.io/versions/v32.0.0/expokit/eject/
+# check https://docs.expo.io/versions/v33.0.0/expokit/eject/
 # expo eject
 yarn eject
 
@@ -93,6 +93,10 @@ yarn android
 # run on ios
 # expo start --ios
 yarn ios
+
+# run on web (beta)
+# expo start --web
+yarn web
 
 # test using jest
 yarn test

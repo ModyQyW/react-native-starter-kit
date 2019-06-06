@@ -8,11 +8,11 @@
 
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 32。
+如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 33。
 
 **务必**查看 [Expo 文档] 获取全面的信息。
 
-如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo-sdk-walkthrough)和[这里](https://docs.expo.io/versions/v32.0.0/workflow/upgrading-expo)。
+如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v33.0.0/workflow/upgrading-expo-sdk-walkthrough/)和[这里](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)。
 
 在打包独立 APP 前，请查看 [这里](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/)
 
@@ -83,7 +83,7 @@ yarn start
 
 # eject
 # 请确认你知道执行这条命令意味着什么
-# 查阅 https://docs.expo.io/versions/v32.0.0/expokit/eject/
+# 查阅 https://docs.expo.io/versions/v33.0.0/expokit/eject/
 # expo eject
 yarn eject
 
@@ -94,6 +94,10 @@ yarn android
 # ios 运行
 # expo start --ios
 yarn ios
+
+# web 运行 (beta)
+# expo start --web
+yarn web
 
 # jest 测试
 yarn test
@@ -108,7 +112,6 @@ expo build:ios
 ```
 
 更多的命令与使用，查看文档或使用`expo -h`。
-
 
 ## 代码结构
 
@@ -231,4 +234,4 @@ render
 
 |WeChat|Alipay|
 |:-:|:-:|
-|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 200px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 200px;" />|
+|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" />|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" />|

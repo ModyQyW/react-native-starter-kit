@@ -1,4 +1,5 @@
-import { AppLoading, Font } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import React from 'react';
 import { Provider } from 'mobx-react/native';
 
@@ -22,16 +23,12 @@ export default function (stores) {
     async loadFonts() {
       // await Expo.Font.loadAsync({
       //     write the font you need load here | 在这里引入你需要的字体
-      //     check | 详见  https://docs.expo.io/versions/v32.0.0/sdk/font
+      //     check | 详见  https://docs.expo.io/versions/v33.0.0/sdk/font
       // });
-      await Font.loadAsync(
-        'antoutline',
-        require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
-      );
-      await Font.loadAsync(
-        'antfill',
-        require('@ant-design/icons-react-native/fonts/antfill.ttf'),
-      );
+      await Font.loadAsync({
+        'antoutline': require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
+        'antfill': require('@ant-design/icons-react-native/fonts/antfill.ttf'),
+      });
     }
     /* eslint-enable */
 
