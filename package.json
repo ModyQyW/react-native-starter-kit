@@ -7,6 +7,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "prebuild:android": "expo build:android --release-channel test",
+    "prebuild:ios": "expo build:ios --release-channel test",
+    "prebuild:web": "expo build:web -d",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
+    "build:web": "expo build:web",
     "eject": "expo eject",
     "test": "jest --watchAll"
   },

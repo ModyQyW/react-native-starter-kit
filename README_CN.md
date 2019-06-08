@@ -77,15 +77,11 @@ $ npm i
 ## 命令
 
 ```sh
+# 使用 -h 获取更多信息
+
 # start
 # expo start
 yarn start
-
-# eject
-# 请确认你知道执行这条命令意味着什么
-# 查阅 https://docs.expo.io/versions/v33.0.0/expokit/eject/
-# expo eject
-yarn eject
 
 # android 运行
 # expo start --android
@@ -99,16 +95,38 @@ yarn ios
 # expo start --web
 yarn web
 
-# jest 测试
-yarn test
+# 在 test channel 上构建 android app
+# expo build:android --release-channel test
+yarn prebuild:android
+
+# 在 test channel 上构建 ios ipa
+# expo build:ios --release-channel test
+yarn prebuild:ios
+
+# 使用 webpack development 模式构建 web (beta)
+# expo build:web -d
+yarn prebuild:web
 
 # 构建 android app
-# expo build:android -h 可以获取更多信息
-expo build:android
+# expo build:android
+yarn build:android
 
 # 构建 ios app
-# expo build:ios -h 可以获取更多信息
-expo build:ios
+# expo build:ios
+yarn build:ios
+
+# build web (beta)
+# expo build:web
+yarn build:web
+
+# eject
+# 请确认你知道执行这条命令意味着什么
+# 查阅 https://docs.expo.io/versions/v33.0.0/expokit/eject/
+# expo eject
+yarn eject
+
+# jest 测试
+yarn test
 ```
 
 更多的命令与使用，查看文档或使用`expo -h`。

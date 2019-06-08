@@ -76,15 +76,11 @@ $ npm i
 ## Commands
 
 ```sh
+# use -h for more information
+
 # start
 # expo start
 yarn start
-
-# eject
-# make sure you know what you are doing when exec this
-# check https://docs.expo.io/versions/v33.0.0/expokit/eject/
-# expo eject
-yarn eject
 
 # run on android
 # expo start --android
@@ -98,16 +94,38 @@ yarn ios
 # expo start --web
 yarn web
 
-# test using jest
-yarn test
+# build android app in test channel
+# expo build:android --release-channel test
+yarn prebuild:android
+
+# build ios ipa in test channel
+# expo build:ios --release-channel test
+yarn prebuild:ios
+
+# build web using webpack development mode (beta)
+# expo build:web -d
+yarn prebuild:web
 
 # build android app
-# expo build:android -h for more info
-expo build:android
+# expo build:android
+yarn build:android
 
-# build ios app
-# expo build:ios -h for more info
+# build ios ipa
+# yarn build:ios
 expo build:ios
+
+# build web (beta)
+# expo build:web
+expo build:web
+
+# eject
+# make sure you know what you are doing when exec this
+# check https://docs.expo.io/versions/v33.0.0/expokit/eject/
+# expo eject
+yarn eject
+
+# test using jest
+yarn test
 ```
 
 For more commands and usage, check documents or use `expo -h`.
