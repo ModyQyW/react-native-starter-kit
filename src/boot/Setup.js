@@ -26,8 +26,8 @@ export default function (stores) {
       //     check | 详见  https://docs.expo.io/versions/v33.0.0/sdk/font
       // });
       await Font.loadAsync({
-        'antoutline': require('@ant-design/icons-react-native/fonts/antoutline.ttf'),
-        'antfill': require('@ant-design/icons-react-native/fonts/antfill.ttf'),
+        'antoutline': require('./../../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf'),
+        'antfill': require('./../../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf'),
       });
     }
     /* eslint-enable */

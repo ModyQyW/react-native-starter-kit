@@ -18,12 +18,12 @@
 
 我引入了数个 UI 库，列写如下：
 
-- [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce-cn)
 - [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
+- [https://rn.mobile.ant.design/docs/react/introduce-cn](https://rn.mobile.ant.design/docs/react/introduce-cn)
 - [teaset](https://github.com/rilyu/teaset/blob/master/docs/cn/README.md)
 - [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
 
-它们风格相近，功能互补，可以视需求使用不同的组件。我个人的建议是，以 Ant Design Mobile RN 或 React Native Elements 为主要 UI 库，出现其不能满足的组件需求时再到别的库中寻求解决方法。在该项目中，把 Ant Design Mobile RN 作为主要 UI 库。请根据你的需要进行调整。
+它们风格相近，功能互补，可以视需求使用不同的组件。我个人的建议和该项目的做法是，以 React Native Elements 为主要 UI 库，出现其不能满足的组件需求时再到别的库中寻求解决方法。请根据你的需要进行调整。
 
 另外，我还加入一些我认为非常有用的库，包括：
 
@@ -146,14 +146,14 @@ yarn test
     |-- Index.js              调用 store 配置和字体加载
     |-- Setup.js              加载需要的字体
   |-- components              全局组件
-  |-- mixins                  全局样式与颜色
+  |-- general                  全局样式与颜色
     |-- colors.js
     |-- styles.js
   |-- stores                  store 目录
     |-- related store         相关 store 文件
   |-- utils                   工具目录
     |-- request.js            axios 封装
-  |-- views                   view 目录
+  |-- screens                   view 目录
     |-- xxx                   view 模块目录
       |-- related js          模块 js 文件
       |-- styles.js           模块样式文件
@@ -173,10 +173,10 @@ yarn test
 如果你的项目足够大，我建议你使用以下模式：
 
 - 在 containers 中获取你需要的所有数据，声明你需要的所有方法
-- 传递所有方法和数据到对应的 views 中
-- 在对应的 views 中处理布局和逻辑
+- 传递所有方法和数据到对应的 screens 中
+- 在对应的 screens 中处理布局和逻辑
 
-如果存在超过一个角色，我建议在 views（大项目在 containers 和 views）中新建对应的角色文件夹并放入对应的文件。
+如果存在超过一个角色，我建议在 screens（大项目在 containers 和 screens）中新建对应的角色文件夹并放入对应的文件。
 
 请随意调整这种方案。_(:з」∠)_
 

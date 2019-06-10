@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { configure } from 'mobx';
-import { Provider } from '@ant-design/react-native';
+import { ThemeProvider } from 'react-native-elements';
 
-import AuthAutoSignIn from './views/Auth/AutoSignIn';
-import AuthSignIn from './views/Auth/SignIn';
-import AuthSignUp from './views/Auth/SignUp';
+import AuthAutoSignIn from './screens/Auth/AutoSignIn';
+import AuthSignIn from './screens/Auth/SignIn';
+import AuthSignUp from './screens/Auth/SignUp';
 
-import MainIndex from './views/Main/Index';
+import MainIndex from './screens/Main/Index';
 
-import DemoIndex from './views/Demo/Index';
-import DemoLayout1 from './views/Demo/Layout1';
-import DemoLayout2 from './views/Demo/Layout2';
+import DemoIndex from './screens/Demo/Index';
+import DemoLayout1 from './screens/Demo/Layout1';
+import DemoLayout2 from './screens/Demo/Layout2';
 
 configure({ enforceActions: 'always' });
 
@@ -64,9 +64,9 @@ const AppSwitch = createSwitchNavigator(
 const AppContainer = createAppContainer(AppSwitch);
 
 const App = () => (
-  <Provider>
+  <ThemeProvider>
     <AppContainer />
-  </Provider>
+  </ThemeProvider>
 );
 
 export default App;

@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 
 // for dev env
@@ -17,7 +18,7 @@ axios.defaults.headers = {
 };
 // timeout setting
 // 超时设置
-axios.defaults.timeout = 3000;
+axios.defaults.timeout = 10000; // 10s
 // take cookie or not
 // 是否携带 cookie
 axios.defaults.withCredentials = false;
@@ -68,32 +69,41 @@ const request = {};
 
 // pass null if there is nothing to send
 
-request.get = async (url, params, token) => axios({
-  method: 'get',
-  headers: {
-    token,
-  },
-  url,
-  params,
-});
+request.get = async (url, params) => {
+  const token = await AsyncStorage.getItem('token');
+  return axios({
+    method: 'get',
+    headers: {
+      token,
+    },
+    url,
+    params,
+  });
+};
 
-request.post = async (url, data, token) => axios({
-  method: 'post',
-  headers: {
-    token,
-  },
-  url,
-  data,
-});
+request.post = async (url, data) => {
+  const token = await AsyncStorage.getItem('token');
+  return axios({
+    method: 'post',
+    headers: {
+      token,
+    },
+    url,
+    data,
+  });
+};
 
-request.uploadImage = async (url, data, token) => axios({
-  method: 'post',
-  headers: {
-    token,
-    'Content-Type': 'image/*',
-  },
-  url,
-  data,
-});
+request.uploadImage = async (url, data) => {
+  const token = await AsyncStorage.getItem('token');
+  return axios({
+    method: 'post',
+    headers: {
+      token,
+      'Content-Type': 'image/*',
+    },
+    url,
+    data,
+  });
+};
 
 export default request;

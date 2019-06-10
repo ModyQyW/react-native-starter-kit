@@ -2,7 +2,8 @@ import {
   StyleSheet, Dimensions, StatusBar, Platform,
 } from 'react-native';
 
-import Colors from './colors';
+const grey200 = '#EEE';
+const grey500 = '#9E9E9E';
 
 const { height, width } = Dimensions.get('window');
 
@@ -28,8 +29,10 @@ const marginBottom = isIos
 const cutHeight = marginTop + marginBottom;
 
 const styles = StyleSheet.create({
-  // container
-  // usually the root element of page
+  /*
+   * container
+   * usually the root element of page
+   */
   container: {
     width,
     height: height - cutHeight,
@@ -39,94 +42,88 @@ const styles = StyleSheet.create({
     marginTop,
     marginBottom,
   },
-  // header with 1 item
-  // usually title
-  header1: {
+  /*
+   * header with 1 or 3 item(s)
+   * 1 item: title
+   * 3 items: arrow-left icon, title, empty /  menu icon
+   */
+  header: {
     flex: 0,
     width: '100%',
     height: 40,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingTop: 0,
+    paddingRight: 8,
+    paddingBottom: 0,
+    paddingLeft: 8,
     borderBottomWidth: 1,
-    borderBottomColor: Colors.gray200,
+    borderBottomColor: grey200,
   },
-  // header with 2 items
-  // usually arrow-left icon and title
-  header2: {
+  // suppose to be an icon
+  headerLeft: {
     flex: 0,
-    width: '100%',
-    height: 40,
+    width: 26,
+    height: 26,
+  },
+  // suppose to be a View wrapping a Text
+  headerMiddle: {
+    flex: 1,
+    height: 26,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
-    position: 'relative',
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.gray200,
+    textAlign: 'center',
   },
-  header2Icon: {
-    position: 'absolute',
-    left: 10,
+  // suppose to be an icon
+  headerRight: {
+    flex: 0,
+    width: 26,
+    height: 26,
   },
-  // header with 3 items
-  // usually arrow-left icon, title and menu icon
-  header3: {
+  /* body */
+  // for View
+  body: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bodyNav: {
     flex: 0,
     width: '100%',
     height: 40,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.gray200,
+    paddingTop: 0,
+    paddingRight: 8,
+    paddingBottom: 0,
+    paddingLeft: 8,
   },
-  // body without nav bar
-  // should be <ScrollView> or <FlatList>
-  body: {
+  // for ScrollView and FlatList
+  bodyMain: {
     flex: 1,
     width: '100%',
-    padding: 10,
   },
-  // body with 2 items
-  // usually bar and main section
-  // should be <View>, and its children has <ScrollView> or <FlatList>
-  body2: {
-    flex: 1,
-    width: '100%',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  // should be <View>
-  body2Bar: {
-    flex: 0,
-    height: 80,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  // should be <ScrollView> or <FlatList>, the main child of bodyWithNav
-  body2Main: {
-    flex: 1,
-    width: '100%',
-    padding: 10,
-  },
-  // footer
+  /* footer */
   footer: {
     flex: 0,
     width: '100%',
-    height: 30,
+    height: 40,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 0,
+    paddingRight: 8,
+    paddingBottom: 0,
+    paddingLeft: 8,
+    borderTopWidth: 1,
+    borderTopColor: grey200,
   },
-  // default
+  // typography
   textThin: {
     fontWeight: '100',
   },
@@ -170,21 +167,53 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 20,
   },
+  text13: {
+    fontSize: 13,
+    lineHeight: 21,
+  },
   text14: {
     fontSize: 14,
     lineHeight: 22,
+  },
+  text15: {
+    fontSize: 15,
+    lineHeight: 23,
   },
   text16: {
     fontSize: 16,
     lineHeight: 24,
   },
+  text17: {
+    fontSize: 17,
+    lineHeight: 25,
+  },
   text18: {
     fontSize: 18,
     lineHeight: 26,
   },
+  text19: {
+    fontSize: 19,
+    lineHeight: 27,
+  },
   text20: {
     fontSize: 20,
     lineHeight: 28,
+  },
+  text21: {
+    fontSize: 21,
+    lineHeight: 29,
+  },
+  text22: {
+    fontSize: 22,
+    lineHeight: 30,
+  },
+  text23: {
+    fontSize: 23,
+    lineHeight: 31,
+  },
+  text24: {
+    fontSize: 24,
+    lineHeight: 32,
   },
   textSecondary: {
     fontSize: 12,
@@ -196,6 +225,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     lineHeight: 21,
   },
+  // default text styles
   textMain: {
     fontSize: 14,
     fontWeight: '400',
@@ -210,11 +240,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     lineHeight: 26,
-  },
-  textTitleBold: {
-    fontSize: 20,
-    fontWeight: '700',
-    lineHeight: 28,
   },
 });
 

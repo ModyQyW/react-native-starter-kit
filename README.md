@@ -18,12 +18,12 @@ Before building standalone apps, please check [here](https://docs.expo.io/versio
 
 I import several UI toolkit listed below.
 
-- [Ant Design Mobile RN](https://rn.mobile.ant.design/docs/react/introduce)
 - [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
+- [Ant Design Mobile RN of React](https://rn.mobile.ant.design/docs/react/introduce)
 - [teaset](https://github.com/rilyu/teaset/blob/master/README.md)
 - [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
 
-They are similar in style and complementary in function, allowing to use different components as needed. My personal suggestion is to use Ant Design Mobile RN or React Native Elements as the main UI. When there are component requirements that can't be met, use another library to get a solution. In this project, I used Ant Design Mobile RN as the main UI. Please adjust according to your needs.
+They are similar in style and complementary in function, allowing to use different components as needed. My personal suggestion and what this project did is to use React Native Elements as the main UI. When there are component requirements that can't be met, use another library to get a solution. Please adjust according to your needs.
 
 Besides, I add some Utilities I think helpful.
 
@@ -145,14 +145,14 @@ For more commands and usage, check documents or use `expo -h`.
     |-- Index.js              call store configuration and fonts loading
     |-- Setup.js              load fonts needed
   |-- components              global components
-  |-- mixins                  global styles and colors
+  |-- general                  global styles and colors
     |-- colors.js
     |-- styles.js
   |-- stores                  stores directory
     |-- related store         related store files
   |-- utils                   tool directory
     |-- request.js            axios encapsulation
-  |-- views                   view directory
+  |-- screens                   view directory
     |-- xxx                   view module directory
       |-- related js          module js files
       |-- styles.js           module style file
@@ -166,15 +166,15 @@ For more commands and usage, check documents or use `expo -h`.
 |-- ...
 ```
 
-I almost finish all my job in stores and views, sometimes also in components. This pattern is suitable for small projects.
+I almost finish all my job in stores and screens, sometimes also in components. This pattern is suitable for small projects.
 
 If your project is big enough, I advise to use this pattern:
 
 - get all data and write all functions you needed in containers
-- pass functions and data to corresponding views
-- deal with layout and logic in corresponding views
+- pass functions and data to corresponding screens
+- deal with layout and logic in corresponding screens
 
-If there are more than one role, I advise to create new corresponding role folders in views (containers and views for big project) and put corresponding files.
+If there are more than one role, I advise to create new corresponding role folders in screens (containers and screens for big project) and put corresponding files.
 
 Or just change as you like. :D
 

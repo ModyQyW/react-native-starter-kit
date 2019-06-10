@@ -2,137 +2,85 @@ import { AsyncStorage } from 'react-native';
 import {
   observable, action, runInAction, computed,
 } from 'mobx';
-import request from '../utils/request';
+import req from '../utils/request';
 
-class AppStore {
-  @observable user = '';
-
-  @observable pwd = '';
-
+class AuthStore {
   @observable tokenKey = 'token';
 
   @observable token = '';
 
-  @action
-  async autoSignIn() {
-    try {
-      const user = await AsyncStorage.getItem('user');
-      const pwd = await AsyncStorage.getItem('pwd');
-      runInAction(() => {
-        this.user = user;
-        this.pwd = pwd;
-      });
-      if (this.user && this.pwd) {
-        return true;
-      }
-      return false;
-    } catch (e) {
-      // eslint-disable-next-line
-      console.log('error', e);
-      return e;
-    }
-  }
+  @observable userInfo = null;
 
-  @computed
-  get getToken() {
-    return this.token;
+  @action
+  resetData() {
+    this.token = '';
+    this.userInfo = null;
   }
 
   /**
-   * call when relaunch app and get token
-   * 重新打开应用时调用，恢复 token
+   * Sign In
+   * 登入
+   * @param {*} { username, password }
    * @returns
-   * @memberof AppStore
+   * @memberof App
    */
-  @action
-  async getTokenFromStorage() {
-    try {
-      const token = await AsyncStorage.getItem(this.tokenKey);
+  signIn({ username, password }) {
+    return req.post(
+      '/auth/signin',
+      {
+        username,
+        password,
+      },
+    ).then(async (res) => {
       runInAction(() => {
-        this.token = token;
+        // save necessary information
+        // 保存必要信息
+        this.token = res.data.token;
       });
-      return {
-        success: true,
-      };
-    } catch (e) {
-      // eslint-disable-next-line
-      console.log('error', e);
-      return {
-        success: false,
-        message: e,
-      };
-    }
+      AsyncStorage.setItem(this.tokenKey, this.token);
+      return res;
+    });
   }
 
-  @action
-  setToken(token) {
+  /**
+   * 更新登录态
+   * @memberof AuthStore
+   */
+  renewToken = async () => {
     try {
-      this.token = token;
-      return {
-        success: true,
-      };
-    } catch (e) {
-      // eslint-disable-next-line
-      console.log('error', e);
-      return {
-        success: false,
-        message: e,
-      };
-    }
-  }
-
-  async setTokenToStorage(token) {
-    try {
-      await AsyncStorage.setItem(this.tokenKey, token);
-      return {
-        success: true,
-      };
-    } catch (e) {
-      // eslint-disable-next-line
-      console.log('error', e);
-      return {
-        success: false,
-        message: e,
-      };
-    }
-  }
-
-  @action
-  async setTokenAll(token) {
-    try {
-      this.token = token;
-      await AsyncStorage.setItem(this.tokenKey, token);
-      return {
-        success: true,
-      };
-    } catch (e) {
-      // eslint-disable-next-line
-      console.log('error', e);
-      return {
-        success: false,
-        message: e,
-      };
-    }
-  }
-
-  @action
-  async renewToken(token) {
-    request.post('/auth/renew', null, token)
-      .then(async (res) => {
-        if (res.success) {
-          await this.setTokenAll(token);
+      // check token status first
+      // 首先检查 token 状态
+      const res1 = await req.get('/auth/status');
+      if (res1.success) {
+        // if token is still active => renew token
+        // 若 token 仍有效 => 更新 token
+        const res2 = await req.post('/auth/renew');
+        if (res2.success) {
+          runInAction(() => {
+            // save necessary information
+            // 保存必要信息
+            this.userInfo = res2.data.userInfo;
+            this.token = res2.data.token;
+          });
+          // value should be string
+          // 值应为字符串
+          AsyncStorage.setItem(this.tokenKey, this.token);
         }
-        return res;
-      })
-      .catch((e) => {
-        // eslint-disable-next-line
-        console.log('error', e);
-        return {
-          success: false,
-          message: e,
-        };
-      });
+        // renew failed => just return response
+        return res2;
+      }
+      // if token is outdated => just return response
+      // 若 token 已失效 => 返回响应即可
+      return res1;
+    } catch (err) {
+      // consider token is outdated
+      // 认为 token 已失效
+      return {
+        success: false,
+        message: err,
+      };
+    }
   }
 }
 
-export default AppStore;
+export default AuthStore;

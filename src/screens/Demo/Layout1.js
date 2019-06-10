@@ -5,32 +5,45 @@ import {
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
-import { Icon } from '@ant-design/react-native';
-import Styles from '../../mixins/styles';
-import Colors from '../../mixins/colors';
+import { Icon } from 'react-native-elements';
+
+import gStyles from '../../general/styles';
 
 @observer
 class LayoutDemo1 extends React.Component {
   @observable navi = this.props.navigation;
 
-  handleBack = () => {
+  onBack = () => {
     this.navi.goBack();
   }
 
   render() {
     return (
-      <View style={Styles.container}>
-        <View style={Styles.header2}>
+      <View style={gStyles.container}>
+        <View style={gStyles.header}>
+          {/* <View style={gStyles.headerLeft}>
+            <Icon
+              name="arrow-back"
+              size={26}
+              onPress={this.onBack}
+            />
+          </View> */}
+          {/* <View style={gStyles.headerMiddle}>
+            <Text style={gStyles.textTitle}>Header</Text>
+          </View> */}
           <Icon
-            style={Styles.header2Icon}
-            name="left"
-            onPress={this.handleBack}
+            name="arrow-back"
+            size={26}
+            onPress={this.onBack}
           />
-          <Text style={Styles.textTitle}>Header</Text>
+          <Text style={[gStyles.headerMiddle, gStyles.textTitle]}>Demo Layout1</Text>
+          <View style={gStyles.headerRight} />
         </View>
-        <ScrollView style={Styles.body}>
+        <ScrollView
+          style={gStyles.bodyMain}
+        >
           <Text>Body</Text>
-          <Text style={Styles.textSecondary}>To test scroll, insert lorem below.</Text>
+          <Text style={gStyles.textMainLight}>To test scroll, insert lorem below.</Text>
           <Text>
 Culpa duis adipisicing cupidatat eiusmod aliqua in. Eu reprehenderit aliquip sunt eiusmod esse. Adipisicing cillum voluptate dolor aute occaecat incididunt pariatur cillum nulla. Proident labore ipsum sit deserunt minim cupidatat enim nisi veniam ullamco duis et. Ea ipsum laborum aute qui elit.
 
