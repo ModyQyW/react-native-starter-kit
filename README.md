@@ -221,6 +221,15 @@ other methods
 render
 ```
 
+I make some rules for `other methods`:
+
+- Should be started with `on`, `handle`, `to`.
+- Props like `onPress`, `onChangeText`, `onLongPress` should call methods started with `on`(onSetNumber) and `to`(toMainStack).
+- Methods called by methods should started with `handle`.
+- Methods used for defining some behavior like FlatList `renderItem`, `getItemLayout`, `keyExtractor` should started with `handle`.
+
+You can see my code for more details.
+
 P.S. Default using MobX strict mode. Check [App.js](./src/App.js).
 
 ## Follow-up Plan

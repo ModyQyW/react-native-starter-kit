@@ -10,7 +10,7 @@
 
 如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 33。
 
-**务必**查看 [Expo 文档] 获取全面的信息。
+**务必**查看 [Expo 文档](https://docs.expo.io/versions/latest/) 获取全面的信息。
 
 如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v33.0.0/workflow/upgrading-expo-sdk-walkthrough/)和[这里](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)。
 
@@ -222,6 +222,15 @@ other methods
 
 render
 ```
+
+I 为`other methods`制定了一些规则:
+
+- 开头只能是`on`，`handle`，`to`；
+- 如`onPress`，`onChangeText`，`onLongPress`的属性只能调用以`on`（onSetNumber）和`to`（toMainStack）开头的方法。
+- 方法内只能调用以`handle`开头的方法。
+- 用于定义某些行为的方法，如 FlatList `renderItem`, `getItemLayout`, `keyExtractor`，只能以`handle`开头。
+
+你可以查看我的代码获取更多的细节。
 
 另：默认开启了 MobX 的严格模式。请查看 [App.js](./src/App.js)。
 
