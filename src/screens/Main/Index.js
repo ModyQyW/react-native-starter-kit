@@ -10,7 +10,7 @@ import gStyles from '../../general/styles';
 class Index extends React.Component {
   @observable navi = this.props.navigation;
 
-  toDemoStack = () => {
+  onToDemoStack = () => {
     this.navi.navigate('DemoStack');
   }
 
@@ -24,7 +24,7 @@ class Index extends React.Component {
           <Text>Do something to start coding!</Text>
           <Text>做点什么，开始打码吧！</Text>
           <Button
-            onPress={this.toDemoStack}
+            onPress={this.onToDemoStack}
             title="Jump to Demo Index"
           />
         </View>

@@ -1,7 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import {
-  observable, action, runInAction, computed,
-} from 'mobx';
+import { observable, action, runInAction } from 'mobx';
 import req from '../utils/request';
 
 class AuthStore {
@@ -12,7 +10,7 @@ class AuthStore {
   @observable userInfo = null;
 
   @action
-  resetData() {
+  handleResetData() {
     this.token = '';
     this.userInfo = null;
   }
@@ -24,7 +22,7 @@ class AuthStore {
    * @returns
    * @memberof App
    */
-  signIn({ username, password }) {
+  handleSignIn({ username, password }) {
     return req.post(
       '/auth/signin',
       {
@@ -46,7 +44,7 @@ class AuthStore {
    * 更新登录态
    * @memberof AuthStore
    */
-  renewToken = async () => {
+  handleRenewToken = async () => {
     try {
       // check token status first
       // 首先检查 token 状态

@@ -9,11 +9,11 @@ import gStyles from '../../general/styles';
 class Index extends React.Component {
   @observable navi = this.props.navigation;
 
-  toLayout1 = () => {
+  onToLayout1 = () => {
     this.navi.navigate('DemoLayout1');
   }
 
-  toLayout2 = () => {
+  onToLayout2 = () => {
     this.navi.navigate('DemoLayout2');
   }
 
@@ -25,11 +25,11 @@ class Index extends React.Component {
         </View>
         <View style={gStyles.body}>
           <Button
-            onPress={this.toLayout1}
+            onPress={this.onToLayout1}
             title="Navigate to Layout1"
           />
           <Button
-            onPress={this.toLayout2}
+            onPress={this.onToLayout2}
             title="Navigate to Layout2"
           />
         </View>

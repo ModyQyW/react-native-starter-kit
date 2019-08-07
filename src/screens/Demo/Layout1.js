@@ -21,16 +21,6 @@ class LayoutDemo1 extends React.Component {
     return (
       <View style={gStyles.container}>
         <View style={gStyles.header}>
-          {/* <View style={gStyles.headerLeft}>
-            <Icon
-              name="arrow-back"
-              size={26}
-              onPress={this.onBack}
-            />
-          </View> */}
-          {/* <View style={gStyles.headerMiddle}>
-            <Text style={gStyles.textTitle}>Header</Text>
-          </View> */}
           <Icon
             name="arrow-back"
             size={26}
@@ -45,6 +35,7 @@ class LayoutDemo1 extends React.Component {
           <Text>Body</Text>
           <Text style={gStyles.textMainLight}>To test scroll, insert lorem below.</Text>
           <Text>
+            {/* eslint-disable */}
 Culpa duis adipisicing cupidatat eiusmod aliqua in. Eu reprehenderit aliquip sunt eiusmod esse. Adipisicing cillum voluptate dolor aute occaecat incididunt pariatur cillum nulla. Proident labore ipsum sit deserunt minim cupidatat enim nisi veniam ullamco duis et. Ea ipsum laborum aute qui elit.
 
 Proident minim quis fugiat sunt sunt pariatur duis ipsum ullamco nostrud in non. Amet dolor qui mollit sint occaecat qui ad deserunt non enim excepteur laboris ut. Laborum eiusmod excepteur officia quis. Aliqua voluptate incididunt quis ipsum esse Lorem id nostrud laborum do Lorem. Aliqua incididunt fugiat veniam Lorem Lorem mollit quis deserunt nulla fugiat sint laboris amet aliqua. Ex exercitation anim ex irure tempor cupidatat enim quis est.
@@ -64,6 +55,7 @@ Labore dolore Lorem esse labore consequat mollit culpa sint voluptate do aliqua 
 Ex magna do tempor consequat eiusmod ullamco esse labore qui consectetur excepteur commodo amet quis. Reprehenderit officia dolore quis magna cupidatat pariatur magna velit. Labore ullamco enim officia deserunt esse esse aute ea nulla eiusmod proident enim exercitation adipisicing. Aliqua est occaecat non elit qui reprehenderit pariatur voluptate sunt ex do laboris. Exercitation sit ut occaecat sint cillum velit labore irure.
 
 Ad laboris culpa et excepteur ut. Eiusmod elit aute in dolore. Voluptate labore labore ex ut. Ad excepteur reprehenderit deserunt irure in Lorem aliqua culpa nisi in irure nisi. Reprehenderit voluptate irure eiusmod ullamco officia irure occaecat tempor occaecat officia reprehenderit eiusmod.
+            {/* eslint-enable */}
           </Text>
         </ScrollView>
       </View>

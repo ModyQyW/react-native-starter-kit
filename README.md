@@ -223,18 +223,16 @@ render
 
 I make some rules for `other methods`:
 
-- Should be started with `on`, `handle`, `to`.
-- Props like `onPress`, `onChangeText`, `onLongPress` should call methods started with `on`(onSetNumber) and `to`(toMainStack).
-- Methods called by methods should started with `handle`.
-- Methods used for defining some behavior like FlatList `renderItem`, `getItemLayout`, `keyExtractor` should started with `handle`.
+- Should be started with `on`, `handle`
+- Methods to a specific stack should be started with `onToXXXStack`
+- Props like `onPress`, `onChangeText`, `onLongPress` should call methods started with `on`(onSetNumber)
+- Methods used for defining some behavior like FlatList `renderItem`, `getItemLayout`, `keyExtractor` should started with `on`(onRenderItem, onGetItemLayout)
+- Methods called by methods should started with `handle`(handleValidate)
+- Methods in stores should started with `handle`(handleGetData)
 
 You can see my code for more details.
 
 P.S. Default using MobX strict mode. Check [App.js](./src/App.js).
-
-## Follow-up Plan
-
-In the next few months I will use my free time to continue to update this starter, including adding interfaces and some layout examples.
 
 ## Advice
 

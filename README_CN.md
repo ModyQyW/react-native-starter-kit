@@ -223,20 +223,18 @@ other methods
 render
 ```
 
-I 为`other methods`制定了一些规则:
+我为`other methods`制定了一些规则:
 
-- 开头只能是`on`，`handle`，`to`；
-- 如`onPress`，`onChangeText`，`onLongPress`的属性只能调用以`on`（onSetNumber）和`to`（toMainStack）开头的方法。
-- 方法内只能调用以`handle`开头的方法。
-- 用于定义某些行为的方法，如 FlatList `renderItem`, `getItemLayout`, `keyExtractor`，只能以`handle`开头。
+- 开头只能是`on`，`handle`
+- 跳转到特定栈的方法命名只能是`onToXXXStack`
+- 如`onPress`，`onChangeText`，`onLongPress`的属性只能调用以`on`开头的方法（onSetNumber）
+- 用于定义某些行为的方法，如 FlatList `renderItem`, `getItemLayout`, `keyExtractor`，只能以`on`开头（onRenderItem, onGetItemLayout）
+- 方法内只能调用以`handle`开头的方法（handleValidate）
+- store 内里的方法只能以`handle`开头（handleGetData）
 
 你可以查看我的代码获取更多的细节。
 
 另：默认开启了 MobX 的严格模式。请查看 [App.js](./src/App.js)。
-
-## 后续计划
-
-未来几个月内我会利用空闲时间继续更新这个脚手架，包括增加界面与一些布局样例。
 
 ## 建议
 

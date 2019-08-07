@@ -6,6 +6,7 @@ import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react/native';
 
 import { Icon } from 'react-native-elements';
+// use ant-design toast
 import { Provider, Toast } from '@ant-design/react-native';
 
 import gStyles from '../../general/styles';
@@ -31,7 +32,7 @@ class LayoutDemo2 extends React.Component {
 
   @action
   onAddData = () => {
-    for (let i = (this.cnt - 1) * 10 + 1; i <= this.cnt * 10; i += 1) {
+    for (let i = (this.cnt - 1) * 10 + 1, len = this.cnt * 10; i <= len; i += 1) {
       this.data.push({
         label: `label${i - 1}`,
         value: i - 1,
@@ -45,7 +46,7 @@ class LayoutDemo2 extends React.Component {
     this.navi.goBack();
   }
 
-  handlePressListItem = (item) => {
+  onPressListItem = (item) => {
     Toast.info(`You just clicked (index: ${item.value}, label: ${item.label}) item`);
   }
 
@@ -78,13 +79,13 @@ class LayoutDemo2 extends React.Component {
               data={this.data}
               keyExtractor={item => item.value.toString()}
               renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => this.handlePressListItem(item)}>
+                <TouchableOpacity onPress={() => this.onPressListItem(item)}>
                   <View style={styles.listItem}>
                     <Text>
-                    label:
+                      label:
                       {item.label}
                       {' '}
-                    value:
+                      value:
                       {item.value}
                     </Text>
                   </View>

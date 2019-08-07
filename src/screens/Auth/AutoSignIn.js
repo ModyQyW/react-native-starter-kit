@@ -39,12 +39,12 @@ class AutoSignIn extends React.Component {
       const token = await AsyncStorage.getItem('token');
       if (token) {
         this.authStore
-          .renewToken()
+          .handleRenewToken()
           .then((res) => {
             if (res.success) {
               // renew token succeeded
               // 更新 token 成功
-              this.toMainStack();
+              this.onToMainStack();
             } else {
               // renew token failed
               // 更新 token 失败
@@ -53,14 +53,14 @@ class AutoSignIn extends React.Component {
                 [{ text: 'OK', onPress: () => {} }],
                 { cancelable: false, onDismiss: () => {} },
               );
-              this.authStore.resetData();
-              this.toAuthSignIn();
+              this.authStore.handleResetData();
+              this.onToAuthSignIn();
             }
           });
       } else {
         // has no token
         // 没有 token
-        this.toAuthSignIn();
+        this.onToAuthSignIn();
       }
     } catch (err) {
       Alert.alert(
@@ -68,16 +68,16 @@ class AutoSignIn extends React.Component {
         [{ text: 'OK', onPress: () => {} }],
         { cancelable: false, onDismiss: () => {} },
       );
-      this.authStore.resetData();
-      this.toAuthSignIn();
+      this.authStore.handleResetData();
+      this.onToAuthSignIn();
     }
   }
 
-  toMainStack = () => {
+  onToMainStack = () => {
     this.navi.navigate('MainStack');
   }
 
-  toAuthSignIn = () => {
+  onToAuthSignIn = () => {
     this.navi.navigate('AuthSignIn');
   }
 

@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
 class SignIn extends React.Component {
   @observable navi = this.props.navigation;
 
-  toMainStack = () => {
+  onToMainStack = () => {
     this.navi.navigate('MainStack');
   }
 
-  toAuthSignUp = () => {
+  onToAuthSignUp = () => {
     this.navi.navigate('AuthSignUp');
   }
 
@@ -38,11 +38,11 @@ class SignIn extends React.Component {
           <Text>This is the sign in screen.</Text>
           <Text>Buttons below are from React Native Elements.</Text>
           <Button
-            onPress={this.toMainStack}
+            onPress={this.onToMainStack}
             title="Navigate to Main Stack"
           />
           <Button
-            onPress={this.toAuthSignUp}
+            onPress={this.onToAuthSignUp}
             title="Navigate to Signup Screen"
           />
         </View>
