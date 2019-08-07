@@ -1,4 +1,4 @@
-import config from './ConfigureStore';
+import config from './Configure';
 import app from './Setup';
 
 export default function () {

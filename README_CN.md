@@ -8,18 +8,18 @@
 
 这是一个使用 [Expo](https://docs.expo.io/) 初始化的, 带有 [React Navigation](https://reactnavigation.org/) 和 [MobX](https://github.com/mobxjs/mobx) 的 [React Native](https://reactnative.cn/) 脚手架。希望这个脚手架对你有帮助。
 
-如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 33。
+如果想使用离线支持，保证 Expo 的版本在 23 以上。这个项目里我使用了 Expo 34。
 
 **务必**查看 [Expo 文档](https://docs.expo.io/versions/latest/) 获取全面的信息。
 
-如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v33.0.0/workflow/upgrading-expo-sdk-walkthrough/)和[这里](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)。
+如果你想修改 Expo SDK，请查看[这里](https://docs.expo.io/versions/v34.0.0/workflow/upgrading-expo-sdk-walkthrough/)和[这里](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)。
 
 在打包独立 APP 前，请查看 [这里](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/)
 
 我引入了数个 UI 库，列写如下：
 
 - [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
-- [https://rn.mobile.ant.design/docs/react/introduce-cn](https://rn.mobile.ant.design/docs/react/introduce-cn)
+- [Ant Design Mobile RN of React](https://rn.mobile.ant.design/docs/react/introduce-cn)
 - [teaset](https://github.com/rilyu/teaset/blob/master/docs/cn/README.md)
 - [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
 
@@ -121,7 +121,7 @@ yarn build:web
 
 # eject
 # 请确认你知道执行这条命令意味着什么
-# 查阅 https://docs.expo.io/versions/v33.0.0/expokit/eject/
+# 查阅 https://docs.expo.io/versions/v34.0.0/expokit/eject/
 # expo eject
 yarn eject
 
@@ -142,7 +142,7 @@ yarn test
     |-- splash.png            独立 APP 载入屏图片
     |-- ...                   其他资源目录
   |-- boot                    引导目录
-    |-- ConfigureStore.js     配置所有 store
+    |-- Configure.js          配置文件
     |-- Index.js              调用 store 配置和字体加载
     |-- Setup.js              加载需要的字体
   |-- components              全局组件

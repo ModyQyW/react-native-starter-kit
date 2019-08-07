@@ -8,11 +8,11 @@
 
 This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) inited by [Expo](https://docs.expo.io/). Hope this helpful.
 
-To use offline support, make sure Expo version is higher than 23. Here I use Expo 33.
+To use offline support, make sure Expo version is higher than 23. Here I use Expo 34.
 
 You **must** check [Expo Document](https://docs.expo.io/versions/latest/) for overall information.
 
-If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v33.0.0/workflow/upgrading-expo-sdk-walkthrough/) and [here](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c).
+If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v34.0.0/workflow/upgrading-expo-sdk-walkthrough/) and [here](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319).
 
 Before building standalone apps, please check [here](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/).
 
@@ -120,7 +120,7 @@ expo build:web
 
 # eject
 # make sure you know what you are doing when exec this
-# check https://docs.expo.io/versions/v33.0.0/expokit/eject/
+# check https://docs.expo.io/versions/v34.0.0/expokit/eject/
 # expo eject
 yarn eject
 
@@ -141,7 +141,7 @@ For more commands and usage, check documents or use `expo -h`.
     |-- splash.png            image for loading and splash screen for standalone apps
     |-- ...                   other assets directory
   |-- boot                    boot directory
-    |-- ConfigureStore.js     configure all stores
+    |-- Configure.js          configure file
     |-- Index.js              call store configuration and fonts loading
     |-- Setup.js              load fonts needed
   |-- components              global components
