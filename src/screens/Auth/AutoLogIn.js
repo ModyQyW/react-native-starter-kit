@@ -4,13 +4,7 @@ import { observable, computed } from 'mobx'
 import { observer, inject } from 'mobx-react/native'
 import PropTypes from 'prop-types'
 
-// really strange here
-// import { layouts } from '../globalStyles.js'
-// will lead to an error saying that
-// layouts is undefined
-import globalStyles from '../globalStyles.js'
-
-const { layouts } = globalStyles
+import { layouts } from '../globalStyles'
 
 const styles = StyleSheet.create({
 

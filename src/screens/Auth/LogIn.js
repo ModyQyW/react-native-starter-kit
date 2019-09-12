@@ -6,9 +6,7 @@ import PropTypes from 'prop-types'
 
 import { Button } from 'react-native-elements'
 
-import globalStyles from '../globalStyles'
-
-const { layouts, typography } = globalStyles
+import { layouts, typography } from '../globalStyles'
 
 const styles = StyleSheet.create({
 

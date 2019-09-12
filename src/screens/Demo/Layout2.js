@@ -8,9 +8,7 @@ import { Icon } from 'react-native-elements'
 // use ant-design toast
 import { Provider, Toast } from '@ant-design/react-native'
 
-import globalStyles from '../globalStyles'
-
-const { layouts, typography } = globalStyles
+import { layouts, typography } from '../globalStyles'
 
 const styles = StyleSheet.create({
   listItem: {
