@@ -1,41 +1,48 @@
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { observable, action } from 'mobx';
-import { observer, inject } from 'mobx-react/native';
+import * as React from 'react'
+import { View, Text, Button } from 'react-native'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react/native'
+import PropTypes from 'prop-types'
 
-import gStyles from '../../general/styles';
+import globalStyles from '../globalStyles'
+
+const { layouts, typography } = globalStyles
 
 @observer
 class Index extends React.Component {
   @observable navi = this.props.navigation;
 
-  onToLayout1 = () => {
-    this.navi.navigate('DemoLayout1');
+  handleToLayout1 = () => {
+    this.navi.navigate('DemoLayout1')
   }
 
-  onToLayout2 = () => {
-    this.navi.navigate('DemoLayout2');
+  handleToLayout2 = () => {
+    this.navi.navigate('DemoLayout2')
   }
 
-  render() {
+  render () {
     return (
-      <View style={gStyles.container}>
-        <View style={gStyles.header}>
-          <Text style={[gStyles.headerMiddle, gStyles.textTitle]}>Demos</Text>
+      <View style={layouts.container}>
+        <View style={layouts.header}>
+          <Text style={[layouts.headerMiddle, typography.textTitle]}>Demos</Text>
         </View>
-        <View style={gStyles.body}>
+        <View style={layouts.body}>
           <Button
-            onPress={this.onToLayout1}
-            title="Navigate to Layout1"
+            onPress={this.handleToLayout1}
+            title='Navigate to Layout1'
           />
           <Button
-            onPress={this.onToLayout2}
-            title="Navigate to Layout2"
+            onPress={this.handleToLayout2}
+            title='Navigate to Layout2'
           />
         </View>
       </View>
-    );
+    )
   }
 }
 
-export default Index;
+Index.propTypes = {
+  navigation: PropTypes.any
+}
+
+export default Index

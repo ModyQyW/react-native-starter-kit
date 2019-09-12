@@ -12,26 +12,19 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "jsx-a11y",
+    "react-native-a11y",
     "react-native"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "airbnb"
+    "plugin:react-native-a11y/recommended",
+    "plugin:react-native/all",
+    "standard",
+    "standard-react"
   ],
   "rules": {
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/prop-types": 0,
-    "react-native/no-color-literals": 2,
-    "react-native/no-inline-styles": 2,
-    "react-native/no-raw-text": 2,
-    "react-native/no-unused-styles": 2,
-    "react-native/split-platform-components": 2,
+    "react-native/sort-styles": 0
   }
 };

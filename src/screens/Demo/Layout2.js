@@ -1,107 +1,111 @@
-import * as React from 'react';
-import {
-  View, Text, StyleSheet, FlatList, TouchableOpacity, Button,
-} from 'react-native';
-import { observable, action } from 'mobx';
-import { observer, inject } from 'mobx-react/native';
+import * as React from 'react'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button } from 'react-native'
+import { observable, action } from 'mobx'
+import { observer } from 'mobx-react/native'
+import PropTypes from 'prop-types'
 
-import { Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements'
 // use ant-design toast
-import { Provider, Toast } from '@ant-design/react-native';
+import { Provider, Toast } from '@ant-design/react-native'
 
-import gStyles from '../../general/styles';
+import globalStyles from '../globalStyles'
+
+const { layouts, typography } = globalStyles
 
 const styles = StyleSheet.create({
   listItem: {
     width: '100%',
-    height: 25,
-  },
-});
+    height: 25
+  }
+})
 
 @observer
-class LayoutDemo2 extends React.Component {
+class Layout2 extends React.Component {
   @observable navi = this.props.navigation;
 
   @observable cnt = 1;
 
   @observable data = [];
 
-  componentDidMount() {
-    this.onAddData();
+  componentDidMount () {
+    this.handleAddData()
   }
 
   @action
-  onAddData = () => {
+  handleAddData = () => {
     for (let i = (this.cnt - 1) * 10 + 1, len = this.cnt * 10; i <= len; i += 1) {
       this.data.push({
         label: `label${i - 1}`,
-        value: i - 1,
-      });
+        value: i - 1
+      })
     }
-    this.data = this.data.slice();
-    this.cnt += 1;
+    this.data = this.data.slice()
+    this.cnt += 1
   }
 
-  onBack = () => {
-    this.navi.goBack();
+  handleBack = () => {
+    this.navi.goBack()
   }
 
-  onPressListItem = (item) => {
-    Toast.info(`You just clicked (index: ${item.value}, label: ${item.label}) item`);
+  handlePressListItem = (item) => {
+    Toast.info(`You just clicked (index: ${item.value}, label: ${item.label}) item`)
   }
 
-  render() {
+  render () {
     return (
       <Provider>
-        <View style={gStyles.container}>
-          <View style={gStyles.header}>
+        <View style={layouts.container}>
+          <View style={layouts.header}>
             <Icon
-              name="arrow-back"
+              name='arrow-back'
               size={26}
-              onPress={this.onBack}
+              onPress={this.handleBack}
             />
-            <Text style={[gStyles.headerMiddle, gStyles.textTitle]}>Demo Layout2</Text>
+            <Text style={[layouts.headerMiddle, typography.textTitle]}>Demo Layout2</Text>
             <Icon
               size={26}
-              name="menu"
+              name='menu'
             />
           </View>
-          <View style={gStyles.body}>
-            <View style={gStyles.bodyNav}>
+          <View style={layouts.body}>
+            <View style={layouts.bodyNav}>
               <Text>nav bar styles depend on designer.</Text>
               <Button
-                onPress={this.onAddData}
-                title="Add Data"
+                onPress={this.handleAddData}
+                title='Add Data'
               />
             </View>
             <FlatList
-              style={gStyles.bodyMain}
+              style={layouts.bodyMain}
               data={this.data}
               keyExtractor={item => item.value.toString()}
               renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => this.onPressListItem(item)}>
+                <TouchableOpacity
+                  accessibilityRole='none'
+                  onPress={() => this.handlePressListItem(item)}
+                >
                   <View style={styles.listItem}>
                     <Text>
-                      label:
-                      {item.label}
-                      {' '}
-                      value:
-                      {item.value}
+                      label: {item.label} value: {item.value}
                     </Text>
                   </View>
                 </TouchableOpacity>
               )}
             />
           </View>
-          <View style={gStyles.footer}>
-            <Text style={gStyles.textSecondary}>
+          <View style={layouts.footer}>
+            <Text style={typography.textSecondary}>
             Author: ModyQyW. MIT License.
             </Text>
           </View>
         </View>
       </Provider>
-    );
+    )
   }
 }
 
-export default LayoutDemo2;
+Layout2.propTypes = {
+  navigation: PropTypes.any
+}
+
+export default Layout2

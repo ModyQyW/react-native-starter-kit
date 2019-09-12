@@ -1,7 +1,6 @@
-import config from './Configure';
-import app from './Setup';
+import stores from './stores'
+import app from './setup'
 
 export default function () {
-  const stores = config();
-  return app(stores);
+  return app(stores)
 }

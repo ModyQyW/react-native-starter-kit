@@ -70,7 +70,7 @@ $ git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
 $ cd rn-mobx-starter-kit
 
 $ yarn
-  or
+# or
 $ npm i
 ```
 
@@ -138,39 +138,37 @@ yarn test
   |-- assets                  资源目录
     |-- fonts                 字体资源目录
     |-- images                图片资源目录
+    |-- sounds                音频资源目录
     |-- icon.png              app 图标
-    |-- splash.png            独立 APP 载入屏图片
+    |-- splash.png            独立 app 载入屏图片
     |-- ...                   其他资源目录
   |-- boot                    引导目录
-    |-- Configure.js          配置文件
-    |-- Index.js              调用 store 配置和字体加载
-    |-- Setup.js              加载需要的字体
+    |-- stores.js             store 配置
+    |-- index.js              配置 store，加载字体加载
+    |-- setup.js              资产加载
   |-- components              全局组件
-  |-- general                  全局样式与颜色
-    |-- colors.js
-    |-- styles.js
-  |-- stores                  store 目录
-    |-- related store         相关 store 文件
+  |-- stores                  mobx store 目录
+    |-- xxx.js
   |-- utils                   工具目录
     |-- request.js            axios 封装
-  |-- screens                   view 目录
-    |-- xxx                   view 模块目录
+  |-- screens                 screen 目录
+    |-- xxx                   screen 模块目录
       |-- related js          模块 js 文件
       |-- styles.js           模块样式文件
-    |-- styles.js             全局样式
+    |-- globalStyles.js       全局样式
   |-- App.js                  导航配置文件
 |-- .eslintrc.js              eslint 配置文件
 |-- App.js                    应用入口
 |-- app.json                  expo 应用配置文件
 |-- package.json              应用包文件
-|-- README_CN.md              你懂的
+|-- README_CN.md
 |-- yarn.lock                 包版本文件
 |-- ...
 ```
 
-我几乎在 stores 和 view 中完成了所有工作，有时候还需要在 components 做一些工作。
+我几乎在 stores 和 view 中完成了所有工作，有时候还需要在 components 做一些工作。这个模式适用于小型项目。
 
-如果你的项目足够大，我建议你使用以下模式：
+如果你的项目比较大，我建议你使用以下模式：
 
 - 在 containers 中获取你需要的所有数据，声明你需要的所有方法
 - 传递所有方法和数据到对应的 screens 中
@@ -182,9 +180,10 @@ yarn test
 
 ## 编码规范
 
-我推崇这么一条法则：“永远遵循同一套编码规范——不管有多少人共同参与同一项目, 一定要确保每一行代码都像是同一个人编写的。”我希望你能遵循一个编码规范以保证代码简洁优雅。我在下方给出了一些编码规范以供参考。
+我推崇这么一条法则：“永远遵循同一套编码规范——不管有多少人共同参与同一项目, 一定要确保每一行代码都像是同一个人编写的。”我希望你能遵循一个编码规范以保证代码简洁优雅。我在下方给出了一些编码规范以供参考。本项目中使用了 standard 规范。
 
 - [Coding Specification by @mdo](https://codeguide.bootcss.com/)
+- [JavaScript Standard Style](https://standardjs.com/rules-zhcn.html)
 - [Airbnb JavaScript Style Guide](https://github.com/lin-123/javascript)
 - [Airbnb React/JSX Style Guide](https://github.com/JasonBoy/javascript/tree/master/react)
 
@@ -195,12 +194,14 @@ react
 react-native
 
 redux or mobx
-reactredux or mobx-react
+react-redux or mobx-react
+
+prop-types
 
 third-party lib | 第三方库
 custom components | 自定义组件
 images | 图片
-public style | 公共样式
+global style | 全局样式
 business components & their styles | 业务组件及其样式
 actions
 ```
@@ -210,11 +211,8 @@ actions
 ```md
 getDefaultProps
 getInitialState
-componentWillMount
 componentDidMount
-componentWillReceiveProps
 shouldComponentUpdate
-componentWillUpdate
 componentDidUpdate
 componentWillUnmount
 
@@ -222,15 +220,6 @@ other methods
 
 render
 ```
-
-我为`other methods`制定了一些规则:
-
-- 开头只能是`on`，`handle`
-- 跳转到特定栈的方法命名只能是`onToXXXStack`
-- 如`onPress`，`onChangeText`，`onLongPress`的属性只能调用以`on`开头的方法（onSetNumber）
-- 用于定义某些行为的方法，如 FlatList `renderItem`, `getItemLayout`, `keyExtractor`，只能以`on`开头（onRenderItem, onGetItemLayout）
-- 方法内只能调用以`handle`开头的方法（handleValidate）
-- store 内里的方法只能以`handle`开头（handleGetData）
 
 你可以查看我的代码获取更多的细节。
 
@@ -244,13 +233,6 @@ render
 
 你也可以帮我提高一下我的英语_(:з」∠)_
 
-## 相关链接
-
-- [Configuring ESLint](https://eslint.org/)
-- [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
-- [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
-
 ## 捐赠
 
 我仍在努力使这个项目变得更好，不仅仅是丰富功能，还有完善代码与文档。
@@ -259,4 +241,4 @@ render
 
 |WeChat|Alipay|
 |:-:|:-:|
-|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" />|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" />|
+|<img src="./wechat.png" />|<img src="./alipay.jpeg" />|

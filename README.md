@@ -61,7 +61,7 @@ yarn config set disturl https://npm.taobao.org/dist --global
 
 ### Installation
 
-On the command prompt run the following commands
+Run the following commands in terminal
 
 ```sh
 $ git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
@@ -69,7 +69,7 @@ $ git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
 $ cd rn-mobx-starter-kit
 
 $ yarn
-  or
+# or
 $ npm i
 ```
 
@@ -137,36 +137,35 @@ For more commands and usage, check documents or use `expo -h`.
   |-- assets                  asset directory
     |-- fonts                 font assets directory
     |-- images                image assets directory
+    |-- sounds                sound assets directory
     |-- icon.png              app icon
     |-- splash.png            image for loading and splash screen for standalone apps
     |-- ...                   other assets directory
   |-- boot                    boot directory
-    |-- Configure.js          configure file
-    |-- Index.js              call store configuration and fonts loading
-    |-- Setup.js              load fonts needed
+    |-- Configure.js          stores configuration
+    |-- Index.js              configure stores and load assets
+    |-- Setup.js              assets load
   |-- components              global components
-  |-- general                  global styles and colors
-    |-- colors.js
-    |-- styles.js
-  |-- stores                  stores directory
-    |-- related store         related store files
+  |-- stores                  mobx store directory
+    |-- xxx.js
   |-- utils                   tool directory
     |-- request.js            axios encapsulation
-  |-- screens                   view directory
-    |-- xxx                   view module directory
+  |-- screens                 screen directory
+    |-- xxx                   screen module directory
       |-- related js          module js files
       |-- styles.js           module style file
+    |-- globalStyles.js       global styles
   |-- App.js                  navigation configuration file
 |-- .eslintrc.js              eslint configuration file
 |-- App.js                    app entry
 |-- app.json                  expo app configuration file
 |-- package.json              app package file
-|-- README.md                 you know what it is
+|-- README.md
 |-- yarn.lock                 package version file
 |-- ...
 ```
 
-I almost finish all my job in stores and screens, sometimes also in components. This pattern is suitable for small projects.
+I almost finish all my work in stores and screens, sometimes also in components. This pattern is suitable for small projects.
 
 If your project is big enough, I advise to use this pattern:
 
@@ -180,9 +179,10 @@ Or just change as you like. :D
 
 ## Coding Specification
 
-I appreciate this words: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow one coding specfication to keep your codes neat. I have given some coding specifications below for reference.
+I appreciate this words: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow one coding specfication to keep your codes neat. I have given some coding specifications below for reference. Standard style is used in this project.
 
 - [Coding Specification by @mdo](http://codeguide.co/)
+- [JavaScript Standard Style](https://standardjs.com/rules-en.html)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
@@ -193,12 +193,14 @@ react
 react-native
 
 redux or mobx
-reactredux or mobx-react
+react-redux or mobx-react
+
+prop-types
 
 third-party lib
 custom components
 images
-public style
+global style
 business components & their styles
 actions
 ```
@@ -208,11 +210,8 @@ And a referenced react native method order.
 ```md
 getDefaultProps
 getInitialState
-componentWillMount
 componentDidMount
-componentWillReceiveProps
 shouldComponentUpdate
-componentWillUpdate
 componentDidUpdate
 componentWillUnmount
 
@@ -220,15 +219,6 @@ other methods
 
 render
 ```
-
-I make some rules for `other methods`:
-
-- Should be started with `on`, `handle`
-- Methods to a specific stack should be started with `onToXXXStack`
-- Props like `onPress`, `onChangeText`, `onLongPress` should call methods started with `on`(onSetNumber)
-- Methods used for defining some behavior like FlatList `renderItem`, `getItemLayout`, `keyExtractor` should started with `on`(onRenderItem, onGetItemLayout)
-- Methods called by methods should started with `handle`(handleValidate)
-- Methods in stores should started with `handle`(handleGetData)
 
 You can see my code for more details.
 
@@ -242,13 +232,6 @@ Help me improve it if it's not perfect.
 
 You can also help me improve my English :D
 
-## Related Links
-
-- [Configuring ESLint](https://eslint.org/)
-- [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
-- [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
-
 ## Donate
 
 I am still working on it to imporve - not only add new function but also complete codes and documents.
@@ -257,4 +240,4 @@ If you think this is helpful, you can buy me a coffee :D
 
 |WeChat|Alipay|
 |:-:|:-:|
-|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/wechat.png" style="width: 200px;"/>|<img src="https://raw.githubusercontent.com/ModyQyW/Pictures/master/alipay.jpg" style="width: 200px;" />|
+|<img src="./wechat.png" style="width: 200px;"/>|<img src="./alipay.jpeg" style="width: 200px;" />|
