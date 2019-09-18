@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native'
 import axios from 'axios'
 
 // for dev env
-const baseUrl = ''
+const baseUrl = 'http://localhost:3000/api'
 // for prod env
 // const baseUrl = '';
 
@@ -11,7 +11,7 @@ const baseUrl = ''
 axios.defaults.baseURL = baseUrl
 // 请求 header
 // request header
-axios.defaults.headers = {
+const defualtHeaders = {
   'X-Requested-With': 'XMLHttpRequest',
   'Content-Type': 'application/json',
   Accept: 'application/json'
@@ -49,17 +49,29 @@ axios.interceptors.response.use(
       // console.log(error.response.data);
       // console.log(error.response.status);
       // console.log(error.response.headers);
-      err.msg = 'badStatusCode'
+      const { status } = error.response
+      switch (status) {
+        case 403:
+          err.msg = 'Forbidden'
+          break
+        case 404:
+          err.msg = 'Not found'
+          break
+        case 500:
+          err.msg = 'Internal server error'
+          break
+        default: break
+      }
     } else if (error.request) {
       // The request was made but no response was received
       // 发送了请求，没有收到响应
       // console.log(error.request);
-      err.msg = 'noResponse'
+      err.msg = 'No response'
     } else {
       // Something happened in setting up the request that triggered an Error
       // 请求时发生错误
       // console.log('Error', error.message);
-      err.msg = 'requestError'
+      err.msg = 'Request error'
     }
     return err
   }
@@ -74,6 +86,7 @@ request.get = async ({ url, data: params }) => {
   return axios({
     method: 'get',
     headers: {
+      ...defualtHeaders,
       token
     },
     url,
@@ -86,6 +99,7 @@ request.post = async ({ url, data }) => {
   return axios({
     method: 'post',
     headers: {
+      ...defualtHeaders,
       token
     },
     url,
@@ -98,6 +112,7 @@ request.uploadImage = async ({ url, data }) => {
   return axios({
     method: 'post',
     headers: {
+      ...defualtHeaders,
       token,
       'Content-Type': 'image/*'
     },
