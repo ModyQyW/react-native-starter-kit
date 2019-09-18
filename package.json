@@ -1,7 +1,10 @@
 {
   "name": "rn-mobx-starter-kit",
-  "main": "node_modules/expo/AppEntry.js",
+  "version": "0.1.0",
+  "author": "ModyQyW <261857860@qq.com>",
   "private": true,
+  "license": "MIT",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,10 +12,12 @@
     "web": "expo start --web",
     "prebuild:android": "expo build:android --release-channel test",
     "prebuild:ios": "expo build:ios --release-channel test",
-    "prebuild:web": "expo build:web -d",
+    "prebuild:web": "expo build:web -d --polyfill",
+    "prepublish": "expo publish --release-channel test",
     "build:android": "expo build:android",
     "build:ios": "expo build:ios",
     "build:web": "expo build:web",
+    "publish": "expo publish",
     "eject": "expo eject",
     "test": "jest --watchAll"
   },
@@ -36,8 +41,7 @@
     "react-native-ui-xg": "^0.0.6",
     "react-native-web": "^0.11.7",
     "react-navigation": "^3.12.1",
-    "teaset": "^0.7.0",
-    "validator": "^11.1.0"
+    "teaset": "^0.7.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
