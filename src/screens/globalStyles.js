@@ -732,7 +732,7 @@ const layouts = StyleSheet.create({
   }
 })
 
-module.exports = {
+export {
   colors,
   typography,
   layouts
