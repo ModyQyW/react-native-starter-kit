@@ -1,243 +1,169 @@
-# React Native MobX Starter Kit
+# rn-mobx-starter-kit
 
-*By ModyQyW*
+A simple cross-platform app built with Expo 34, react-native, mobx and react-navigation.
 
----
+English | [简体中文](README.CN.md)
 
-## Introduction
+## Getting Started
 
-This is A [React Native](https://facebook.github.io/react-native/) Starter Kit with [React Navigation](https://reactnavigation.org/) and [MobX](https://github.com/mobxjs/mobx) inited by [Expo](https://docs.expo.io/). Hope this helpful.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#Deployment) for notes on how to deploy the project on a live system.
 
-To use offline support, make sure Expo version is higher than 23. Here I use Expo 34.
+### Prerequisites
 
-You **must** check [Expo Document](https://docs.expo.io/versions/latest/) for overall information.
+- Using nvm, node lts, npm lts and yarn is recommended.
+  - Follow the links below and install nvm first
+    - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm)
+    - [nvm-windows](https://github.com/coreybutler/nvm-windows)
+    - Using [Homebrew](https://brew.sh/) to install nvm on Mac is **NOT** recommended
+  - Then install node lts in terminal / command line
 
-If you want to change Expo SDK, please check [here](https://docs.expo.io/versions/v34.0.0/workflow/upgrading-expo-sdk-walkthrough/) and [here](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319).
+    ```sh
+    # for now, lts version is 10.16.3
+    # last updated: 2019.09.17
+    nvm install 10.16.3
+    ```
 
-Before building standalone apps, please check [here](https://docs.expo.io/versions/latest/distribution/building-standalone-apps/).
+  - Globally update npm to lts and install yarn
 
-I import several UI toolkit listed below.
+    ```sh
+    npm i -g npm@lts
+    npm i -g yarn
+    ```
 
-- [React Native Elements](https://react-native-training.github.io/react-native-elements/docs/getting_started.html)
-- [Ant Design Mobile RN of React](https://rn.mobile.ant.design/docs/react/introduce)
-- [teaset](https://github.com/rilyu/teaset/blob/master/README.md)
-- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)
+  - If you are Chinese, maybe you should set mirrors
+- Git is also required.
+  - [git for Windows/Linux](https://git-scm.com/downloads)
+  - Using [Homebrew](https://brew.sh/) to install git on Mac is recommended.
+- react-native-cli and expo-cli is also required.
+  
+  ```sh
+  npm i -g react-native-cli expo-cli
+  ```
 
-They are similar in style and complementary in function, allowing to use different components as needed. My personal suggestion and what this project did is to use React Native Elements as the main UI. When there are component requirements that can't be met, use another library to get a solution. Please adjust according to your needs.
-
-Besides, I add some Utilities I think helpful.
-
-- [moment](http://momentjs.com/)
-- [validator](https://github.com/chriso/validator.js)
-
-About flexbox, check here:
-
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-## Get Started
-
-### System Environment Requirements
-
-- Globally installed [Node](https://nodejs.org/en/) **first**
-- Globally installed react-native-cli
-- Globally installed expo-cli
-- Globally installed yarn for Chinese users
-
-```sh
-npm i -g react-native-cli
-npm i -g expo-cli
-# optional
-npm i -g yarn
-```
-
-- Chinese users are recommended to set repository to mirrors
+### Installing
 
 ```sh
-npm config set registry https://registry.npm.taobao.org --global
-npm config set disturl https://npm.taobao.org/dist --global
-yarn config set registry https://registry.npm.taobao.org --global
-yarn config set disturl https://npm.taobao.org/dist --global
-```
+# terminal / command line 1
+# clone the project
+git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
 
-### Installation
+# enter the project directory
+cd rn-mobx-starter-kit
 
-Run the following commands in terminal
+# install dependency
+yarn
 
-```sh
-$ git clone git@github.com:ModyQyW/rn-mobx-starter-kit.git
-
-$ cd rn-mobx-starter-kit
-
-$ yarn
-# or
-$ npm i
-```
-
-## Commands
-
-```sh
-# use -h for more information
-
-# start
-# expo start
-yarn start
-
-# run on android
-# expo start --android
+# start developing android
 yarn android
 
-# run on ios
-# expo start --ios
+# start developing ios
 yarn ios
 
-# run on web (beta)
-# expo start --web
-yarn web
-
-# build android app in test channel
-# expo build:android --release-channel test
+# use test channel to build android and test
 yarn prebuild:android
 
-# build ios ipa in test channel
-# expo build:ios --release-channel test
+# use test channel to build ios and test
 yarn prebuild:ios
 
-# build web using webpack development mode (beta)
-# expo build:web -d
-yarn prebuild:web
+# test channel publish
+yarn prepublish
 
-# build android app
-# expo build:android
+# use default channel to build android and deploy
 yarn build:android
 
-# build ios ipa
-# yarn build:ios
-expo build:ios
+# use default channel to build ios and deploy
+yarn build:ios
 
-# build web (beta)
-# expo build:web
-expo build:web
+# default channel publish
+yarn publish
 
 # eject
-# make sure you know what you are doing when exec this
-# check https://docs.expo.io/versions/v34.0.0/expokit/eject/
-# expo eject
+# you had better know what it means
 yarn eject
 
-# test using jest
-yarn test
+# terminal / command line 2
+# clone corresponding backend server for developing
+git clone git@github.com:ModyQyW/backend-server.git
+
+# enter the server directory
+cd backend-server
+
+# install dependency
+yarn
+
+# start server
+yarn start
 ```
 
-For more commands and usage, check documents or use `expo -h`.
+## Running the tests
 
-## Code Organization
+No tests now. Pull requests are welcome.
 
-```md
-|-- src                       code and asset directory
-  |-- assets                  asset directory
-    |-- fonts                 font assets directory
-    |-- images                image assets directory
-    |-- sounds                sound assets directory
-    |-- icon.png              app icon
-    |-- splash.png            image for loading and splash screen for standalone apps
-    |-- ...                   other assets directory
-  |-- boot                    boot directory
-    |-- Configure.js          stores configuration
-    |-- Index.js              configure stores and load assets
-    |-- Setup.js              assets load
-  |-- components              global components
-  |-- stores                  mobx store directory
-    |-- xxx.js
-  |-- utils                   tool directory
-    |-- request.js            axios encapsulation
-  |-- screens                 screen directory
-    |-- xxx                   screen module directory
-      |-- related js          module js files
-      |-- styles.js           module style file
-    |-- globalStyles.js       global styles
-  |-- App.js                  navigation configuration file
-|-- .eslintrc.js              eslint configuration file
-|-- App.js                    app entry
-|-- app.json                  expo app configuration file
-|-- package.json              app package file
-|-- README.md
-|-- yarn.lock                 package version file
-|-- ...
-```
+## Deployment
 
-I almost finish all my work in stores and screens, sometimes also in components. This pattern is suitable for small projects.
+First, open [request.js](./src/utils/request.js), comment L5 and uncomment L7.
 
-If your project is big enough, I advise to use this pattern:
+Second, Check your update code and make sure they are fine. Or, you need to build a new app and upload.
 
-- get all data and write all functions you needed in containers
-- pass functions and data to corresponding screens
-- deal with layout and logic in corresponding screens
+Assuming you do not have your own server:
 
-If there are more than one role, I advise to create new corresponding role folders in screens (containers and screens for big project) and put corresponding files.
+- Run `yarn build:android`(for android) or `yarn build:ios`(for ios)
+- Download the app and upload to store
+- Use `yarn publish` to update your app
 
-Or just change as you like. :D
+Assuming you have your own server and you are going to host the app on it:
 
-## Coding Specification
+- Follow [Hosting An App on Your Servers](https://docs.expo.io/versions/v34.0.0/distribution/hosting-your-app/)
+- For short
+  - Export the asset files and upload to your server
+  - Build the app, download and upload to store
+  - Repeat the first step to update your app
 
-I appreciate this words: *Always follow the same set of coding specification - no matter how many people are involved in the same project, make sure that each line of code appears to be written by the same person.* I hope you can follow one coding specfication to keep your codes neat. I have given some coding specifications below for reference. Standard style is used in this project.
+## Built With
 
-- [Coding Specification by @mdo](http://codeguide.co/)
-- [JavaScript Standard Style](https://standardjs.com/rules-en.html)
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-- [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+- [expo](https://expo.io/) - A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web apps from the same codebase. **You should read the documents very, very carefully.**
+- [react-native](https://facebook.github.io/react-native/) - A framework for building native apps using React
+- [mobx](https://mobx.js.org/) - Simple, scalable state management
+- [react-navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps
+- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+- [react-native-elements](https://react-native-training.github.io/react-native-elements/) - Cross Platform React Native UI Toolkit
+- [@ant-design/react-native](https://rn.mobile.ant.design/) - A UI component library based on React Native
+- [teaset](https://github.com/rilyu/teaset) - A UI library for react native, provides 20+ pure JS(ES6) components, focusing on content display and action control
+- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) - A suit of cross platform React Native ui kit
+- [eslint](https://eslint.org) - An open source project provided a pluggable linting utility for JavaScript, using [standard](https://standardjs.com/) in the project
 
-Besides, I have given a referenced react native import order.
+## Features
 
-```md
-react
-react-native
+- Cross platform: android and ios
+- Preset styles
+- Layout examples
+- Store examples
 
-redux or mobx
-react-redux or mobx-react
+TODO:
 
-prop-types
+- Full documents about how to modify
+- Add typescript support
 
-third-party lib
-custom components
-images
-global style
-business components & their styles
-actions
-```
+## Contributing
 
-And a referenced react native method order.
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests.
 
-```md
-getDefaultProps
-getInitialState
-componentDidMount
-shouldComponentUpdate
-componentDidUpdate
-componentWillUnmount
+## Versioning
 
-other methods
+Use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/ModyQyW/rn-mobx-starter-kit/releases).
 
-render
-```
+## Authors
 
-You can see my code for more details.
+- **Rui Wu** - *Initial work* - [ModyQyW](https://github.com/ModyQyW)
 
-P.S. Default using MobX strict mode. Check [App.js](./src/App.js).
+See also the list of [contributors](https://github.com/ModyQyW/rn-mobx-starter-kit/contributors) who participated in this project.
 
-## Advice
+## License
 
-Welcome to give me some advice whatever you want to say. I am a Chinese and my English is poor. Forgive me.
+[MIT](./LICENSE)
 
-Help me improve it if it's not perfect.
+Copyright (c) 2019-present ModyQyW
 
-You can also help me improve my English :D
+## Acknowledgments
 
-## Donate
-
-I am still working on it to imporve - not only add new function but also complete codes and documents.
-
-If you think this is helpful, you can buy me a coffee :D
-
-|WeChat|Alipay|
-|:-:|:-:|
-|<img src="./wechat.png" style="width: 200px;"/>|<img src="./alipay.jpeg" style="width: 200px;" />|
+- [react-native-boilerplate-mobx-flow](https://github.com/GeekyAnts/react-native-boilerplate-mobx-flow)
