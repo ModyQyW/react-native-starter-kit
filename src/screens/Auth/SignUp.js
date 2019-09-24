@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
 })
 
 // handle your sign up logic here
-// 在这里处理你的注册逻辑
 @observer
 class SignUp extends React.Component {
   @observable navi = this.props.navigation;

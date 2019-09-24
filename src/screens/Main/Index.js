@@ -22,7 +22,6 @@ class Index extends React.Component {
         </View>
         <View style={layouts.body}>
           <Text>Do something to start coding!</Text>
-          <Text>做点什么，开始打码吧！</Text>
           <Button
             onPress={this.handleToDemoStack}
             title='Jump to Demo Index'

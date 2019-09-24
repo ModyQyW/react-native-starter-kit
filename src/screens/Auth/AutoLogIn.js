@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
 })
 
 // handle your auto log in logic here
-// 在这里处理你的自动登录逻辑
 @inject('authStore')
 @observer
 class AutoLogIn extends React.Component {
@@ -29,8 +28,7 @@ class AutoLogIn extends React.Component {
   }
 
   /**
-   * renew token
-   * 更新 token
+   * @description renew token
    * @memberof AutoLogIn
    */
   handleRenewToken = async () => {
@@ -38,12 +36,12 @@ class AutoLogIn extends React.Component {
     if (token) {
       this.authStore
         .handleRenewToken()
-        .then(({ success, message }) => {
-          if (success) {
+        .then(({ suc, msg }) => {
+          if (suc) {
             this.handleToMainStack()
           } else {
             Alert.alert(
-              'Error', message || 'Failed to get necessary information.',
+              'Error', msg || 'Failed to get necessary information.',
               [{ text: 'OK', onPress: () => {} }],
               { cancelable: false, onDismiss: () => {} }
             )

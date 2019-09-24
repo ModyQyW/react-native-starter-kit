@@ -2,47 +2,83 @@ import { AsyncStorage } from 'react-native'
 import { observable, action } from 'mobx'
 import req from '../utils/request'
 
+/**
+ * @typedef  {Object}  UserInfo
+ * @property {Number}  id
+ * @property {String}  username
+ * @property {String}  nickname
+ * @property {Number}  role
+ *
+ * @typedef  {Object}  Result
+ * @property {Boolean} suc
+ * @property {String}  msg
+ */
+
 class AuthStore {
+  /**
+   * @description token's key in AsyncStorage
+   * @type {String}
+   */
   @observable tokenKey = 'token';
 
+  /**
+   * @description token's value in AsyncStorage
+   * @type {String}
+   */
   @observable token = '';
 
-  @observable userInfo = null;
+  /**
+   * @description the user's info
+   * @type {UserInfo}
+   */
+  @observable userInfo = {
+    id: -1,
+    username: '---',
+    nickname: '---',
+    role: -1
+  };
 
   /**
-   * set data
-   * 设置数据
+   * @description set data
    * @param {Object} anonymous
    * @param {String} anonymous.token
    * @param {Object} anonymous.userInfo
    * @memberof AuthStore
    */
   @action
-  async handleSetData ({ token = '', userInfo = {} }) {
+  async handleSetData ({ token, id, username, nickname, role }) {
     this.token = token
-    this.userInfo = userInfo
+    this.userInfo = {
+      id,
+      username,
+      nickname,
+      role
+    }
     await AsyncStorage.setItem(this.tokenKey, token)
   }
 
   /**
-   * reset data
-   * 重置数据
+   * @description reset data
    * @memberof AuthStore
    */
   @action
   async handleResetData () {
     this.token = ''
-    this.userInfo = null
+    this.userInfo = {
+      id: -1,
+      username: '---',
+      nickname: '---',
+      role: -1
+    }
     await AsyncStorage.removeItem(this.tokenKey)
   }
 
   /**
-   * log in
-   * 登入
+   * @description log in
    * @param {Object} anonymous
    * @param {String} anonymous.username
    * @param {String} anonymous.password
-   * @returns {Promise.<Object>}
+   * @returns {Promise.<Result>}
    * @memberof App
    */
   handleLogIn ({ username, password }) {
@@ -52,32 +88,29 @@ class AuthStore {
         username,
         password
       }
-    }).then(async ({ success, message, token, userInfo }) => {
-      if (success) {
-        await this.handleSetData({ token, userInfo })
+    }).then(async ({ suc, msg, data: { token, id, username, nickname, role } }) => {
+      if (suc) {
+        await this.handleSetData({ token, id, username, nickname, role })
       }
-      return { success, message }
+      return { suc, msg }
     })
   }
 
   /**
-   * renew token
-   * 更新登录态
-   * @returns {Object} res
-   * @returns {Boolean} res.success
-   * @returns {String} res.message
+   * @description renew token
+   * @returns {Promise.<Result>}
    * @memberof AuthStore
    */
   handleRenewToken = async () => {
     return req.post({
       url: '/auth/renew'
-    }).then(async ({ success, message, token, userInfo }) => {
-      if (success) {
-        await this.handleSetData({ token, userInfo })
+    }).then(async ({ suc, msg, data: { token, id, username, nickname, role } }) => {
+      if (suc) {
+        await this.handleSetData({ token, id, username, nickname, role })
       } else {
         await this.handleResetData()
       }
-      return { success, message }
+      return { suc, msg }
     })
   }
 }

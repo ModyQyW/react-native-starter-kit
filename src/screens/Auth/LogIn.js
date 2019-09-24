@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
 })
 
 // handle your log in logic here
-// 在这里处理你的登录逻辑
 @observer
 class LogIn extends React.Component {
   @observable navi = this.props.navigation;
