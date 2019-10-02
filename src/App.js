@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 import { configure } from 'mobx'
 import { ThemeProvider } from 'react-native-elements'
 

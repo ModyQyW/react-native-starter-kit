@@ -40,9 +40,9 @@ class AuthStore {
 
   /**
    * @description set data
-   * @param {Object} anonymous
-   * @param {String} anonymous.token
-   * @param {Object} anonymous.userInfo
+   * @param {Object}   anonymous
+   * @param {String}   anonymous.token
+   * @param {UserInfo} anonymous.userInfo
    * @memberof AuthStore
    */
   @action
