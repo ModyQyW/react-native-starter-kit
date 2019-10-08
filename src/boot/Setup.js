@@ -31,8 +31,7 @@ export default (stores) => {
     }
 
     render () {
-      const { isReady } = this.state
-      if (!isReady) {
+      if (!this.state.isReady) {
         return <AppLoading />
       }
       return (

@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from 'react-native'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import bindAll from 'lodash.bindall'
 
 import { Icon } from 'react-native-elements'
 
@@ -12,7 +13,14 @@ import { layouts, typography } from '../globalStyles'
 class Layout1 extends React.Component {
   @observable navi = this.props.navigation;
 
-  handleBack = () => {
+  constructor (props) {
+    super(props)
+    bindAll(this, [
+      'handleBack'
+    ])
+  }
+
+  handleBack () {
     this.navi.goBack()
   }
 
@@ -61,7 +69,7 @@ Ad laboris culpa et excepteur ut. Eiusmod elit aute in dolore. Voluptate labore 
 }
 
 Layout1.propTypes = {
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default Layout1

@@ -3,6 +3,7 @@ import { View, Text, Button } from 'react-native'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import bindAll from 'lodash.bindall'
 
 import { layouts, typography } from '../globalStyles'
 
@@ -10,7 +11,14 @@ import { layouts, typography } from '../globalStyles'
 class Index extends React.Component {
   @observable navi = this.props.navigation;
 
-  handleToDemoStack = () => {
+  constructor (props) {
+    super(props)
+    bindAll(this, [
+      'handleToDemoStack'
+    ])
+  }
+
+  handleToDemoStack () {
     this.navi.navigate('DemoStack')
   }
 
@@ -33,7 +41,7 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default Index

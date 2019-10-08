@@ -66,48 +66,42 @@ axios.interceptors.response.use(
   }
 )
 
-const request = {}
-
-// pass null if there is nothing to send
-
-request.get = async ({ url, data: params }) => {
-  const token = await AsyncStorage.getItem('token')
-  return axios({
-    method: 'get',
-    headers: {
-      ...defualtHeaders,
-      token
-    },
-    url,
-    params
-  })
+export default {
+  get: async function ({ url, data: params }) {
+    const token = await AsyncStorage.getItem('token')
+    return axios({
+      method: 'get',
+      headers: {
+        ...defualtHeaders,
+        token
+      },
+      url,
+      params
+    })
+  },
+  post: async function ({ url, data }) {
+    const token = await AsyncStorage.getItem('token')
+    return axios({
+      method: 'post',
+      headers: {
+        ...defualtHeaders,
+        token
+      },
+      url,
+      data
+    })
+  },
+  uploadImage: async function ({ url, data }) {
+    const token = await AsyncStorage.getItem('token')
+    return axios({
+      method: 'post',
+      headers: {
+        ...defualtHeaders,
+        token,
+        'Content-Type': 'image/*'
+      },
+      url,
+      data
+    })
+  }
 }
-
-request.post = async ({ url, data }) => {
-  const token = await AsyncStorage.getItem('token')
-  return axios({
-    method: 'post',
-    headers: {
-      ...defualtHeaders,
-      token
-    },
-    url,
-    data
-  })
-}
-
-request.uploadImage = async ({ url, data }) => {
-  const token = await AsyncStorage.getItem('token')
-  return axios({
-    method: 'post',
-    headers: {
-      ...defualtHeaders,
-      token,
-      'Content-Type': 'image/*'
-    },
-    url,
-    data
-  })
-}
-
-export default request

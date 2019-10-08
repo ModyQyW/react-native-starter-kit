@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import bindAll from 'lodash.bindall'
 
 import { Button } from 'react-native-elements'
 
@@ -17,11 +18,19 @@ const styles = StyleSheet.create({
 class LogIn extends React.Component {
   @observable navi = this.props.navigation;
 
-  handleToMainStack = () => {
+  constructor (props) {
+    super(props)
+    bindAll(this, [
+      'handleToMainStack',
+      'handleToAuthSignUp'
+    ])
+  }
+
+  handleToMainStack () {
     this.navi.navigate('MainStack')
   }
 
-  handleToAuthSignUp = () => {
+  handleToAuthSignUp () {
     this.navi.navigate('AuthSignUp')
   }
 
@@ -49,7 +58,7 @@ class LogIn extends React.Component {
 }
 
 LogIn.propTypes = {
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default LogIn

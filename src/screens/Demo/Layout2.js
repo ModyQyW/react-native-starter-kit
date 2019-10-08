@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button } from 'reac
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import bindAll from 'lodash.bindall'
 
 import { Icon } from 'react-native-elements'
 // use ant-design toast
@@ -25,12 +26,21 @@ class Layout2 extends React.Component {
 
   @observable data = [];
 
+  constructor (props) {
+    super(props)
+    bindAll(this, [
+      'handleAddData',
+      'handleBack',
+      'handlePressListItem'
+    ])
+  }
+
   componentDidMount () {
     this.handleAddData()
   }
 
   @action
-  handleAddData = () => {
+  handleAddData () {
     for (let i = (this.cnt - 1) * 10 + 1, len = this.cnt * 10; i <= len; i += 1) {
       this.data.push({
         label: `label${i - 1}`,
@@ -41,11 +51,11 @@ class Layout2 extends React.Component {
     this.cnt += 1
   }
 
-  handleBack = () => {
+  handleBack () {
     this.navi.goBack()
   }
 
-  handlePressListItem = (item) => {
+  handlePressListItem (item) {
     Toast.info(`You just clicked (index: ${item.value}, label: ${item.label}) item`)
   }
 
@@ -103,7 +113,7 @@ class Layout2 extends React.Component {
 }
 
 Layout2.propTypes = {
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default Layout2

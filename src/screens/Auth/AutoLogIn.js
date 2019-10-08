@@ -32,7 +32,7 @@ class AutoLogIn extends React.Component {
    * @description renew token
    * @memberof AutoLogIn
    */
-  handleRenewToken = async () => {
+  async handleRenewToken () {
     const token = await AsyncStorage.getItem(this.tokenKey)
     if (token) {
       this.authStore
@@ -72,8 +72,7 @@ class AutoLogIn extends React.Component {
 }
 
 AutoLogIn.propTypes = {
-  authStore: PropTypes.any,
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default AutoLogIn

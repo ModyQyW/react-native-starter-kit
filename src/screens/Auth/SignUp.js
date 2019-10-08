@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Button } from 'react-native'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import bindAll from 'lodash.bindall'
 
 import { layouts, typography } from '../globalStyles'
 
@@ -15,7 +16,14 @@ const styles = StyleSheet.create({
 class SignUp extends React.Component {
   @observable navi = this.props.navigation;
 
-  handleBack = () => {
+  constructor (props) {
+    super(props)
+    bindAll(this, [
+      'handleBack'
+    ])
+  }
+
+  handleBack () {
     this.navi.goBack()
   }
 
@@ -40,7 +48,7 @@ class SignUp extends React.Component {
 }
 
 SignUp.propTypes = {
-  navigation: PropTypes.any
+  navigation: PropTypes.object
 }
 
 export default SignUp
