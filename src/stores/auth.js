@@ -83,7 +83,7 @@ class AuthStore {
    */
   handleLogIn ({ username, password }) {
     return req.post({
-      url: '/auth/signin',
+      url: '/auth/login',
       data: {
         username,
         password
