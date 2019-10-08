@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { observable } from 'mobx'
-import { observer } from 'mobx-react/native'
+import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 
 import { Button } from 'react-native-elements'

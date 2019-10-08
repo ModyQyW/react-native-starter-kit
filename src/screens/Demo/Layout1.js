@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { observable } from 'mobx'
-import { observer } from 'mobx-react/native'
+import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 
 import { Icon } from 'react-native-elements'

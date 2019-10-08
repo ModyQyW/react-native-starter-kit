@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View, ActivityIndicator, Alert, AsyncStorage } from 'react-native'
 import { observable, computed } from 'mobx'
-import { observer, inject } from 'mobx-react/native'
+import { observer, MobXProviderContext } from 'mobx-react'
 import PropTypes from 'prop-types'
 
 import { layouts } from '../globalStyles'
@@ -11,10 +11,11 @@ const styles = StyleSheet.create({
 })
 
 // handle your auto log in logic here
-@inject('authStore')
 @observer
 class AutoLogIn extends React.Component {
-  @observable authStore = this.props.authStore;
+  static contextType = MobXProviderContext;
+
+  @observable authStore = this.context.authStore;
 
   @observable navi = this.props.navigation;
 

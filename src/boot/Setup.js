@@ -1,7 +1,7 @@
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import React from 'react'
-import { Provider } from 'mobx-react/native'
+import { MobXProviderContext } from 'mobx-react'
 
 import App from '../App'
 
@@ -36,9 +36,9 @@ export default (stores) => {
         return <AppLoading />
       }
       return (
-        <Provider {...stores}>
+        <MobXProviderContext.Provider value={stores}>
           <App />
-        </Provider>
+        </MobXProviderContext.Provider>
       )
     }
   }
