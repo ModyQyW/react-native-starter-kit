@@ -1,6 +1,6 @@
 # rn-mobx-starter-kit
 
-使用 Expo 34，react-native，mobx 和 react-navigation 构建的跨平台简单 app。
+使用 Expo 35，react-native，mobx 和 react-navigation 构建的跨平台简单 app。
 
 [English](README.md) | 简体中文
 
@@ -113,7 +113,7 @@ yarn start
 
 假定你有自己的服务器，而且要在上面托管你的 app：
 
-- 跟随 [Hosting An App on Your Servers](https://docs.expo.io/versions/v34.0.0/distribution/hosting-your-app/) 的指引
+- 跟随 [Hosting An App on Your Servers](https://docs.expo.io/versions/v35.0.0/distribution/hosting-your-app/) 的指引
 - 简而言之
   - 导出资产文件，上传到服务器上
   - 构建 app，下载并上传到商店

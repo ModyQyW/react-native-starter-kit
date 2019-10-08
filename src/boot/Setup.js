@@ -22,7 +22,7 @@ export default (stores) => {
     async loadFonts () {
       // await Expo.Font.loadAsync({
       //     write the font you need load here
-      //     check https://docs.expo.io/versions/v34.0.0/sdk/font
+      //     check https://docs.expo.io/versions/v35.0.0/sdk/font
       // });
       await Font.loadAsync({
         antoutline: require('./../../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf'),

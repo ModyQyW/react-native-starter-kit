@@ -1,6 +1,6 @@
 # rn-mobx-starter-kit
 
-A simple cross-platform app built with Expo 34, react-native, mobx and react-navigation.
+A simple cross-platform app built with Expo 35, react-native, mobx and react-navigation.
 
 English | [简体中文](README.CN.md)
 
@@ -113,7 +113,7 @@ Assuming you do not have your own server:
 
 Assuming you have your own server and you are going to host the app on it:
 
-- Follow [Hosting An App on Your Servers](https://docs.expo.io/versions/v34.0.0/distribution/hosting-your-app/)
+- Follow [Hosting An App on Your Servers](https://docs.expo.io/versions/v35.0.0/distribution/hosting-your-app/)
 - For short
   - Export the asset files and upload to your server
   - Build the app, download and upload to store
