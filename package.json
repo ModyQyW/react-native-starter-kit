@@ -18,6 +18,7 @@
     "build:web": "expo build:web",
     "publish": "expo publish",
     "eject": "expo eject",
+    "lint": "eslint .",
     "test": "jest --watchAll"
   },
   "jest": {
