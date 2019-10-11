@@ -42,7 +42,7 @@
     "react-native-ui-xg": "^0.0.6",
     "react-native-web": "^0.11.7",
     "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^1.9.3",
+    "react-navigation-stack": "^1.9.4",
     "teaset": "^0.7.0"
   },
   "devDependencies": {
