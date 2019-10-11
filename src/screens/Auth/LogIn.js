@@ -6,8 +6,7 @@ import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
 
 import { Button } from 'react-native-elements'
-
-import { layouts, typography } from '../globalStyles'
+import { layouts, typography } from '@modyqyw/css-styles/app/reactnative/gloabl'
 
 const styles = StyleSheet.create({
 

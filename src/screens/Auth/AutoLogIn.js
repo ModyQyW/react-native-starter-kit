@@ -4,7 +4,7 @@ import { observable, computed } from 'mobx'
 import { observer, MobXProviderContext } from 'mobx-react'
 import PropTypes from 'prop-types'
 
-import { layouts } from '../globalStyles'
+import { layouts } from '@modyqyw/css-styles/app/reactnative/gloabl'
 
 const styles = StyleSheet.create({
 
