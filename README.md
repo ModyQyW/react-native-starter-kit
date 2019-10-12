@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Using nvm, node lts, npm lts and yarn is recommended.
+- Using nvm, node lts, npm lts and yarn is recommended
   - Follow the links below and install nvm first
     - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm)
     - [nvm-windows](https://github.com/coreybutler/nvm-windows)
@@ -31,10 +31,10 @@ These instructions will get you a copy of the project up and running on your loc
     ```
 
   - If you are Chinese, maybe you should set mirrors
-- Git is also required.
+- Git is also required
   - [git for Windows/Linux](https://git-scm.com/downloads)
-  - Using [Homebrew](https://brew.sh/) to install git on Mac is recommended.
-- react-native-cli and expo-cli is also required.
+  - Using [Homebrew](https://brew.sh/) to install git on Mac is recommended
+- react-native-cli and expo-cli is also required
   
   ```sh
   npm i -g react-native-cli expo-cli

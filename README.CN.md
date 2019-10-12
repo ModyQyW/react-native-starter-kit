@@ -10,7 +10,7 @@
 
 ### 准备
 
-- 推荐使用 nvm，长期支持版 lts node，长期支持版 npm 和 yarn。
+- 推荐使用 nvm，长期支持版 lts node，长期支持版 npm 和 yarn
   - 参照以下链接，首先安装 nvm
     - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm)
     - [nvm-windows](https://github.com/coreybutler/nvm-windows)
@@ -31,10 +31,10 @@
     ```
 
   - 如果你是国人，或许你应该设置镜像
-- Git 也是需要的。
+- Git 也是需要的
   - [git for Windows/Linux](https://git-scm.com/downloads)
   - 使用 [Homebrew](https://brew.sh/) 在 Mac 安装 git 是推荐的
-- react-native-cli 和 expo-cli 也是需要的。
+- react-native-cli 和 expo-cli 也是需要的
   
   ```sh
   npm i -g react-native-cli expo-cli
