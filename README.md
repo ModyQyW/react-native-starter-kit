@@ -34,10 +34,10 @@ These instructions will get you a copy of the project up and running on your loc
 - Git is also required
   - [git for Windows/Linux](https://git-scm.com/downloads)
   - Using [Homebrew](https://brew.sh/) to install git on Mac is recommended
-- react-native-cli and expo-cli is also required
+- expo-cli is also required
   
   ```sh
-  npm i -g react-native-cli expo-cli
+  npm i -g expo-cli
   ```
 
 ### Installing

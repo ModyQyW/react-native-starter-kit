@@ -34,10 +34,10 @@
 - Git 也是需要的
   - [git for Windows/Linux](https://git-scm.com/downloads)
   - 使用 [Homebrew](https://brew.sh/) 在 Mac 安装 git 是推荐的
-- react-native-cli 和 expo-cli 也是需要的
+- expo-cli 也是需要的
   
   ```sh
-  npm i -g react-native-cli expo-cli
+  npm i -g expo-cli
   ```
 
 ### 安装
