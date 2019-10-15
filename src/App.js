@@ -57,8 +57,7 @@ const AppSwitch = createSwitchNavigator(
     DemoStack
   },
   {
-    initialRouteName: 'AuthAutoLogIn',
-    headerMode: 'none'
+    initialRouteName: 'AuthAutoLogIn'
   }
 )
 
