@@ -27,6 +27,8 @@ class Layout2 extends React.Component {
     bindAll(this, [
       'handleAddData',
       'handleBack',
+      'onExtractKey',
+      'onRenderListItem',
       'handlePressListItem'
     ])
   }
@@ -49,6 +51,25 @@ class Layout2 extends React.Component {
 
   handleBack () {
     this.props.navigation.goBack()
+  }
+
+  onExtractKey (item) {
+    return item.value.toString()
+  }
+
+  onRenderListItem ({ item }) {
+    return (
+      <TouchableOpacity
+        accessibilityRole='none'
+        onPress={() => this.handlePressListItem(item)}
+      >
+        <View style={styles.listItem}>
+          <Text>
+            label: {item.label} value: {item.value}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    )
   }
 
   handlePressListItem (item) {
@@ -82,19 +103,8 @@ class Layout2 extends React.Component {
             <FlatList
               style={layouts.bodyMain}
               data={this.data}
-              keyExtractor={item => item.value.toString()}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  accessibilityRole='none'
-                  onPress={() => this.handlePressListItem(item)}
-                >
-                  <View style={styles.listItem}>
-                    <Text>
-                      label: {item.label} value: {item.value}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              )}
+              keyExtractor={this.onExtractKey}
+              renderItem={this.onRenderListItem}
             />
           </View>
           <View style={layouts.footer}>

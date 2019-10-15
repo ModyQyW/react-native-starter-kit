@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { View, Text, ScrollView } from 'react-native'
-import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
@@ -37,7 +36,7 @@ class Layout1 extends React.Component {
           style={layouts.bodyMain}
         >
           <Text>Body</Text>
-          <Text style={layouts.textMainLight}>To test scroll, insert lorem below.</Text>
+          <Text style={typography.textMainLight}>To test scroll, insert lorem below.</Text>
           <Text>
 Culpa duis adipisicing cupidatat eiusmod aliqua in. Eu reprehenderit aliquip sunt eiusmod esse. Adipisicing cillum voluptate dolor aute occaecat incididunt pariatur cillum nulla. Proident labore ipsum sit deserunt minim cupidatat enim nisi veniam ullamco duis et. Ea ipsum laborum aute qui elit.
 
