@@ -2,6 +2,8 @@
 
 A simple cross-platform app built with Expo 35, react-native, mobx and react-navigation.
 
+Check [rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit) for typescript support.
+
 English | [简体中文](README.CN.md)
 
 ## Getting Started
@@ -121,7 +123,7 @@ Assuming you have your own server and you are going to host the app on it:
 
 ## Built With
 
-- [expo](https://expo.io/) - A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web apps from the same codebase. **You should read the documents very, very carefully.**
+- [expo](https://expo.io/) - A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web apps from the same codebase **You should read the documents very, very carefully.**
 - [react-native](https://facebook.github.io/react-native/) - A framework for building native apps using React
 - [mobx](https://mobx.js.org/) - Simple, scalable state management
 - [react-navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps
@@ -142,7 +144,6 @@ Assuming you have your own server and you are going to host the app on it:
 TODO:
 
 - Full documents about how to modify
-- Add typescript support
 
 ## Contributing
 

@@ -2,6 +2,8 @@
 
 使用 Expo 35，react-native，mobx 和 react-navigation 构建的跨平台简单 app。
 
+typescript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit)。
+
 [English](README.md) | 简体中文
 
 ## 起步
@@ -121,7 +123,7 @@ yarn start
 
 ## Built With
 
-- [expo](https://expo.io/)：一组工具和服务，用于构建，部署和快速迭代来自相同代码库的原生 iOS，Android 和 Web 应用程序。 **你要非常非常仔细地阅读文档。**
+- [expo](https://expo.io/)：一组工具和服务，用于构建，部署和快速迭代来自相同代码库的原生 iOS，Android 和 Web 应用程序 **你要非常非常仔细地阅读文档。**
 - [react-native](https://reactnative.cn/)：使用 React 构建原生应用程序的框架
 - [mobx](https://mobx.js.org/)：简单，可扩展的状态管理
 - [react-navigation](https://reactnavigation.org/)：React Native 应用程序的路由和导航
