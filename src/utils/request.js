@@ -70,37 +70,37 @@ export default {
   get: async function ({ url, data: params }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
+      url,
       method: 'get',
       headers: {
         ...defualtHeaders,
         token
       },
-      url,
       params
     })
   },
   post: async function ({ url, data }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
+      url,
       method: 'post',
       headers: {
         ...defualtHeaders,
         token
       },
-      url,
       data
     })
   },
   uploadImage: async function ({ url, data }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
+      url,
       method: 'post',
       headers: {
         ...defualtHeaders,
         token,
         'Content-Type': 'image/*'
       },
-      url,
       data
     })
   }
