@@ -1,6 +1,13 @@
 import { AsyncStorage } from 'react-native'
 import axios from 'axios'
 
+/**
+ * @typedef  {Object}  Result
+ * @property {Boolean} suc
+ * @property {String}  msg
+ * @property {Any}     data
+ */
+
 // for dev env
 const baseUrl = 'http://localhost:3000/api'
 // for prod env
@@ -67,7 +74,13 @@ axios.interceptors.response.use(
 )
 
 export default {
-  get: async function ({ url, data: params }) {
+  /**
+   * @param  {object}           annoymous
+   * @param  {string}           annoymous.url
+   * @param  {any}              annoymous.params
+   * @return {Promise.<Result>}
+   */
+  get: async function ({ url, params = null }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
       url,
@@ -79,7 +92,13 @@ export default {
       params
     })
   },
-  post: async function ({ url, data }) {
+  /**
+   * @param  {object}           annoymous
+   * @param  {string}           annoymous.url
+   * @param  {any}              annoymous.params
+   * @return {Promise.<Result>}
+   */
+  post: async function ({ url, data = null }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
       url,
@@ -91,7 +110,13 @@ export default {
       data
     })
   },
-  uploadImage: async function ({ url, data }) {
+  /**
+   * @param  {object}           annoymous
+   * @param  {string}           annoymous.url
+   * @param  {any}              annoymous.params
+   * @return {Promise.<Result>}
+   */
+  uploadImage: async function ({ url, data = null }) {
     const token = await AsyncStorage.getItem('token')
     return axios({
       url,

@@ -12,6 +12,7 @@ import req from '../utils/request'
  * @typedef  {Object}  Result
  * @property {Boolean} suc
  * @property {String}  msg
+ * @property {Any}     data
  */
 
 class AuthStore {
@@ -40,9 +41,12 @@ class AuthStore {
 
   /**
    * @description set data
-   * @param {Object}   anonymous
-   * @param {String}   anonymous.token
-   * @param {UserInfo} anonymous.userInfo
+   * @param {Object} annoymous
+   * @param {String} annoymous.token
+   * @param {Number} annoymous.id
+   * @param {String} annoymous.username
+   * @param {String} annoymous.nickname
+   * @param {Number} annoymous.role
    * @memberof AuthStore
    */
   @action
@@ -81,14 +85,15 @@ class AuthStore {
    * @returns {Promise.<Result>}
    * @memberof App
    */
-  handleLogIn ({ username, password }) {
+  async handleLogIn ({ username, password }) {
     return req.post({
       url: '/auth/login',
       data: {
         username,
         password
       }
-    }).then(async ({ suc, msg, data: { token, id, username, nickname, role } }) => {
+    }).then(async (res) => {
+      const { suc, msg, data: { token, id, username, nickname, role } } = res
       if (suc) {
         await this.handleSetData({ token, id, username, nickname, role })
       }
@@ -101,10 +106,11 @@ class AuthStore {
    * @returns {Promise.<Result>}
    * @memberof AuthStore
    */
-  handleRenewToken = async () => {
+  async handleRenewToken () {
     return req.post({
       url: '/auth/renew'
-    }).then(async ({ suc, msg, data: { token, id, username, nickname, role } }) => {
+    }).then(async (res) => {
+      const { suc, msg, data: { token, id, username, nickname, role } } = res
       if (suc) {
         await this.handleSetData({ token, id, username, nickname, role })
       } else {
