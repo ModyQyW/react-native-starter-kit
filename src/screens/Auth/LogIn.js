@@ -15,8 +15,6 @@ const styles = StyleSheet.create({
 // handle your log in logic here
 @observer
 class LogIn extends React.Component {
-  @observable navi = this.props.navigation;
-
   constructor (props) {
     super(props)
     bindAll(this, [
@@ -26,11 +24,11 @@ class LogIn extends React.Component {
   }
 
   handleToMainStack () {
-    this.navi.navigate('MainStack')
+    this.props.navigation.navigate('MainStack')
   }
 
   handleToAuthSignUp () {
-    this.navi.navigate('AuthSignUp')
+    this.props.navigation.navigate('AuthSignUp')
   }
 
   render () {

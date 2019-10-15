@@ -9,8 +9,6 @@ import { layouts, typography } from '@modyqyw/css-styles/react-native/global'
 
 @observer
 class Index extends React.Component {
-  @observable navi = this.props.navigation;
-
   constructor (props) {
     super(props)
     bindAll(this, [
@@ -20,11 +18,11 @@ class Index extends React.Component {
   }
 
   handleToLayout1 () {
-    this.navi.navigate('DemoLayout1')
+    this.props.navigation.navigate('DemoLayout1')
   }
 
   handleToLayout2 () {
-    this.navi.navigate('DemoLayout2')
+    this.props.navigation.navigate('DemoLayout2')
   }
 
   render () {

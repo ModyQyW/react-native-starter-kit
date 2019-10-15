@@ -10,8 +10,6 @@ import { layouts, typography } from '@modyqyw/css-styles/react-native/global'
 
 @observer
 class Layout1 extends React.Component {
-  @observable navi = this.props.navigation;
-
   constructor (props) {
     super(props)
     bindAll(this, [
@@ -20,7 +18,7 @@ class Layout1 extends React.Component {
   }
 
   handleBack () {
-    this.navi.goBack()
+    this.props.navigation.goBack()
   }
 
   render () {

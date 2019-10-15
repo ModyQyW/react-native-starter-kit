@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
 // handle your sign up logic here
 @observer
 class SignUp extends React.Component {
-  @observable navi = this.props.navigation;
-
   constructor (props) {
     super(props)
     bindAll(this, [
@@ -24,7 +22,7 @@ class SignUp extends React.Component {
   }
 
   handleBack () {
-    this.navi.goBack()
+    this.props.navigation.goBack()
   }
 
   render () {

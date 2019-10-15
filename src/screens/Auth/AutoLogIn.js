@@ -13,11 +13,7 @@ const styles = StyleSheet.create({
 // handle your auto log in logic here
 @observer
 class AutoLogIn extends React.Component {
-  static contextType = MobXProviderContext;
-
   @observable authStore = this.context.authStore;
-
-  @observable navi = this.props.navigation;
 
   @computed
   get tokenKey () {
@@ -51,11 +47,11 @@ class AutoLogIn extends React.Component {
   }
 
   handleToMainStack () {
-    this.navi.navigate('MainStack')
+    this.props.navigation.navigate('MainStack')
   }
 
   handleToAuthLogIn () {
-    this.navi.navigate('AuthLogIn')
+    this.props.navigation.navigate('AuthLogIn')
   }
 
   render () {
@@ -70,5 +66,7 @@ class AutoLogIn extends React.Component {
 AutoLogIn.propTypes = {
   navigation: PropTypes.object
 }
+
+AutoLogIn.contextType = MobXProviderContext
 
 export default AutoLogIn

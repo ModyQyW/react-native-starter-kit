@@ -18,8 +18,6 @@ const styles = StyleSheet.create({
 
 @observer
 class Layout2 extends React.Component {
-  @observable navi = this.props.navigation;
-
   @observable cnt = 1;
 
   @observable data = [];
@@ -50,7 +48,7 @@ class Layout2 extends React.Component {
   }
 
   handleBack () {
-    this.navi.goBack()
+    this.props.navigation.goBack()
   }
 
   handlePressListItem (item) {

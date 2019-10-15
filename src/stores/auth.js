@@ -79,9 +79,9 @@ class AuthStore {
 
   /**
    * @description log in
-   * @param {Object} anonymous
-   * @param {String} anonymous.username
-   * @param {String} anonymous.password
+   * @param {Object} annoymous
+   * @param {String} annoymous.username
+   * @param {String} annoymous.password
    * @returns {Promise.<Result>}
    * @memberof App
    */
