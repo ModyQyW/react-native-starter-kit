@@ -28,10 +28,6 @@ class AutoLogIn extends React.Component {
     await this.handleRenewToken()
   }
 
-  /**
-   * @description renew token
-   * @memberof AutoLogIn
-   */
   async handleRenewToken () {
     const token = await AsyncStorage.getItem(this.tokenKey)
     if (token) {
@@ -54,11 +50,11 @@ class AutoLogIn extends React.Component {
     }
   }
 
-  handleToMainStack = () => {
+  handleToMainStack () {
     this.navi.navigate('MainStack')
   }
 
-  handleToAuthLogIn = () => {
+  handleToAuthLogIn () {
     this.navi.navigate('AuthLogIn')
   }
 
