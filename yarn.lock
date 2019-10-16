@@ -1045,10 +1045,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@modyqyw/css-styles@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@modyqyw/css-styles/-/css-styles-0.0.8.tgz#0577ba2ede8fc856c2c4a510bb13e273e6a19920"
-  integrity sha512-K+AKEhLxfDRvt2CO0c5KNiRtnukYPR26of8/9MLjQxPfiAeMujgg06GE8Y4lh9KITki2gAB7cwtI6cAFkp875g==
+"@modyqyw/css-styles@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@modyqyw/css-styles/-/css-styles-0.0.10.tgz#2a63b4e4e8e266c4dbc6f200dd0d8fc5fcec0f17"
+  integrity sha512-0/8W679n9dYb9+fy1v8q8GiwnE1YyGLQnbzS3F4ho4+lTwaDbF7/Z00Gr4lHl8+ZsmspZoprrs1H9DjbapGLHA==
 
 "@react-native-community/cli@^1.2.1":
   version "1.11.2"
