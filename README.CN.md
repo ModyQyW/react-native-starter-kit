@@ -20,9 +20,7 @@ typescript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-
   - 接着在终端/命令行安装长期支持版 node
 
     ```sh
-    # for now, lts version is 10.16.3
-    # last updated：2019.09.17
-    nvm install 10.16.3
+    nvm install --lts
     ```
 
   - 全局升级 npm 到长期支持版，安装 yarn
