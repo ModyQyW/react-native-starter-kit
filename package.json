@@ -18,7 +18,7 @@
     "build:web": "expo build:web",
     "publish": "expo publish",
     "eject": "expo eject",
-    "lint": "eslint .",
+    "lint": "eslint src --ext .js,.jsx",
     "test": "jest --watchAll"
   },
   "jest": {
@@ -62,5 +62,43 @@
     "eslint-plugin-react-native-a11y": "^1.2.0",
     "eslint-plugin-standard": "^4.0.1",
     "jest-expo": "^35.0.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      }
+    },
+    "parser": "babel-eslint",
+    "env": {
+      "es6": true,
+      "react-native/react-native": true
+    },
+    "plugins": [
+      "react",
+      "react-native-a11y",
+      "react-native"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-native-a11y/recommended",
+      "plugin:react-native/all",
+      "standard",
+      "standard-react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react-native/sort-styles": 0
+    }
   }
 }
