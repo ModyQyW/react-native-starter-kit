@@ -7,7 +7,7 @@ import bindAll from 'lodash.bindall'
 
 import { Icon } from 'react-native-elements'
 import { Provider, Toast } from '@ant-design/react-native'
-import { layouts, typography } from '@modyqyw/css-styles/react-native/global'
+import { layouts, typography } from '../../Styles'
 
 const styles = StyleSheet.create({
   listItem: {

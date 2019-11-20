@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
 
 import { Icon } from 'react-native-elements'
-import { layouts, typography } from '@modyqyw/css-styles/react-native/global'
+import { layouts, typography } from '../../Styles'
 
 @observer
 class Layout1 extends React.Component {

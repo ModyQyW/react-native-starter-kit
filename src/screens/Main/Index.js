@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
 
-import { layouts, typography } from '@modyqyw/css-styles/react-native/global'
+import { layouts, typography } from '../../Styles'
 
 @observer
 class Index extends React.Component {
