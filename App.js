@@ -1,5 +1,3 @@
-import boot from './src/boot/index'
+import createApp from './src/App'
 
-const app = boot()
-
-export default app
+export default createApp()
