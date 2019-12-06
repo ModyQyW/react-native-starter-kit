@@ -23,12 +23,6 @@ class AuthStore {
   @observable tokenKey = 'token';
 
   /**
-   * @description token's value in AsyncStorage
-   * @type {String}
-   */
-  @observable token = '';
-
-  /**
    * @description the user's info
    * @type {UserInfo}
    */
@@ -51,7 +45,6 @@ class AuthStore {
    */
   @action
   async handleSetData ({ token, id, username, nickname, role }) {
-    this.token = token
     this.userInfo = {
       id,
       username,
@@ -67,7 +60,6 @@ class AuthStore {
    */
   @action
   async handleResetData () {
-    this.token = ''
     this.userInfo = {
       id: -1,
       username: '---',

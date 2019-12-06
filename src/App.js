@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
@@ -94,16 +94,13 @@ export default function createApp () {
     }
 
     render () {
-      if (!this.state.isReady) {
-        return <AppLoading />
-      }
-      return (
+      return this.state.isReady ? (
         <MobXProviderContext.Provider value={stores}>
           <ThemeProvider>
             <AppContainer />
           </ThemeProvider>
         </MobXProviderContext.Provider>
-      )
+      ) : <AppLoading />
     }
   }
 }
