@@ -1,6 +1,5 @@
-import * as React from 'react'
+import React from 'react'
 import { StyleSheet, View, Text, Button } from 'react-native'
-import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'

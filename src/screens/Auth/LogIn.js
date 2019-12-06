@@ -1,11 +1,10 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import { observable } from 'mobx'
 import { observer } from 'mobx-react'
+import { Button } from 'react-native-elements'
 import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
 
-import { Button } from 'react-native-elements'
 import { layouts, typography } from '../../Styles'
 
 const styles = StyleSheet.create({

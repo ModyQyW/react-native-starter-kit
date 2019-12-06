@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { StyleSheet, View, ActivityIndicator, Alert, AsyncStorage } from 'react-native'
 import { observable, computed } from 'mobx'
 import { observer, MobXProviderContext } from 'mobx-react'

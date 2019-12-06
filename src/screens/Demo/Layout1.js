@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { observer } from 'mobx-react'
+import { Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
 import bindAll from 'lodash.bindall'
 
-import { Icon } from 'react-native-elements'
 import { layouts, typography } from '../../Styles'
 
 @observer
