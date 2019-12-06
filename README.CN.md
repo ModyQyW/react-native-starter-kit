@@ -153,7 +153,7 @@ TODO:
 
 - **Rui Wu** - *最初工作* - [ModyQyW](https://github.com/ModyQyW)
 
-另请参阅参与此项目的 [contributors](https://github.com/ModyQyW/vue-vuetify-admin/contributors) 列表。
+另请参阅参与此项目的 [contributors](https://github.com/ModyQyW/rn-mobx-starter-kit/contributors) 列表。
 
 ## 协议
 
