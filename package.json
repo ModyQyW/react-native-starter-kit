@@ -1,6 +1,6 @@
 {
   "name": "rn-mobx-starter-kit",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "author": "ModyQyW <261857860@qq.com>",
   "private": true,
   "license": "MIT",
@@ -18,11 +18,7 @@
     "build:web": "expo build:web",
     "publish": "expo publish",
     "eject": "expo eject",
-    "lint": "eslint src --ext .js,.jsx",
-    "test": "jest --watchAll"
-  },
-  "jest": {
-    "preset": "jest-expo"
+    "lint": "eslint src --ext .js,.jsx"
   },
   "dependencies": {
     "@ant-design/react-native": "^3.2.0",
@@ -56,10 +52,9 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.2.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-standard": "^4.0.1",
-    "jest-expo": "^35.0.0",
     "lint-staged": "^9.5.0"
   },
   "eslintConfig": {
