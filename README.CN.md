@@ -27,7 +27,7 @@ typescript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-
 
     ```sh
     npm i -g npm@lts
-    npm i -g yarn
+    npm i -g yarn@lastest
     ```
 
   - 如果你是国人，或许你应该设置镜像
@@ -82,6 +82,7 @@ yarn publish
 yarn eject
 
 # terminal / command line 2
+# for now, it is unnecessary
 # clone corresponding backend server for developing
 git clone git@github.com:ModyQyW/backend-server.git
 
@@ -101,7 +102,7 @@ yarn start
 
 ## 部署
 
-首先，打开 [request.js](./src/utils/request.js)，注释第 5 行，取消注释第 7 行。
+首先，打开 [request.js](./src/utils/request.js)，注释第 12 行，取消注释第 14 行。
 
 然后，检查你的更新代码，确保他们没有问题。否则，你就需要重新打包上传了。
 
@@ -122,6 +123,7 @@ yarn start
 ## Built With
 
 - [expo](https://expo.io/)：一组工具和服务，用于构建，部署和快速迭代来自相同代码库的原生 iOS，Android 和 Web 应用程序 **你要非常非常仔细地阅读文档。**
+- [react](https://zh-hans.reactjs.org/)：用于构建用户界面的 JavaScript 库
 - [react-native](https://reactnative.cn/)：使用 React 构建原生应用程序的框架
 - [mobx](https://mobx.js.org/)：简单，可扩展的状态管理
 - [react-navigation](https://reactnavigation.org/)：React Native 应用程序的路由和导航
@@ -137,20 +139,15 @@ yarn start
 - 跨平台：android 和 ios
 - 预设样式
 - 布局例子
-- 状态管理例子
+- MobX context 例子
 
 TODO:
 
 - 完整的文档，教导如何修改
-- 添加 typescript 支持
 
 ## 贡献
 
 请阅读 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解行为准则以及提交拉取请求的流程的详细信息。
-
-## 版本命名
-
-使用 [SemVer](http://semver.org/) 进行版本控制。有关可用版本，请参阅此仓库的 [releases](https://github.com/ModyQyW/vue-vuetify-admin/releases)。
 
 ## 作者
 

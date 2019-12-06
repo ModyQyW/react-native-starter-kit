@@ -27,7 +27,7 @@ These instructions will get you a copy of the project up and running on your loc
 
     ```sh
     npm i -g npm@lts
-    npm i -g yarn
+    npm i -g yarn@latest
     ```
 
   - If you are Chinese, maybe you should set mirrors
@@ -82,6 +82,7 @@ yarn publish
 yarn eject
 
 # terminal / command line 2
+# for now, it is unnecessary
 # clone corresponding backend server for developing
 git clone git@github.com:ModyQyW/backend-server.git
 
@@ -97,11 +98,11 @@ yarn start
 
 ## Running the tests
 
-No tests now. Pull requests are welcome.
+No tests now. PRs are welcome.
 
 ## Deployment
 
-First, open [request.js](./src/utils/request.js), comment L5 and uncomment L7.
+First, open [request.js](./src/utils/request.js), comment L12 and uncomment L14.
 
 Second, Check your update code and make sure they are fine. Or, you need to build a new app and upload.
 
@@ -122,6 +123,7 @@ Assuming you have your own server and you are going to host the app on it:
 ## Built With
 
 - [expo](https://expo.io/) - A set of tools and services for building, deploying, and quickly iterating on native iOS, Android, and web apps from the same codebase **You should read the documents very, very carefully.**
+- [react](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [react-native](https://facebook.github.io/react-native/) - A framework for building native apps using React
 - [mobx](https://mobx.js.org/) - Simple, scalable state management
 - [react-navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps
@@ -137,7 +139,7 @@ Assuming you have your own server and you are going to host the app on it:
 - Cross platform: android and ios
 - Preset styles
 - Layout examples
-- Store examples
+- MobX context examples
 
 TODO:
 
@@ -146,10 +148,6 @@ TODO:
 ## Contributing
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests.
-
-## Versioning
-
-Use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/ModyQyW/rn-mobx-starter-kit/releases).
 
 ## Authors
 
