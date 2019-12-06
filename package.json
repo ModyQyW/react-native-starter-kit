@@ -98,7 +98,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "./src/**/*.js": [
+    "./src/**/*.{js,jsx)": [
       "eslint",
       "git add"
     ]
