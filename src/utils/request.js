@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native'
 import axios from 'axios'
 
 /**
- * @typedef  {Object}  Result
+ * @typedef  {Object}  IResponse
  * @property {Boolean} suc
  * @property {String}  msg
  * @property {Any}     data
@@ -75,10 +75,10 @@ axios.interceptors.response.use(
 
 export default {
   /**
-   * @param  {object}           annoymous
-   * @param  {string}           annoymous.url
-   * @param  {any}              annoymous.params
-   * @return {Promise.<Result>}
+   * @param  {object}              annoymous
+   * @param  {string}              annoymous.url
+   * @param  {any}                 annoymous.params
+   * @return {Promise.<IResponse>}
    */
   get: async function ({ url, params = null }) {
     const token = await AsyncStorage.getItem('token')
@@ -93,10 +93,10 @@ export default {
     })
   },
   /**
-   * @param  {object}           annoymous
-   * @param  {string}           annoymous.url
-   * @param  {any}              annoymous.params
-   * @return {Promise.<Result>}
+   * @param  {object}              annoymous
+   * @param  {string}              annoymous.url
+   * @param  {any}                 annoymous.params
+   * @return {Promise.<IResponse>}
    */
   post: async function ({ url, data = null }) {
     const token = await AsyncStorage.getItem('token')
@@ -111,10 +111,10 @@ export default {
     })
   },
   /**
-   * @param  {object}           annoymous
-   * @param  {string}           annoymous.url
-   * @param  {any}              annoymous.params
-   * @return {Promise.<Result>}
+   * @param  {object}              annoymous
+   * @param  {string}              annoymous.url
+   * @param  {any}                 annoymous.params
+   * @return {Promise.<IResponse>}
    */
   uploadImage: async function ({ url, data = null }) {
     const token = await AsyncStorage.getItem('token')
