@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions, StatusBar, Platform } from 'react-native'
+import { Dimensions, Platform, StatusBar, StyleSheet } from 'react-native'
 
 export const colors = {
   black: '#000',
@@ -440,7 +440,7 @@ export const colors = {
   adGray2: '#FAFAFA',
   adGray3: '#F5F5F5',
   adGray4: '#E8E8E8',
-  adGray5: '#D9D9D9', // border
+  adGray5: '#D9D9D9',
   adGray6: '#BFBFBF',
   adGray7: '#8C8C8C',
   adGray8: '#595959',
@@ -451,19 +451,36 @@ export const colors = {
   adGrey2: '#FAFAFA',
   adGrey3: '#F5F5F5',
   adGrey4: '#E8E8E8',
-  adGrey5: '#D9D9D9', // border
+  adGrey5: '#D9D9D9',
   adGrey6: '#BFBFBF',
   adGrey7: '#8C8C8C',
   adGrey8: '#595959',
   adGrey9: '#262626',
   adGrey10: '#000',
-  textTitle: 'rgba(0, 0, 0, 0.85)',
-  textTitleLight: 'rgba(0, 0, 0, 0.75)',
-  textMain: 'rgba(0, 0, 0, 0.65)',
-  textMainLight: 'rgba(0, 0, 0, 0.55)',
-  textSecondary: 'rgba(0, 0, 0, 0.45)',
-  textDisabled: 'rgba(0, 0, 0, 0.25)',
-  border: '#D9D9D9'
+  // for light theme
+  title: 'rgba(0, 0, 0, 0.85)',
+  titleLight: 'rgba(0, 0, 0, 0.75)',
+  main: 'rgba(0, 0, 0, 0.65)',
+  mainLight: 'rgba(0, 0, 0, 0.55)',
+  secondary: 'rgba(0, 0, 0, 0.45)',
+  disabled: 'rgba(0, 0, 0, 0.25)',
+  containerBackground: '#FFF',
+  componentBackground: 'rgba(0, 0, 0, 0.04)',
+  dividerBackground: 'rgba(0, 0, 0, 0.09)',
+  border: '#D9D9D9',
+  // for dark theme
+  titleInverse: 'rgba(255, 255, 255, 1)',
+  titleLightInverse: 'rgba(255, 255, 255, 0.95)',
+  mainInverse: 'rgba(255, 255, 255, 0.85)',
+  mainLightInverse: 'rgba(255, 255, 255, 0.75)',
+  secondaryInverse: 'rgba(255, 255, 255, 0.65)',
+  disabledInverse: 'rgba(255, 255, 255, 0.45)',
+  containerBackgroundInverse: '#000',
+  componentBackgroundInverse: 'rgba(255, 255, 255, 0.09)',
+  dividerBackgroundInverse: 'rgba(255, 255, 255, 0.15)',
+  // mask and shadow
+  maskBackground: 'rgba(0, 0, 0, 0.45)',
+  shadowBackground: 'rgba(0, 0, 0, 0.45)'
 }
 
 export const typography = StyleSheet.create({
@@ -581,30 +598,76 @@ export const typography = StyleSheet.create({
     textAlignVertical: 'center'
   },
   textDisabled: {
-    color: colors.textDisabled
+    color: colors.disabled
   },
-  textSecondary: {
-    color: colors.textSecondary,
+  textSecondaryBase: {
     fontSize: 12,
     lineHeight: 20
   },
-  textMainLight: {
-    color: colors.textMainLight,
+  textSecondary: {
+    color: colors.secondary,
+    fontSize: 12,
+    lineHeight: 20
+  },
+  textSecondaryInverse: {
+    color: colors.secondaryInverse,
+    fontSize: 12,
+    lineHeight: 20
+  },
+  textMainLightBase: {
     fontSize: 13,
     lineHeight: 21
   },
-  textMain: {
-    color: colors.textMain,
+  textMainLight: {
+    color: colors.mainLight,
+    fontSize: 13,
+    lineHeight: 21
+  },
+  textMainLightInverse: {
+    color: colors.mainLightInverse,
+    fontSize: 13,
+    lineHeight: 21
+  },
+  textMainBase: {
     fontSize: 14,
     lineHeight: 22
   },
-  textTitleLight: {
-    color: colors.textTitleLight,
+  textMain: {
+    color: colors.main,
+    fontSize: 14,
+    lineHeight: 22
+  },
+  textMainInverse: {
+    color: colors.mainInverse,
+    fontSize: 14,
+    lineHeight: 22
+  },
+  textTitleLightBase: {
     fontSize: 16,
     lineHeight: 24
   },
+  textTitleLight: {
+    color: colors.titleLight,
+    fontSize: 16,
+    lineHeight: 24
+  },
+  textTitleLightInverse: {
+    color: colors.titleLightInverse,
+    fontSize: 16,
+    lineHeight: 24
+  },
+  textTitleBase: {
+    color: colors.title,
+    fontSize: 18,
+    lineHeight: 26
+  },
   textTitle: {
-    color: colors.textTitle,
+    color: colors.title,
+    fontSize: 18,
+    lineHeight: 26
+  },
+  textTitleInverse: {
+    color: colors.title,
     fontSize: 18,
     lineHeight: 26
   }
