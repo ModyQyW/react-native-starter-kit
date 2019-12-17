@@ -23,10 +23,10 @@
   "dependencies": {
     "@ant-design/react-native": "^3.2.0",
     "axios": "^0.19.0",
-    "expo": "^36.0.0",
+    "expo": "^36.0.1",
     "expo-font": "~8.0.0",
     "lodash.bindall": "^4.4.0",
-    "mobx": "^5.15.0",
+    "mobx": "^5.15.1",
     "mobx-react": "^6.1.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
@@ -44,7 +44,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.0",
-    "babel-preset-expo": "^7.1.0",
+    "babel-preset-expo": "^8.0.0",
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
