@@ -1,43 +1,32 @@
-import * as React from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
 import { observer } from 'mobx-react'
 import { Icon } from 'react-native-elements'
-import PropTypes from 'prop-types'
-import bindAll from 'lodash.bindall'
 
 import { layouts, typography } from '../../Styles'
 
-@observer
-class Layout1 extends React.Component {
-  constructor (props) {
-    super(props)
-    bindAll(this, [
-      'handleBack'
-    ])
+const Layout1 = observer((props) => {
+  const handleBack = () => {
+    props.navigation.goBack()
   }
 
-  handleBack () {
-    this.props.navigation.goBack()
-  }
-
-  render () {
-    return (
-      <View style={layouts.container}>
-        <View style={layouts.header}>
-          <Icon
-            name='arrow-back'
-            size={26}
-            onPress={this.handleBack}
-          />
-          <Text style={[layouts.headerMiddle, typography.textTitle]}>Demo Layout1</Text>
-          <View style={layouts.headerRight} />
-        </View>
-        <ScrollView
-          style={layouts.bodyMain}
-        >
-          <Text>Body</Text>
-          <Text style={typography.textMainLight}>To test scroll, insert lorem below.</Text>
-          <Text>
+  return (
+    <View style={layouts.container}>
+      <View style={layouts.header}>
+        <Icon
+          name='arrow-back'
+          size={26}
+          onPress={handleBack}
+        />
+        <Text style={[layouts.headerMiddle, typography.textTitle]}>Demo Layout1</Text>
+        <View style={layouts.headerRight} />
+      </View>
+      <ScrollView
+        style={layouts.bodyMain}
+      >
+        <Text>Body</Text>
+        <Text style={typography.textMainLight}>To test scroll, insert lorem below.</Text>
+        <Text>
 Culpa duis adipisicing cupidatat eiusmod aliqua in. Eu reprehenderit aliquip sunt eiusmod esse. Adipisicing cillum voluptate dolor aute occaecat incididunt pariatur cillum nulla. Proident labore ipsum sit deserunt minim cupidatat enim nisi veniam ullamco duis et. Ea ipsum laborum aute qui elit.
 
 Proident minim quis fugiat sunt sunt pariatur duis ipsum ullamco nostrud in non. Amet dolor qui mollit sint occaecat qui ad deserunt non enim excepteur laboris ut. Laborum eiusmod excepteur officia quis. Aliqua voluptate incididunt quis ipsum esse Lorem id nostrud laborum do Lorem. Aliqua incididunt fugiat veniam Lorem Lorem mollit quis deserunt nulla fugiat sint laboris amet aliqua. Ex exercitation anim ex irure tempor cupidatat enim quis est.
@@ -57,15 +46,10 @@ Labore dolore Lorem esse labore consequat mollit culpa sint voluptate do aliqua 
 Ex magna do tempor consequat eiusmod ullamco esse labore qui consectetur excepteur commodo amet quis. Reprehenderit officia dolore quis magna cupidatat pariatur magna velit. Labore ullamco enim officia deserunt esse esse aute ea nulla eiusmod proident enim exercitation adipisicing. Aliqua est occaecat non elit qui reprehenderit pariatur voluptate sunt ex do laboris. Exercitation sit ut occaecat sint cillum velit labore irure.
 
 Ad laboris culpa et excepteur ut. Eiusmod elit aute in dolore. Voluptate labore labore ex ut. Ad excepteur reprehenderit deserunt irure in Lorem aliqua culpa nisi in irure nisi. Reprehenderit voluptate irure eiusmod ullamco officia irure occaecat tempor occaecat officia reprehenderit eiusmod.
-          </Text>
-        </ScrollView>
-      </View>
-    )
-  }
-}
-
-Layout1.propTypes = {
-  navigation: PropTypes.object
-}
+        </Text>
+      </ScrollView>
+    </View>
+  )
+})
 
 export default Layout1

@@ -1,72 +1,56 @@
-import React from 'react'
-import { StyleSheet, View, ActivityIndicator, Alert, AsyncStorage } from 'react-native'
-import { observable, computed } from 'mobx'
-import { observer, MobXProviderContext } from 'mobx-react'
-import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import { ActivityIndicator, Alert, AsyncStorage, StyleSheet, View } from 'react-native'
+import { observer } from 'mobx-react'
+import { useStores } from '../../stores'
+// import { MobXProviderContext, observer } from 'mobx-react'
 
 import { layouts } from '../../Styles'
 
-const styles = StyleSheet.create({
+const style = {}
 
-})
+const styles = StyleSheet.create(style)
 
 // handle your auto log in logic here
-@observer
-class AutoLogIn extends React.Component {
-  @observable authStore = this.context.authStore;
+const AutoLogIn = observer((props) => {
+  const { authStore } = useStores()
 
-  @computed
-  get tokenKey () {
-    return this.authStore.tokenKey
+  const handleToMainStack = () => {
+    props.navigation.navigate('MainStack')
   }
 
-  async componentDidMount () {
-    await this.handleRenewToken()
+  const handleToAuthLogIn = () => {
+    props.navigation.navigate('AuthLogIn')
   }
 
-  async handleRenewToken () {
-    const token = await AsyncStorage.getItem(this.tokenKey)
-    if (token) {
-      this.authStore
-        .handleRenewToken()
-        .then(({ suc, msg }) => {
-          if (suc) {
-            this.handleToMainStack()
-          } else {
-            Alert.alert(
-              'Error', msg || 'Failed to get necessary information.',
-              [{ text: 'OK', onPress: () => {} }],
-              { cancelable: false, onDismiss: () => {} }
-            )
-            this.handleToAuthLogIn()
-          }
-        })
-    } else {
-      this.handleToAuthLogIn()
+  useEffect(() => {
+    const handleRenewToken = async () => {
+      const token = await AsyncStorage.getItem(authStore.tokenKey)
+      if (token !== null) {
+        authStore.handleRenewToken()
+          .then(({ suc, msg }) => {
+            if (suc) {
+              handleToMainStack()
+            } else {
+              Alert.alert(
+                'Error', msg || 'Failed to get necessary information.',
+                [{ text: 'OK', onPress: () => {} }],
+                { cancelable: false, onDismiss: () => {} }
+              )
+              handleToAuthLogIn()
+            }
+          })
+      } else {
+        handleToAuthLogIn()
+      }
     }
-  }
+    handleRenewToken()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  handleToMainStack () {
-    this.props.navigation.navigate('MainStack')
-  }
-
-  handleToAuthLogIn () {
-    this.props.navigation.navigate('AuthLogIn')
-  }
-
-  render () {
-    return (
-      <View style={layouts.container}>
-        <ActivityIndicator />
-      </View>
-    )
-  }
-}
-
-AutoLogIn.propTypes = {
-  navigation: PropTypes.object
-}
-
-AutoLogIn.contextType = MobXProviderContext
+  return (
+    <View style={layouts.container}>
+      <ActivityIndicator />
+    </View>
+  )
+})
 
 export default AutoLogIn

@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native'
-import { observable, action } from 'mobx'
+import { action, observable } from 'mobx'
 import req from '../utils/request'
 
 /**
@@ -9,7 +9,7 @@ import req from '../utils/request'
  * @property {String}  nickname
  * @property {Number}  role
  *
- * @typedef  {Object}  Result
+ * @typedef  {Object}  IResponse
  * @property {Boolean} suc
  * @property {String}  msg
  * @property {Any}     data
@@ -74,8 +74,8 @@ class AuthStore {
    * @param {Object} annoymous
    * @param {String} annoymous.username
    * @param {String} annoymous.password
-   * @returns {Promise.<Result>}
-   * @memberof App
+   * @returns {Promise.<IResponse>}
+   * @memberof AuthStore
    */
   async handleLogIn ({ username, password }) {
     return req.post({
@@ -95,7 +95,7 @@ class AuthStore {
 
   /**
    * @description renew token
-   * @returns {Promise.<Result>}
+   * @returns {Promise.<IResponse>}
    * @memberof AuthStore
    */
   async handleRenewToken () {
@@ -113,4 +113,4 @@ class AuthStore {
   }
 }
 
-export default new AuthStore()
+export default AuthStore

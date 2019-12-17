@@ -1,51 +1,31 @@
-import React from 'react'
-import { StyleSheet, View, Text, Button } from 'react-native'
+import * as React from 'react'
+import { Button, Text, View } from 'react-native'
 import { observer } from 'mobx-react'
-import PropTypes from 'prop-types'
-import bindAll from 'lodash.bindall'
 
 import { layouts, typography } from '../../Styles'
 
-const styles = StyleSheet.create({
-
-})
-
 // handle your sign up logic here
-@observer
-class SignUp extends React.Component {
-  constructor (props) {
-    super(props)
-    bindAll(this, [
-      'handleBack'
-    ])
+const SignUp = observer((props) => {
+  const handleBack = () => {
+    props.navigation.goBack()
   }
 
-  handleBack () {
-    this.props.navigation.goBack()
-  }
-
-  render () {
-    return (
-      <View style={layouts.container}>
-        <View style={layouts.header}>
-          <Text style={[layouts.headerMiddle, typography.textTitle]}>SignUp</Text>
-        </View>
-        <View style={layouts.body}>
-          <Text>This is the sign up screen.</Text>
-          <Text>The button below is from React Native.</Text>
-          <Text>Looks like it is a meterial design icon :D</Text>
-          <Button
-            onPress={this.handleBack}
-            title='Go Back'
-          />
-        </View>
+  return (
+    <View style={layouts.container}>
+      <View style={layouts.header}>
+        <Text style={[layouts.headerMiddle, typography.textTitle]}>SignUp</Text>
       </View>
-    )
-  }
-}
-
-SignUp.propTypes = {
-  navigation: PropTypes.object
-}
+      <View style={layouts.body}>
+        <Text>This is the sign up screen.</Text>
+        <Text>The button below is from React Native.</Text>
+        <Text>Looks like it is a meterial design icon :D</Text>
+        <Button
+          onPress={handleBack}
+          title='Go Back'
+        />
+      </View>
+    </View>
+  )
+})
 
 export default SignUp

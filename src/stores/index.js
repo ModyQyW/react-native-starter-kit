@@ -1,5 +1,8 @@
-import authStore from '../stores/auth'
+import React from 'react'
+import AuthStore from '../stores/auth'
 
-export default {
-  authStore
-}
+const storesContext = React.createContext({
+  authStore: new AuthStore()
+})
+
+export const useStores = () => React.useContext(storesContext)

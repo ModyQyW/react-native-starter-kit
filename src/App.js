@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { configure } from 'mobx'
-import { MobXProviderContext } from 'mobx-react'
 import { ThemeProvider } from 'react-native-elements'
-
-import stores from './stores'
 
 import AuthAutoLogIn from './screens/Auth/AutoLogIn'
 import AuthLogIn from './screens/Auth/LogIn'
@@ -68,39 +65,25 @@ const AppSwitch = createSwitchNavigator(
 
 const AppContainer = createAppContainer(AppSwitch)
 
-export default function createApp () {
-  return class App extends React.Component {
-    constructor (props) {
-      super(props)
-      this.state = {
-        isReady: false
+export default () => {
+  // eslint-disable-next-line react/display-name
+  return () => {
+    const [isReady, setIsReady] = useState(false)
+
+    useEffect(() => {
+      const loadFonts = async () => {
+        await Font.loadAsync({
+          antoutline: require('../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf'),
+          antfill: require('../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf')
+        })
       }
-    }
+      loadFonts().then(() => { setIsReady(true) })
+    }, [])
 
-    async componentDidMount () {
-      await this.loadFonts()
-      this.setState({ isReady: true })
-    }
-
-    async loadFonts () {
-      // await Expo.Font.loadAsync({
-      //     write the font you need load here
-      //     check https://docs.expo.io/versions/v35.0.0/sdk/font
-      // });
-      await Font.loadAsync({
-        antoutline: require('../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf'),
-        antfill: require('../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf')
-      })
-    }
-
-    render () {
-      return this.state.isReady ? (
-        <MobXProviderContext.Provider value={stores}>
-          <ThemeProvider>
-            <AppContainer />
-          </ThemeProvider>
-        </MobXProviderContext.Provider>
-      ) : <AppLoading />
-    }
+    return isReady ? (
+      <ThemeProvider>
+        <AppContainer />
+      </ThemeProvider>
+    ) : <AppLoading />
   }
 }

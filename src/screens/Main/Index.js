@@ -1,44 +1,28 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { Button, View, Text } from 'react-native'
 import { observer } from 'mobx-react'
-import PropTypes from 'prop-types'
-import bindAll from 'lodash.bindall'
 
 import { layouts, typography } from '../../Styles'
 
-@observer
-class Index extends React.Component {
-  constructor (props) {
-    super(props)
-    bindAll(this, [
-      'handleToDemoStack'
-    ])
+const Index = observer((props) => {
+  const handleToDemoStack = () => {
+    props.navigation.navigate('DemoStack')
   }
 
-  handleToDemoStack () {
-    this.props.navigation.navigate('DemoStack')
-  }
-
-  render () {
-    return (
-      <View style={layouts.container}>
-        <View style={layouts.header}>
-          <Text style={[layouts.headerMiddle, typography.textTitle]}>rn-mobx-starter-kit</Text>
-        </View>
-        <View style={layouts.body}>
-          <Text>Do something to start coding!</Text>
-          <Button
-            onPress={this.handleToDemoStack}
-            title='Jump to Demo Index'
-          />
-        </View>
+  return (
+    <View style={layouts.container}>
+      <View style={layouts.header}>
+        <Text style={[layouts.headerMiddle, typography.textTitle]}>rn-mobx-starter-kit</Text>
       </View>
-    )
-  }
-}
-
-Index.propTypes = {
-  navigation: PropTypes.object
-}
+      <View style={layouts.body}>
+        <Text>Do something to start coding!</Text>
+        <Button
+          onPress={handleToDemoStack}
+          title='Jump to Demo Index'
+        />
+      </View>
+    </View>
+  )
+})
 
 export default Index
