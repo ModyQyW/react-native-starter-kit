@@ -2,7 +2,7 @@
 
 A simple cross-platform app built with Expo 35, react-native, mobx and react-navigation.
 
-Check [rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit) for typescript support.
+Check [rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit) for TypeScript support. It is much better when facing hooks.
 
 English | [简体中文](README.CN.md)
 
@@ -114,7 +114,7 @@ Assuming you do not have your own server:
 
 Assuming you have your own server and you are going to host the app on it:
 
-- Follow [Hosting An App on Your Servers](https://docs.expo.io/versions/v35.0.0/distribution/hosting-your-app/)
+- Follow [Hosting An App on Your Servers](https://docs.expo.io/versions/v36.0.0/distribution/hosting-your-app/)
 - For short
   - Export the asset files and upload to your server
   - Build the app, download and upload to store
@@ -126,12 +126,12 @@ Assuming you have your own server and you are going to host the app on it:
 - [react](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [react-native](https://facebook.github.io/react-native/) - A framework for building native apps using React
 - [mobx](https://mobx.js.org/) - Simple, scalable state management
+- [mobx-react](https://mobx-react.js.org/) - MobX in React brings easy reactivity to your components
 - [react-navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps
 - [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 - [react-native-elements](https://react-native-training.github.io/react-native-elements/) - Cross Platform React Native UI Toolkit
 - [@ant-design/react-native](https://rn.mobile.ant.design/) - A UI component library based on React Native
 - [teaset](https://github.com/rilyu/teaset) - A UI library for react native, provides 20+ pure JS(ES6) components, focusing on content display and action control
-- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg) - A suit of cross platform React Native ui kit
 - [eslint](https://eslint.org) - An open source project provided a pluggable linting utility for JavaScript, using [standard](https://standardjs.com/) in the project
 
 ## Features

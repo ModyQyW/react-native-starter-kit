@@ -1,8 +1,8 @@
 # rn-mobx-starter-kit
 
-使用 Expo 35，react-native，mobx 和 react-navigation 构建的跨平台简单 app。
+使用 Expo 36，react-native，mobx 和 react-navigation 构建的跨平台简单 app。
 
-typescript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit)。
+TypeScript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit)，在面对 hooks 时 TypeScript 表现得比 JavaScript 好。
 
 [English](README.md) | 简体中文
 
@@ -114,7 +114,7 @@ yarn start
 
 假定你有自己的服务器，而且要在上面托管你的 app：
 
-- 跟随 [Hosting An App on Your Servers](https://docs.expo.io/versions/v35.0.0/distribution/hosting-your-app/) 的指引
+- 跟随 [Hosting An App on Your Servers](https://docs.expo.io/versions/v36.0.0/distribution/hosting-your-app/) 的指引
 - 简而言之
   - 导出资产文件，上传到服务器上
   - 构建 app，下载并上传到商店
@@ -126,12 +126,12 @@ yarn start
 - [react](https://zh-hans.reactjs.org/)：用于构建用户界面的 JavaScript 库
 - [react-native](https://reactnative.cn/)：使用 React 构建原生应用程序的框架
 - [mobx](https://mobx.js.org/)：简单，可扩展的状态管理
+- [mobx-react](https://mobx-react.js.org/)：React 中的 MobX 为你的组件带来舒适的自动反应
 - [react-navigation](https://reactnavigation.org/)：React Native 应用程序的路由和导航
-- [axios](https://github.com/axios/axios)：基于Promise的HTTP客户端，用于浏览器和node.js
+- [axios](https://github.com/axios/axios)：基于 Promise 的 HTTP 客户端，用于浏览器和 node.js
 - [react-native-elements](https://react-native-training.github.io/react-native-elements/)：跨平台 React Native UI Toolkit
 - [@ant-design/react-native](https://rn.mobile.ant.design/)：基于 React Native 的 UI 组件库
 - [teaset](https://github.com/rilyu/teaset)：用于 react native 的 UI 库，提供 20 多个纯 JS（ES6）组件，专注于内容显示和动作控制
-- [react-native-ui-xg](https://github.com/xgfe/react-native-ui-xg)：一套跨平台 React Native ui 套件
 - [eslint](https://eslint.org)：一个为 JavaScript 提供了可插入的规范代码能力的开源项目，这个项目里使用了 [standard](https://standardjs.com/readme-zhcn.html)
 
 ## 特性
