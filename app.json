@@ -4,7 +4,7 @@
     "description": "This is a starter kit for react native using mobx, some UI toolkits and react-navigation. Hope this helpful :D",
     "slug": "rn-mobx-starter-kit",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
