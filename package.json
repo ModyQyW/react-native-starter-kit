@@ -1,7 +1,7 @@
 {
   "name": "rn-mobx-starter-kit",
   "version": "0.0.0",
-  "author": "ModyQyW <261857860@qq.com>",
+  "author": "ModyQyW <wurui7@mail3.sysu.edu.cn>",
   "private": true,
   "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
@@ -40,6 +40,7 @@
     "teaset": "^0.7.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.0",
     "babel-preset-expo": "^8.0.0",
