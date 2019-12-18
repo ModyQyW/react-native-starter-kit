@@ -4,6 +4,8 @@
 
 TypeScript 版：[rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit)，在面对 hooks 时 TypeScript 表现得比 JavaScript 好。
 
+TypeScript + unstated 版（移除了 mobx）：[rn-unstated-ts-starter-kit](https://github.com/ModyQyW/rn-unstated-ts-starter-kit)。
+
 在我看来，mobx 更适合用于类组件。对于 hooks，我个人推荐 [unstated-next](https://github.com/jamiebuilds/unstated-next)。请根据你的喜好来进行选择。
 
 [English](README.md) | 简体中文
