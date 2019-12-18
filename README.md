@@ -4,6 +4,8 @@ A simple cross-platform app built with Expo 35, react-native, mobx and react-nav
 
 Check [rn-mobx-ts-starter-kit](https://github.com/ModyQyW/rn-mobx-ts-starter-kit) for TypeScript support. It is much better when facing hooks.
 
+In my opinion, mobx is more suitable for class component. For hooks, I recommend [unstated-next](https://github.com/jamiebuilds/unstated-next) personally. Feel free to use what you like.
+
 English | [简体中文](README.CN.md)
 
 ## Getting Started
