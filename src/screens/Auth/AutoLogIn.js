@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { ActivityIndicator, Alert, AsyncStorage, StyleSheet, View } from 'react-native'
 import { observer } from 'mobx-react'
 import { useStores } from '../../stores'
-// import { MobXProviderContext, observer } from 'mobx-react'
 
 import { layouts } from '../../Styles'
 
