@@ -2,10 +2,10 @@ import { AsyncStorage } from 'react-native'
 import axios from 'axios'
 
 /**
- * @typedef  {Object}  IResponse
- * @property {Boolean} suc
- * @property {String}  msg
- * @property {Any}     data
+ * @typedef  {object}  IResponse
+ * @property {boolean} suc
+ * @property {string}  msg
+ * @property {any}     data
  */
 
 // for dev env
@@ -13,25 +13,25 @@ const baseUrl = 'http://localhost:3000/api'
 // for prod env
 // const baseUrl = '';
 
-// base url
+/** @desc base url */
 axios.defaults.baseURL = baseUrl
-// request header
-const defualtHeaders = {
+/** @desc default header */
+const defaultHeaders = {
   'X-Requested-With': 'XMLHttpRequest',
   'Content-Type': 'application/json',
   Accept: 'application/json'
 }
-// timeout setting
-axios.defaults.timeout = 10000 // 10s
-// take cookie or not
+/** @desc timeout setting */
+axios.defaults.timeout = 10000
+/** @desc take cookie or not */
 axios.defaults.withCredentials = false
-// validate response status
+/** @desc validate response status */
 axios.defaults.validateStatus = status => (status >= 200 && status < 300) || status === 304
-// max length of the content
+/** @desc max length of the content */
 axios.defaults.maxContentLength = 524288 // 0.5 MB
-// max redirect times
+/** @desc max redirect times */
 axios.defaults.maxRedirects = 5
-// response interceptor
+/** @desc response interceptor */
 axios.interceptors.response.use(
   response => response.data,
   (error) => {
@@ -75,9 +75,9 @@ axios.interceptors.response.use(
 
 export default {
   /**
-   * @param  {object}              annoymous
-   * @param  {string}              annoymous.url
-   * @param  {any}                 annoymous.params
+   * @param  {object} payload
+   * @param  {string} payload.url
+   * @param  {any} payload.params
    * @return {Promise.<IResponse>}
    */
   get: async function ({ url, params = null }) {
@@ -86,16 +86,16 @@ export default {
       url,
       method: 'get',
       headers: {
-        ...defualtHeaders,
+        ...defaultHeaders,
         token
       },
       params
     })
   },
   /**
-   * @param  {object}              annoymous
-   * @param  {string}              annoymous.url
-   * @param  {any}                 annoymous.params
+   * @param  {object} payload
+   * @param  {string} payload.url
+   * @param  {any} payload.data
    * @return {Promise.<IResponse>}
    */
   post: async function ({ url, data = null }) {
@@ -104,17 +104,17 @@ export default {
       url,
       method: 'post',
       headers: {
-        ...defualtHeaders,
+        ...defaultHeaders,
         token
       },
       data
     })
   },
   /**
-   * @param  {object}              annoymous
-   * @param  {string}              annoymous.url
-   * @param  {any}                 annoymous.params
-   * @return {Promise.<IResponse>}
+   * @param  {object} payload
+   * @param  {string} payload.url
+   * @param  {any} payload.data
+   * @return {Promise<IResponse>}
    */
   uploadImage: async function ({ url, data = null }) {
     const token = await AsyncStorage.getItem('token')
@@ -122,7 +122,7 @@ export default {
       url,
       method: 'post',
       headers: {
-        ...defualtHeaders,
+        ...defaultHeaders,
         token,
         'Content-Type': 'image/*'
       },
