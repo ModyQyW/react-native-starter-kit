@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "rn-mobx-starter-kit",
-    "description": "This is a starter kit for react native using mobx, some UI toolkits and react-navigation. Hope this helpful :D",
-    "slug": "rn-mobx-starter-kit",
+    "name": "rn-mobx-scaffold",
+    "description": "This is a scaffold for react-native. Hope this helpful :D",
+    "slug": "rn-mobx-scaffold",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -10,7 +10,7 @@
       "android",
       "web"
     ],
-    "version": "0.1.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "splash": {
@@ -19,7 +19,7 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
-      "./src/assets/*/*"
+      "./src/assets/*"
     ],
     "updates": {
       "enabled": true,

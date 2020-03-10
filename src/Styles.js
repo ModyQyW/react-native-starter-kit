@@ -1,5 +1,7 @@
 import { Dimensions, Platform, StatusBar, StyleSheet } from 'react-native'
 
+const { height, width } = Dimensions.get('window')
+
 export const colors = {
   black: '#000',
   white: '#fff',
@@ -861,6 +863,9 @@ export const boxModel = StyleSheet.create({
   width23D24: {
     width: '95.83333333%'
   },
+  widthDevice: {
+    width
+  },
   widthHalf: {
     width: '50%'
   },
@@ -887,6 +892,9 @@ export const boxModel = StyleSheet.create({
   },
   heightFull: {
     height: '100%'
+  },
+  heightDevice: {
+    height
   },
   minHeight0: {
     minHeight: 0
@@ -2000,8 +2008,6 @@ export const misc = StyleSheet.create({
   }
 })
 
-const { height, width } = Dimensions.get('window')
-
 // x and xs
 const iPhoneXWidth = 375
 const iPhoneXHeight = 812
@@ -2011,34 +2017,39 @@ const iPhoneXRHeight = 896
 const isIOS = Platform.OS === 'ios'
 const isIPhoneX = isIOS && ((width === iPhoneXWidth && height === iPhoneXHeight) || (width === iPhoneXRWidth && height === iPhoneXRHeight))
 
-const androidMarginTop = StatusBar.currentHeight
-const iPhoneXMarginTop = 44
-const iOSMarginTop = 20
+const androidPaddingTop = StatusBar.currentHeight
+const iPhoneXPaddingTop = 44
+const iOSPaddingTop = 20
 
-const androidMarginBottom = 0
-const iPhoneXMarginBottom = 34
-const iOSMarginBottom = 0
+const androidPaddingBottom = 0
+const iPhoneXPaddingBottom = 34
+const iOSPaddingBottom = 0
 
-const marginTop = androidMarginTop || (isIPhoneX ? iPhoneXMarginTop : iOSMarginTop)
-const marginBottom = isIOS
+const paddingTop = androidPaddingTop || (isIPhoneX ? iPhoneXPaddingTop : iOSPaddingTop)
+const paddingBottom = isIOS
   ? (isIPhoneX
-    ? iPhoneXMarginBottom
-    : iOSMarginBottom
+    ? iPhoneXPaddingBottom
+    : iOSPaddingBottom
   )
-  : androidMarginBottom
-const cutHeight = marginTop + marginBottom
+  : androidPaddingBottom
 
 export const layouts = StyleSheet.create({
   // container: View
   // usually the root element of page
   container: {
     width,
-    height: height - cutHeight,
+    height,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop,
-    marginBottom
+    paddingTop,
+    paddingBottom
+  },
+  // background: Image
+  background: {
+    position: 'absolute',
+    width,
+    height
   },
   // header with 1 or 3 item(s): View
   // 1 item: title
@@ -2061,7 +2072,9 @@ export const layouts = StyleSheet.create({
   headerLeft: {
     flex: 0,
     width: 26,
-    height: 26
+    height: 26,
+    lineHeight: 26,
+    textAlignVertical: 'center'
   },
   // supposed to be a View wrapping a Text
   headerMiddle: {
@@ -2070,13 +2083,17 @@ export const layouts = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 26,
-    textAlign: 'center'
+    lineHeight: 26,
+    textAlign: 'center',
+    textAlignVertical: 'center'
   },
   // supposed to be an icon
   headerRight: {
     flex: 0,
     width: 26,
-    height: 26
+    height: 26,
+    lineHeight: 26,
+    textAlignVertical: 'center'
   },
   // body: View
   body: {
@@ -2094,6 +2111,8 @@ export const layouts = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     height: 40,
+    lineHeight: 40,
+    textAlignVertical: 'center',
     paddingTop: 4,
     paddingRight: 8,
     paddingBottom: 4,

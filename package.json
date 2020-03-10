@@ -1,5 +1,5 @@
 {
-  "name": "rn-mobx-starter-kit",
+  "name": "rn-mobx-scaffold",
   "version": "0.0.0",
   "author": "ModyQyW <wurui7@mail3.sysu.edu.cn>",
   "private": true,
@@ -18,29 +18,33 @@
     "build:web": "expo build:web",
     "publish": "expo publish",
     "eject": "expo eject",
-    "lint": "eslint src --ext .js,.jsx"
+    "lint": "eslint src --ext .js,.jsx --fix"
   },
   "dependencies": {
-    "@ant-design/react-native": "^3.2.2",
+    "@ant-design/react-native": "^3.3.0",
+    "@react-native-community/masked-view": "^0.1.7",
+    "@react-navigation/bottom-tabs": "^5.1.1",
+    "@react-navigation/native": "^5.0.9",
+    "@react-navigation/stack": "^5.1.1",
     "axios": "^0.19.2",
     "expo": "^36.0.2",
-    "expo-font": "~8.0.0",
+    "expo-font": "^8.0.0",
     "mobx": "^5.15.4",
     "mobx-react": "^5.4.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-appearance": "^0.3.3",
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "^1.7.0",
-    "react-native-web": "^0.12.2",
-    "react-navigation": "^4.2.2",
-    "react-navigation-stack": "^1.10.3",
-    "teaset": "^0.7.1"
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.2.0",
+    "react-native-web": "^0.12.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
+    "@babel/core": "^7.8.7",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.0",
     "babel-preset-expo": "^8.0.0",
@@ -50,20 +54,20 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-standard": "^4.0.1",
     "lint-staged": "^9.5.0"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "parserOptions": {
       "ecmaFeatures": {
         "experimentalObjectRestSpread": true,
         "jsx": true
       }
     },
-    "parser": "babel-eslint",
     "env": {
       "es6": true,
       "react-native/react-native": true
@@ -89,8 +93,7 @@
       ],
       "react-hooks/rules-of-hooks": 2,
       "react-hooks/exhaustive-deps": 1,
-      "react-native/sort-styles": 0,
-      "no-unused-vars": 1
+      "react-native/sort-styles": 0
     }
   },
   "gitHooks": {

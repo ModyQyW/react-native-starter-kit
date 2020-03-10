@@ -1,35 +1,50 @@
 import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { observer } from 'mobx-react'
+import PropTypes from 'prop-types'
 
 import { layouts, typography } from '../../Styles'
 
-const Index = observer((props) => {
-  const handleToLayout1 = () => {
-    props.navigation.navigate('DemoLayout1')
+@observer
+class Index extends React.Component {
+  handleToDemoLayout1 = () => {
+    this.props.navigation.navigate('DemoLayout1')
   }
 
-  const handleToLayout2 = () => {
-    props.navigation.navigate('DemoLayout2')
+  handleToDemoLayout2 = () => {
+    this.props.navigation.navigate('DemoLayout2')
   }
 
-  return (
-    <View style={layouts.container}>
-      <View style={layouts.header}>
-        <Text style={[layouts.headerMiddle, typography.textTitle]}>Demos</Text>
+  render () {
+    return (
+      <View style={layouts.container}>
+        <View style={layouts.header}>
+          <Text
+            style={[
+              layouts.headerMiddle,
+              typography.textTitle
+            ]}
+          >
+            Demos
+          </Text>
+        </View>
+        <View style={layouts.body}>
+          <Button
+            onPress={this.handleToDemoLayout1}
+            title='To DemoLayout1'
+          />
+          <Button
+            onPress={this.handleToDemoLayout2}
+            title='To DemoLayout2'
+          />
+        </View>
       </View>
-      <View style={layouts.body}>
-        <Button
-          onPress={handleToLayout1}
-          title='Navigate to Layout1'
-        />
-        <Button
-          onPress={handleToLayout2}
-          title='Navigate to Layout2'
-        />
-      </View>
-    </View>
-  )
-})
+    )
+  }
+}
+
+Index.propTypes = {
+  navigation: PropTypes.any
+}
 
 export default Index

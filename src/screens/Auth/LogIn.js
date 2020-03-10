@@ -1,39 +1,52 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { observer } from 'mobx-react'
 import { Button } from 'react-native-elements'
+import { observer } from 'mobx-react'
+import PropTypes from 'prop-types'
 
 import { layouts, typography } from '../../Styles'
 
-// handle your log in logic here
-const LogIn = observer((props) => {
-  const handleToMainStack = () => {
-    props.navigation.navigate('MainStack')
+@observer
+class LogIn extends React.Component {
+  handleToMainStack = () => {
+    this.props.navigation.navigate('MainStack')
   }
 
-  const handleToAuthSignUp = () => {
-    props.navigation.navigate('AuthSignUp')
+  handleToAuthSignUp = () => {
+    this.props.navigation.navigate('AuthSignUp')
   }
 
-  return (
-    <View style={layouts.container}>
-      <View style={layouts.header}>
-        <Text style={[layouts.headerMiddle, typography.textTitle]}>LogIn</Text>
+  render () {
+    return (
+      <View style={layouts.container}>
+        <View style={layouts.header}>
+          <Text
+            style={[
+              layouts.headerMiddle,
+              typography.textTitle
+            ]}
+          >
+            LogIn
+          </Text>
+        </View>
+        <View style={layouts.body}>
+          <Text>LogIn Screen</Text>
+          <Button
+            onPress={this.handleToMainStack}
+            title='To MainStack'
+          />
+          <Button
+            onPress={this.handleToAuthSignUp}
+            title='To AuthSignup'
+          />
+        </View>
       </View>
-      <View style={layouts.body}>
-        <Text>This is the log in screen.</Text>
-        <Text>Buttons below are from React Native Elements.</Text>
-        <Button
-          onPress={handleToMainStack}
-          title='Navigate to Main Stack'
-        />
-        <Button
-          onPress={handleToAuthSignUp}
-          title='Navigate to Signup Screen'
-        />
-      </View>
-    </View>
-  )
-})
+    )
+  }
+}
+
+LogIn.propTypes = {
+  navigation: PropTypes.any
+}
 
 export default LogIn

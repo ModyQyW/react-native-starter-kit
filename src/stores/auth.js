@@ -2,29 +2,18 @@ import { AsyncStorage } from 'react-native'
 import { action, observable } from 'mobx'
 import req from '../utils/request'
 
-/**
- * @typedef  {Object}  UserInfo
- * @property {Number}  id
- * @property {String}  username
- * @property {String}  nickname
- * @property {Number}  role
- *
- * @typedef  {Object}  IResponse
- * @property {Boolean} suc
- * @property {String}  msg
- * @property {Any}     data
- */
-
 class AuthStore {
   /**
-   * @description token's key in AsyncStorage
-   * @type {String}
+   * @desc token's key in AsyncStorage
    */
   @observable tokenKey = 'token';
 
   /**
-   * @description the user's info
-   * @type {UserInfo}
+   * @desc the user's info
+   * @property {number} id
+   * @property {string} username
+   * @property {string} username
+   * @property {number} role
    */
   @observable userInfo = {
     id: -1,
@@ -34,17 +23,16 @@ class AuthStore {
   };
 
   /**
-   * @description set data
-   * @param {Object} annoymous
-   * @param {String} annoymous.token
-   * @param {Number} annoymous.id
-   * @param {String} annoymous.username
-   * @param {String} annoymous.nickname
-   * @param {Number} annoymous.role
-   * @memberof AuthStore
+   * @desc set data
+   * @param {object} payload
+   * @param {string} payload.token
+   * @param {number} payload.id
+   * @param {string} payload.username
+   * @param {string} payload.nickname
+   * @param {number} payload.role
    */
   @action
-  async handleSetData ({ token, id, username, nickname, role }) {
+  handleSetDataAsync = async ({ token, id, username, nickname, role }) => {
     this.userInfo = {
       id,
       username,
@@ -55,11 +43,10 @@ class AuthStore {
   }
 
   /**
-   * @description reset data
-   * @memberof AuthStore
+   * @desc reset data
    */
   @action
-  async handleResetData () {
+  handleResetDataAsync = async () => {
     this.userInfo = {
       id: -1,
       username: '---',
@@ -70,14 +57,12 @@ class AuthStore {
   }
 
   /**
-   * @description log in
-   * @param {Object} annoymous
-   * @param {String} annoymous.username
-   * @param {String} annoymous.password
-   * @returns {Promise.<IResponse>}
-   * @memberof AuthStore
+   * @desc log in
+   * @param {object} payload
+   * @param {string} payload.username
+   * @param {string} payload.password
    */
-  async handleLogIn ({ username, password }) {
+  handleLogInAsync = async ({ username, password }) => {
     return req.post({
       url: '/auth/login',
       data: {
@@ -85,32 +70,32 @@ class AuthStore {
         password
       }
     }).then(async (res) => {
-      const { suc, msg, data: { token, id, username, nickname, role } } = res
+      const { suc, msg, data } = res
       if (suc) {
-        await this.handleSetData({ token, id, username, nickname, role })
+        await this.handleSetDataAsync({ ...data })
       }
       return { suc, msg }
     })
   }
 
   /**
-   * @description renew token
-   * @returns {Promise.<IResponse>}
-   * @memberof AuthStore
+   * @desc renew token
    */
-  async handleRenewToken () {
+  handleRenewToken = async () => {
     return req.post({
       url: '/auth/renew'
     }).then(async (res) => {
-      const { suc, msg, data: { token, id, username, nickname, role } } = res
+      const { suc, msg, data } = res
       if (suc) {
-        await this.handleSetData({ token, id, username, nickname, role })
+        await this.handleSetDataAsync({ ...data })
       } else {
-        await this.handleResetData()
+        await this.handleResetDataAsync()
       }
       return { suc, msg }
     })
   }
 }
 
-export default AuthStore
+const auth = new AuthStore()
+
+export default auth

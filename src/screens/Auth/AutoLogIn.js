@@ -1,55 +1,54 @@
-import React, { useEffect } from 'react'
-import { ActivityIndicator, Alert, AsyncStorage, StyleSheet, View } from 'react-native'
-import { observer } from 'mobx-react'
-import { useStores } from '../../stores'
+import React from 'react'
+import { ActivityIndicator, Alert, AsyncStorage, View } from 'react-native'
+import { observer, inject } from 'mobx-react'
+import PropTypes from 'prop-types'
 
 import { layouts } from '../../Styles'
 
-const style = {}
-
-const styles = StyleSheet.create(style)
-
-// handle your auto log in logic here
-const AutoLogIn = observer((props) => {
-  const { authStore } = useStores()
-
-  const handleToMainStack = () => {
-    props.navigation.navigate('MainStack')
-  }
-
-  const handleToAuthLogIn = () => {
-    props.navigation.navigate('AuthLogIn')
-  }
-
-  useEffect(() => {
-    const handleRenewToken = async () => {
-      const token = await AsyncStorage.getItem(authStore.tokenKey)
-      if (token !== null) {
-        authStore.handleRenewToken()
-          .then(({ suc, msg }) => {
-            if (suc) {
-              handleToMainStack()
-            } else {
-              Alert.alert(
-                'Error', msg || 'Failed to get necessary information.',
-                [{ text: 'OK', onPress: () => {} }],
-                { cancelable: false, onDismiss: () => {} }
-              )
-              handleToAuthLogIn()
-            }
-          })
-      } else {
-        handleToAuthLogIn()
-      }
+@inject('auth')
+@observer
+class AutoLogIn extends React.Component {
+  async componentDidMount () {
+    const token = await AsyncStorage.getItem(this.props.auth.tokenKey)
+    if (token !== null) {
+      this.props.auth.handleRenewToken()
+        .then(({ suc, msg }) => {
+          if (suc) {
+            this.handleToMainStack()
+          } else {
+            Alert.alert(
+              'Error', msg || 'Failed to get necessary information.',
+              [{ text: 'OK', onPress: () => {} }],
+              { cancelable: false, onDismiss: () => {} }
+            )
+            this.handleToAuthStack()
+          }
+        })
+    } else {
+      this.handleToAuthStack()
     }
-    handleRenewToken()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }
 
-  return (
-    <View style={layouts.container}>
-      <ActivityIndicator />
-    </View>
-  )
-})
+  handleToMainStack = () => {
+    this.props.navigation.navigate('MainStack')
+  }
+
+  handleToAuthStack = () => {
+    this.props.navigation.navigate('AuthStack')
+  }
+
+  render () {
+    return (
+      <View style={layouts.container}>
+        <ActivityIndicator />
+      </View>
+    )
+  }
+}
+
+AutoLogIn.propTypes = {
+  navigation: PropTypes.any,
+  auth: PropTypes.any
+}
 
 export default AutoLogIn

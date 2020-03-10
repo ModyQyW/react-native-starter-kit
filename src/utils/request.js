@@ -1,13 +1,6 @@
 import { AsyncStorage } from 'react-native'
 import axios from 'axios'
 
-/**
- * @typedef  {object}  IResponse
- * @property {boolean} suc
- * @property {string}  msg
- * @property {any}     data
- */
-
 // for dev env
 const baseUrl = 'http://localhost:3000/api'
 // for prod env
