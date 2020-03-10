@@ -2042,7 +2042,6 @@ export const layouts = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop,
     paddingBottom
   },
   // background: Image
@@ -2060,8 +2059,8 @@ export const layouts = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: 40,
-    paddingTop: 0,
+    height: 40 + paddingTop,
+    paddingTop,
     paddingRight: 8,
     paddingBottom: 0,
     paddingLeft: 8,
