@@ -2118,9 +2118,11 @@ export const layouts = StyleSheet.create({
   // body's child: ScrollView / FlatList
   bodyMain: {
     flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
     width: '100%',
-    paddingRight: 8,
-    paddingLeft: 8
+    paddingRight: 24,
+    paddingLeft: 24
   },
   // footer: View
   footer: {
