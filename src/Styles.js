@@ -2071,8 +2071,7 @@ export const layouts = StyleSheet.create({
   headerLeft: {
     flex: 0,
     width: 26,
-    height: 26,
-    textAlignVertical: 'center'
+    height: 26
   },
   // supposed to be a View wrapping a Text
   headerMiddle: {
@@ -2089,8 +2088,7 @@ export const layouts = StyleSheet.create({
   headerRight: {
     flex: 0,
     width: 26,
-    height: 26,
-    textAlignVertical: 'center'
+    height: 26
   },
   // body: View
   body: {
