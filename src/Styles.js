@@ -2072,7 +2072,6 @@ export const layouts = StyleSheet.create({
     flex: 0,
     width: 26,
     height: 26,
-    lineHeight: 26,
     textAlignVertical: 'center'
   },
   // supposed to be a View wrapping a Text
@@ -2091,7 +2090,6 @@ export const layouts = StyleSheet.create({
     flex: 0,
     width: 26,
     height: 26,
-    lineHeight: 26,
     textAlignVertical: 'center'
   },
   // body: View
