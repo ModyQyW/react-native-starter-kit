@@ -114,6 +114,7 @@ Assuming you have your own server and you are going to host the app on it:
 - [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 - [react-native-elements](https://react-native-training.github.io/react-native-elements/) - Cross Platform React Native UI Toolkit
 - [@ant-design/react-native](https://rn.mobile.ant.design/) - A UI component library based on React Native
+- [teaset](https://github.com/rilyu/teaset) - A UI library for react native, provides 20+ pure JS(ES6) components, focusing on content display and action control
 - [eslint](https://eslint.org) - An open source project provided a pluggable linting utility for JavaScript, using [standard](https://standardjs.com/) in the project
 
 ## Features
@@ -121,10 +122,6 @@ Assuming you have your own server and you are going to host the app on it:
 - Cross platforms
 - Preset styles
 - Layout examples
-
-TODO:
-
-- Full documents about how to modify
 
 ## Contributing
 
