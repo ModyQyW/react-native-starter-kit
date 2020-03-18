@@ -1952,8 +1952,19 @@ export const visual = StyleSheet.create({
     borderLeftWidth: 1
   },
   borderedNone: {
-    borderColor: colors.transparent,
     borderWidth: 0
+  },
+  borderedTopNone: {
+    borderTopWidth: 0
+  },
+  borderedRightNone: {
+    borderRightWidth: 0
+  },
+  borderedBottomNone: {
+    borderBottomWidth: 0
+  },
+  borderedLeftNone: {
+    borderLeftWidth: 0
   },
   roundedNone: {
     borderRadius: 0
@@ -2113,11 +2124,10 @@ export const layouts = StyleSheet.create({
     paddingBottom: 4,
     paddingLeft: 8
   },
-  // body's child: ScrollView / FlatList
+  // body's child: View style
   bodyMain: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
     width: '100%',
     paddingRight: 24,
     paddingLeft: 24
