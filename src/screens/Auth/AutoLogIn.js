@@ -12,12 +12,12 @@ class AutoLogIn extends React.Component {
     const token = await AsyncStorage.getItem(this.props.auth.tokenKey)
     if (token !== null) {
       this.props.auth.handleRenewToken()
-        .then(({ suc, msg }) => {
-          if (suc) {
+        .then(({ success, message }) => {
+          if (success) {
             this.handleToMainStack()
           } else {
             Alert.alert(
-              'Error', msg || 'Failed to get necessary information.',
+              'Error', message || 'Failed to get necessary information.',
               [{ text: 'OK', onPress: () => {} }],
               { cancelable: false, onDismiss: () => {} }
             )

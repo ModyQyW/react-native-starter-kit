@@ -70,11 +70,11 @@ class AuthStore {
         password
       }
     }).then(async (res) => {
-      const { suc, msg, data } = res
-      if (suc) {
+      const { success, message, data } = res
+      if (success) {
         await this.handleSetDataAsync({ ...data })
       }
-      return { suc, msg }
+      return { success, message }
     })
   }
 
@@ -85,13 +85,13 @@ class AuthStore {
     return req.post({
       url: '/auth/renew'
     }).then(async (res) => {
-      const { suc, msg, data } = res
-      if (suc) {
+      const { success, message, data } = res
+      if (success) {
         await this.handleSetDataAsync({ ...data })
       } else {
         await this.handleResetDataAsync()
       }
-      return { suc, msg }
+      return { success, message }
     })
   }
 }

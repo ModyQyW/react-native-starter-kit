@@ -44,8 +44,8 @@ axios.interceptors.response.use(
   (error) => {
     // just make it like api responses
     const err = {
-      suc: false,
-      msg: ''
+      success: false,
+      message: ''
     }
     // console.log(error.config);
     if (error.response) {
@@ -57,35 +57,35 @@ axios.interceptors.response.use(
       const { status } = error.response
       switch (status) {
         case 403:
-          err.msg = 'Forbidden'
+          err.message = 'Forbidden'
           break
         case 404:
-          err.msg = 'Not found'
+          err.message = 'Not found'
           break
         case 500:
-          err.msg = 'Internal server error'
+          err.message = 'Internal server error'
           break
         case 502:
-          err.msg = 'Bad gateway'
+          err.message = 'Bad gateway'
           break
         case 503:
-          err.msg = 'Service Unavailable'
+          err.message = 'Service Unavailable'
           break
         case 504:
-          err.msg = 'Gateway timeout'
+          err.message = 'Gateway timeout'
           break
         default:
-          err.msg = `Unknown error with ${status}`
+          err.message = `Unknown error with ${status}`
           break
       }
     } else if (error.request) {
       // The request was made but no response was received
       // console.log(error.request);
-      err.msg = 'No response'
+      err.message = 'No response'
     } else {
       // Something happened in setting up the request that triggered an Error
-      // console.log('Error', error.msg);
-      err.msg = 'Request error'
+      // console.log('Error', error.message);
+      err.message = 'Request error'
     }
     return err
   }
@@ -93,8 +93,8 @@ axios.interceptors.response.use(
 
 /**
  * @typedef {object} IResponse
- * @property {boolean} suc
- * @property {string} msg
+ * @property {boolean} success
+ * @property {string} message
  * @property {any} data
  */
 
@@ -120,13 +120,13 @@ export const get = async ({
     },
     params
   }).then((res) => {
-    if (!res.suc) {
+    if (!res.success) {
       switch (feedbackType) {
         case 1:
-          Alert({ message: res.msg })
+          Alert({ message: res.message })
           break
         case 2:
-          Toast.fail({ message: res.msg })
+          Toast.fail({ message: res.message })
           break
         default:
           break
@@ -158,13 +158,13 @@ export const post = async ({
     },
     data
   }).then((res) => {
-    if (!res.suc) {
+    if (!res.success) {
       switch (feedbackType) {
         case 1:
-          Alert({ message: res.msg })
+          Alert({ message: res.message })
           break
         case 2:
-          Toast.fail({ message: res.msg })
+          Toast.fail({ message: res.message })
           break
         default:
           break
