@@ -1,13 +1,27 @@
-import { AsyncStorage } from 'react-native'
 import axios from 'axios'
+import Alert from './Alert'
+import Toast from './Toast'
+import Storage from './Storage'
 
 // for dev env
 const baseUrl = 'http://localhost:3000/api'
 // for prod env
 // const baseUrl = '';
 
-/** @desc base url */
-axios.defaults.baseURL = baseUrl
+/**
+ * @param {string} apiUrl
+ * @return {string}
+ */
+const getFullUrl = (apiUrl) => {
+  if (apiUrl.startsWith('https')) {
+    return apiUrl
+  }
+  if (apiUrl.startsWith('/')) {
+    return baseUrl + apiUrl
+  }
+  return baseUrl + '/' + apiUrl
+}
+
 /** @desc default header */
 const defaultHeaders = {
   'X-Requested-With': 'XMLHttpRequest',
@@ -15,18 +29,18 @@ const defaultHeaders = {
   Accept: 'application/json'
 }
 /** @desc timeout setting */
-axios.defaults.timeout = 10000
+axios.defaults.timeout = 10000 // 10s
 /** @desc take cookie or not */
 axios.defaults.withCredentials = false
 /** @desc validate response status */
-axios.defaults.validateStatus = status => (status >= 200 && status < 300) || status === 304
+axios.defaults.validateStatus = (status): boolean => (status >= 200 && status < 300) || status === 304
 /** @desc max length of the content */
 axios.defaults.maxContentLength = 524288 // 0.5 MB
 /** @desc max redirect times */
 axios.defaults.maxRedirects = 5
 /** @desc response interceptor */
 axios.interceptors.response.use(
-  response => response.data,
+  (response) => response.data,
   (error) => {
     // just make it like api responses
     const err = {
@@ -51,7 +65,18 @@ axios.interceptors.response.use(
         case 500:
           err.msg = 'Internal server error'
           break
-        default: break
+        case 502:
+          err.msg = 'Bad gateway'
+          break
+        case 503:
+          err.msg = 'Service Unavailable'
+          break
+        case 504:
+          err.msg = 'Gateway timeout'
+          break
+        default:
+          err.msg = `Unknown error with ${status}`
+          break
       }
     } else if (error.request) {
       // The request was made but no response was received
@@ -66,60 +91,90 @@ axios.interceptors.response.use(
   }
 )
 
+/**
+ * @typedef {object} IResponse
+ * @property {boolean} suc
+ * @property {string} msg
+ * @property {any} data
+ */
+
+/**
+ * @param {object} payload
+ * @param {string} payload.url
+ * @param {any} payload.params
+ * @param {number} payload.feedbackType
+ * @return {Promise<IResponse>}
+ */
+export const get = async ({
+  url,
+  params = null,
+  feedbackType = 1
+}) => {
+  const token = await Storage.getToken()
+  return axios.request({
+    url: getFullUrl(url),
+    method: 'get',
+    headers: {
+      ...defaultHeaders,
+      token
+    },
+    params
+  }).then((res) => {
+    if (!res.suc) {
+      switch (feedbackType) {
+        case 1:
+          Alert({ message: res.msg })
+          break
+        case 2:
+          Toast.fail({ message: res.msg })
+          break
+        default:
+          break
+      }
+    }
+    return res
+  })
+}
+
+/**
+ * @param {object} payload
+ * @param {string} payload.url
+ * @param {any} payload.data
+ * @param {number} payload.feedbackType
+ * @return {Promise<IResponse>}
+ */
+export const post = async ({
+  url,
+  data = null,
+  feedbackType = 1
+}) => {
+  const token = await Storage.getToken()
+  return axios.request({
+    url: getFullUrl(url),
+    method: 'post',
+    headers: {
+      ...defaultHeaders,
+      token: token
+    },
+    data
+  }).then((res) => {
+    if (!res.suc) {
+      switch (feedbackType) {
+        case 1:
+          Alert({ message: res.msg })
+          break
+        case 2:
+          Toast.fail({ message: res.msg })
+          break
+        default:
+          break
+      }
+    }
+    return res
+  })
+}
+
 export default {
-  /**
-   * @param  {object} payload
-   * @param  {string} payload.url
-   * @param  {any} payload.params
-   * @return {Promise.<IResponse>}
-   */
-  get: async function ({ url, params = null }) {
-    const token = await AsyncStorage.getItem('token')
-    return axios({
-      url,
-      method: 'get',
-      headers: {
-        ...defaultHeaders,
-        token
-      },
-      params
-    })
-  },
-  /**
-   * @param  {object} payload
-   * @param  {string} payload.url
-   * @param  {any} payload.data
-   * @return {Promise.<IResponse>}
-   */
-  post: async function ({ url, data = null }) {
-    const token = await AsyncStorage.getItem('token')
-    return axios({
-      url,
-      method: 'post',
-      headers: {
-        ...defaultHeaders,
-        token
-      },
-      data
-    })
-  },
-  /**
-   * @param  {object} payload
-   * @param  {string} payload.url
-   * @param  {any} payload.data
-   * @return {Promise<IResponse>}
-   */
-  uploadImage: async function ({ url, data = null }) {
-    const token = await AsyncStorage.getItem('token')
-    return axios({
-      url,
-      method: 'post',
-      headers: {
-        ...defaultHeaders,
-        token,
-        'Content-Type': 'image/*'
-      },
-      data
-    })
-  }
+  get,
+  post
 }

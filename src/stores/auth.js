@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native'
 import { action, observable } from 'mobx'
-import req from '../utils/request'
+import req from '../utils/Request'
 
 class AuthStore {
   /**

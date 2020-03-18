@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Icon } from 'react-native-elements'
-import { Provider, Toast } from '@ant-design/react-native'
 import { action, observable } from 'mobx'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import Toast from '../../utils/Toast'
 
 import { layouts, typography } from '../../Styles'
 
@@ -47,10 +47,9 @@ class DemoLayout2 extends React.Component {
   onExtractKey = (item) => item.value.toString()
 
   handlePressListItem = (item) => {
-    Toast.info(
-      `You just clicked (index: ${item.value}, label: ${item.label}) item`,
-      0.5
-    )
+    Toast.info({
+      message: `You just clicked (index: ${item.value}, label: ${item.label}) item`
+    })
   }
 
   onRenderListItem = ({ item }) => (
@@ -68,49 +67,47 @@ class DemoLayout2 extends React.Component {
 
   render () {
     return (
-      <Provider>
-        <View style={layouts.container}>
-          <View style={layouts.header}>
-            <Icon
-              name='arrow-back'
-              size={26}
-              onPress={this.handleBack}
-            />
-            <Text
-              style={[
-                layouts.headerMiddle,
-                typography.textTitle
-              ]}
-            >
-              DemoLayout2
-            </Text>
-            <Icon
-              size={26}
-              name='menu'
-            />
-          </View>
-          <View style={layouts.body}>
-            <View style={layouts.bodyNav}>
-              <Text>nav bar styles depend on designer.</Text>
-              <Button
-                onPress={this.handleAddData}
-                title='Add Data'
-              />
-            </View>
-            <FlatList
-              style={layouts.bodyMain}
-              data={this.data}
-              keyExtractor={this.onExtractKey}
-              renderItem={this.onRenderListItem}
-            />
-          </View>
-          <View style={layouts.footer}>
-            <Text style={typography.textSecondary}>
-              Author: ModyQyW. MIT License.
-            </Text>
-          </View>
+      <View style={layouts.container}>
+        <View style={layouts.header}>
+          <Icon
+            name='arrow-back'
+            size={26}
+            onPress={this.handleBack}
+          />
+          <Text
+            style={[
+              layouts.headerMiddle,
+              typography.textTitle
+            ]}
+          >
+            DemoLayout2
+          </Text>
+          <Icon
+            size={26}
+            name='menu'
+          />
         </View>
-      </Provider>
+        <View style={layouts.body}>
+          <View style={layouts.bodyNav}>
+            <Text>nav bar styles depend on designer.</Text>
+            <Button
+              onPress={this.handleAddData}
+              title='Add Data'
+            />
+          </View>
+          <FlatList
+            style={layouts.bodyMain}
+            data={this.data}
+            keyExtractor={this.onExtractKey}
+            renderItem={this.onRenderListItem}
+          />
+        </View>
+        <View style={layouts.footer}>
+          <Text style={typography.textSecondary}>
+            Author: ModyQyW. MIT License.
+          </Text>
+        </View>
+      </View>
     )
   }
 }
