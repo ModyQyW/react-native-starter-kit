@@ -1,4 +1,4 @@
-import { Dimensions, Platform, StatusBar, StyleSheet } from 'react-native'
+import { Dimensions, Platform, StyleSheet } from 'react-native'
 
 const { height, width } = Dimensions.get('window')
 
@@ -2028,15 +2028,20 @@ const iPhoneXRHeight = 896
 const isIOS = Platform.OS === 'ios'
 const isIPhoneX = isIOS && ((width === iPhoneXWidth && height === iPhoneXHeight) || (width === iPhoneXRWidth && height === iPhoneXRHeight))
 
-const androidPaddingTop = StatusBar.currentHeight
+const androidPaddingTop = 0
 const iPhoneXPaddingTop = 44
 const iOSPaddingTop = 20
 
-const androidPaddingBottom = 0
+const androidPaddingBottom = 34
 const iPhoneXPaddingBottom = 34
 const iOSPaddingBottom = 0
 
-const paddingTop = androidPaddingTop || (isIPhoneX ? iPhoneXPaddingTop : iOSPaddingTop)
+const paddingTop = isIOS
+  ? (isIPhoneX
+    ? iPhoneXPaddingTop
+    : iOSPaddingTop
+  )
+  : androidPaddingTop
 const paddingBottom = isIOS
   ? (isIPhoneX
     ? iPhoneXPaddingBottom
@@ -2070,7 +2075,7 @@ export const layouts = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: 40 + paddingTop,
+    height: 56 + paddingTop,
     paddingTop,
     paddingRight: 8,
     paddingBottom: 0,
