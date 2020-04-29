@@ -1,5 +1,7 @@
 # rn-mobx-scaffold
 
+**DEPRECATED**
+
 A simple cross-platform app built with react-native, Expo 36, mobx and react-navigation 5.
 
 Check [rn-unstated-ts-scaffold](https://github.com/ModyQyW/rn-unstated-ts-scaffold) for hooks and typescript.
